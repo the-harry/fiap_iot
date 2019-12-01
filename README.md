@@ -121,6 +121,11 @@ Para um melhor acompanhamento das aulas é sugerido que tenha em mão os seguint
 ![ky021](.../../img/doc/ky021.jpg)
 
 
+* `Kit RFID Sensor e cartão/tag - RFID-RC522`
+
+![MFRC522](.../../img/doc/MFRC522.jpg)
+
+
 * `Leds`
 
   - vermelho

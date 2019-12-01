@@ -1,4 +1,4 @@
-# Aula 1
+# Aula 2 - Introdução a programação
 
 ## Estrutura básica do sketch arduino
 Um sketch é um arquivo do arduino com a extenção `.ino`, ele pode conter código
