@@ -57,7 +57,6 @@ int calcular(int a, int b) {
 Para executar essa função basta chama-la no código usando `calcular(4, 2);` e nos retornará o valor 2.
 
 ## Variáveis e tipos no C
-
 Uma variável é basicamente uma caixa onde você pode guardar informações
 temporariamente, ao finalizar a execução do código as informações são perdidas.
 Para atribuir um valor a uma variavel é só escolher um nome(de preferência que
