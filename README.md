@@ -8,15 +8,15 @@ um ou mais desafios aplicando os conceitos aprendidos.
 
 ### Primeiro semestre
 
-É composto por 18? aulas focando mais em linguagem `C/C++` e `Arduino` e outras técnologias.
+É composto por 18 aulas sobre `Arduino` e suas técnologias.
 
  - Sumário das aulas:
 
-  * `Aula 1 - `
+  * `Aula 1 - Arduino, tipos, instalação da IDE.`
 
-  * `Aula 2 - `
+  * `Aula 2 - Introdução a programação.`
 
-  * `Aula 3 - `
+  * `Aula 3 - Análise do Blink e projeto de piscar um LED`
 
   * `Aula 4 - `
 
@@ -51,7 +51,7 @@ um ou mais desafios aplicando os conceitos aprendidos.
 
 ### Segundo semestre
 
-É composto por 14? aulas focando mais em linguagem `Python` e `Raspberry Pi` e outras técnologias.
+É composto por 14 aulas sobre `Python` e `Raspberry Pi` Virtualizada no Virtual Box.
  - Sumário das aulas:
 
   * `Aula 1 - `
