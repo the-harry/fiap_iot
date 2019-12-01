@@ -1,4 +1,4 @@
-# Materiais de IOT da FIAP
+# Material IOT 2020
 
 ## Estrutura das aulas
 Cada aula vai estar em uma pasta seguindo o padrão `semestre/aula` ter um código de exêmplo,
@@ -8,15 +8,15 @@ um ou mais desafios aplicando os conceitos aprendidos.
 
 ### Primeiro semestre
 
-É composto por 18? aulas focando mais em linguagem `C/C++` e `Arduino` e outras técnologias.
+É composto por 18 aulas sobre `Arduino` e suas técnologias.
 
  - Sumário das aulas:
 
-  * `Aula 1 - `
+  * `Aula 1 - Arduino, tipos, instalação da IDE.`
 
-  * `Aula 2 - `
+  * `Aula 2 - Introdução a programação.`
 
-  * `Aula 3 - `
+  * `Aula 3 - Análise do Blink e projeto de piscar um LED.`
 
   * `Aula 4 - `
 
@@ -51,7 +51,7 @@ um ou mais desafios aplicando os conceitos aprendidos.
 
 ### Segundo semestre
 
-É composto por 14? aulas focando mais em linguagem `Python` e `Raspberry Pi` e outras técnologias.
+É composto por 14 aulas sobre `Python` e `Raspberry Pi` Virtualizada no Virtual Box.
  - Sumário das aulas:
 
   * `Aula 1 - `
@@ -86,20 +86,54 @@ um ou mais desafios aplicando os conceitos aprendidos.
 
 Para um melhor acompanhamento das aulas é sugerido que tenha em mão os seguintes itens:
 
-* `Arduino Uno R3`
+* `Arduino Uno`
 
-* `Cabo serial`
+![Arduino Uno](.../../img/doc/arduino.jpg)
 
-* `Sensor ultrasônico`
 
-* `Sensor de umidade`
+* `Cabo serial para arduino`
 
-* `Solenoid `
+![Cabo serial](.../../img/doc/serial.jpg)
 
-* `Sensor de luz`
 
-* `Sensor de temperatura`
+* `Sensor ultrassônico - HC-SR04`
 
-* `Micro switch magnético`
+![HC-SR04](.../../img/doc/HC-SR04.jpg)
+
+
+* `Sensor de umidade e temperatura - DHT11`
+
+![DHT11](.../../img/doc/dht11.jpg)
+
+
+* `Solenoide`
+
+![solenoide](.../../img/doc/solenoide.jpg)
+
+
+* `Sensor de luz - LDR`
+
+![ldr](.../../img/doc/ldr.jpg)
+
+
+* `Chave Magnética Reed Switch - KY-021`
+
+![ky021](.../../img/doc/ky021.jpg)
+
 
 * `Leds`
+
+  - vermelho
+  - amarelo
+  - verde
+
+![leds](.../../img/doc/leds.jpg)
+
+
+* `Resistores`
+
+  -
+  -
+  -
+
+![resistores](.../../img/doc/resistores.png)
