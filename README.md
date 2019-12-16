@@ -8,7 +8,7 @@ um ou mais desafios aplicando os conceitos aprendidos.
 
 ### Primeiro semestre
 
-É composto por 18 aulas sobre `Arduino` e suas técnologias.
+É composto por 18 aulas sobre `Arduino` e `C/C++`.
 
  - Sumário das aulas:
 
@@ -16,71 +16,74 @@ um ou mais desafios aplicando os conceitos aprendidos.
 
   * `Aula 2 - Introdução a lógica de programação.`
 
-  * `Aula 3 - Análise do Blink e projeto de piscar um LED. - variáveis, constantes e definições.`
+  * `Aula 3 - Análise estrutural do sketch usando o blink.`
 
-  * `Aula 4 - Tomando decisões - if, else, else if.`
+  * `Aula 4 - Funções do arduino.`
 
-  * `Aula 5 - Controle de repetição - Loops for e while.`
+  * `Aula 5 - Variáveis, constantes e definições.`
 
-  * `Aula 6 - Quebrando nosso código - Funções e retornos.`
+  * `Aula 6* - O que são tipos.`
 
-  * `Aula 7 - Convertendo tipos.`
+  * `Aula 7 - Operações lógicas.`
 
-  * `Aula 8 - Switch case e ternários.`
+  * `Aula 8 - Tomando decisões - if, else, else if.`
 
-  * `Aula 9 - `
+  * `Aula 9 - Controle de repetição - Loops for e while(e o temido goto).`
 
-  * `Aula 10 - `
+  * `Aula 10 - Funções e retornos.`
 
-  * `Aula 11 - `
+  * `Aula 11 - Criando nosso primeiro projeto no git.`
 
-  * `Aula 12 - Entendendo a estrurura de uma lib.`
+  * `Aula 12 - Trabalhando em equipe com git.`
 
-  * `Aula 13 - Criando nossa lib.`
+  * `Aula 13 - Switch case e ternários.`
 
-  * `Aula 14 - `
+  * `Aula 14 - Entendendo a estrurura de uma lib.`
 
-  * `Aula 15 - `
+  * `Aula 15 - Convertendo tipos.`
 
-  * `Aula 16 - `
+  * `Aula 16 - Arrays e estruturas de dados.`
 
-  * `Aula 17 - `
+  * `Aula 17 - Criando nossa lib parte 1, header.`
 
-  * `Aula 18 - `
+  * `Aula 18 - Criando nossa lib parte 2, body.`
+
 
 
 ### Segundo semestre
 
-É composto por 14 aulas sobre `Python` e `Raspberry Pi` Virtualizada no Virtual Box.
+É composto por 14 aulas sobre `Python` e `Raspberry Pi` no Virtual Box.
+
  - Sumário das aulas:
 
-  * `Aula 1 - Introdução ao raspberry pi.`
+  * `Aula 1 - Introdução ao raspberry pi e dispositivos de borda.`
 
-  * `Aula 2 -  Configuração inicial e comandos administrativos.`
+  * `Aula 2 - Configuração inicial e comandos administrativos.`
 
   * `Aula 3 - Introdução a Python.`
 
-  * `Aula 4 - Libs em python - pip, gpio.`
+  * `Aula 4 - Variáveis e a falta de tipos no python.`
 
-  * `Aula 5 - Arduino e Rasp, comunicação serial.`
+  * `Aula 5 - Decisões e controles de repetição no python.`
 
-  * `Aula 6 - APIs e requests http.`
+  * `Aula 6 - Funções no python.`
 
-  * `Aula 8 - Introdução a programação orientada a objetos.`
+  * `Aula 7 - Introdução a programação orientada a objetos.`
 
-  * `Aula 8 - Bancos de dados temporais, Introdução ao influx.`
+  * `Aula 8 - Libs em python - pip, gpio.`
 
-  * `Aula 9 - Introdução a monitoramento com Grafana.`
+  * `Aula 9 - Integração Arduino e Rasp, comunicação serial.`
 
-  * `Aula 10 - `
+  * `Aula 10 - APIs e requests http.`
 
-  * `Aula 11 - `
+  * `Aula 11 - Usando o docker na infraestrutura.`
 
-  * `Aula 12 - `
+  * `Aula 12 - Bancos de dados temporais, Introdução ao influx.`
 
-  * `Aula 13 - `
+  * `Aula 13 - Introdução a monitoramento com Grafana.`
 
-  * `Aula 14 - `
+  * `Aula 14 - Fazendo pequenas API's REST com sinatra.`
+
 
 ## Hardware
 
