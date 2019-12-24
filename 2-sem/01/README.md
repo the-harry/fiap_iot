@@ -20,7 +20,7 @@ Um dispositivo muito usado para dispositivos de borda é o raspberry pi, ele é 
 Jhon Doe criou uma startup voltada para monitoramento doméstico e você foi contratado por ele essa semana e hoje é seu primeiro dia(Parabéns! ;), e ele e seu time projetaram uma solução para monitorar jardins, solução na qual você os ajudará a criar. A sua ideia é criar algo que seja escalavel conforme a necessidade do cliente para prover um GAAS(Garde As A Service) onde seriam oferecidos serviços desde monitoração do solo, luz, humidade, entre outros.
 A empresa ainda é pequena e temos poucos funcionários, apenas o que precisamos para fazer o trabalho sair. Temos o Jhon Doe que cuida da parte do negócio, temos o Fulano Foo, que cuida do código, e a Jane Doe, que cuida da infra e hardware. A ideia é que no início você aprenda um pouco com cada um e posteriormente escolha seu destino, jovem padawan. Sempre lembrando que independente do caminho que decidir trilhar, você deve pelo menos entender os outros assuntos para se tonar um jedi.
 
-Para a primeira semana de trabalho você foi incubido de se reunir com o time inteiro para decidir como elaborar da melhor forma a arquitetura atual do projeto. Como ainda estamos em uma fase de prototipação vamos focar apenas em um sensor de humidade do solo. Fulano fez um rascunho básico de como a arquitetura seria.
+Para a primeira semana de trabalho você foi incubido de se reunir com o time inteiro para decidir como elaborar da melhor forma a arquitetura atual do projeto. Como ainda estamos em uma fase de prototipação vamos focar apenas em um sensor de humidade do solo. A Jane fez um rascunho básico de como a arquitetura seria.
 
 ![Arquitetura](arquitetura.png)
 
@@ -29,3 +29,5 @@ Para a primeira semana de trabalho você foi incubido de se reunir com o time in
 * [ ] Redesenhar a implementação da arquitetura usando um dispositivo de borda e pesquisar sobre o modelo;
 
 * [ ] Fazer levantamento de qual protocolo seria melhor para esse projeto junto com o time, e explicar o porquê;
+
+Com essas informações em mãos crie um repositório no github com seu time, os adicione como mantedores do projeto e documente essas informações levantadas no arquivo `README.md` do projeto.
