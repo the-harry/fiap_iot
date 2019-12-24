@@ -10,7 +10,7 @@ Agora vamos habilitar o ssh, para isso digite `sudo systemctl enable shh`, o sys
 
 Agora que temos o endereço de ip e habilitamos o ssh podemos nos conectar assim daqui para frente, sem a necessidade de plugar mil coisas no rasp. Supondo que seu ip seja `192.168.0.13` digite no seu pc/note digite:
 
-- OBS: Caso use linux é bem provavel que ele já tenha ssh, mas se você usa windows ~~deveria usar linux~~ pode usar o Putty, 
+- OBS: Caso use linux é bem provavel que ele já tenha ssh, mas se você usa windows ~~deveria usar linux~~ pode usar o Putty,
 
 `ssh pi@192.168.0.13`
 
@@ -62,6 +62,9 @@ OBS: Comandos com o prefixo `$` podem ser rodados por usuários normais, e coman
   - Desabilita o serviço na inicialização do sistema operacional
     `# systemctl disable nome_do_serviço`
 
+* Caso queira ver processos associados a alguma porta use o ss:
+  `# ss -tupln`
+
 * Não sabe o que o comando faz? Dê uma olhada no manual:
 `$ man nome_do_comando`
 
@@ -69,8 +72,14 @@ OBS: Comandos com o prefixo `$` podem ser rodados por usuários normais, e coman
 
 ### User history
 
-
+Na segunda semana você foi incubido de configurar o raspberry junto com a Jane, para prosseguir com a fase de desenvolvimento.
 
 ### Tasklist
 
-* [ ]
+* [ ] Configurar hostname
+
+* [ ] Configurar atualizar sistema
+
+* [ ] Configurar alterar a senha
+
+* [ ] Configurar locales(data, hora, teclado)
