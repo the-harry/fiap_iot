@@ -4,9 +4,22 @@
 
 Nessa aula veremos a configuração inicial do raspberry pi e alguns comandos úteis.
 
-Após instalar a ISO no sdcard vamos ligar e acessa-lo. Com um teclado e um monitor ligados no rasp. Após se logar com o usuário padão `pi:raspberry`, se conecte a internet(por cabo ou wifi) e abra um terminal. Nós poderiamos fazer tudo por aqui, mas por comodidade vamos apenas pegar o endereço de ip, e habilitar o ssh para nos conectarmos remotamente.
-Para começar digite o comando `ip a` para verificar seu ip, caso tenha se conectado por wifi a interface associada será algo como `wlp6s0` se for por cabo será algo como `enp12s0`, anote esse ip.
-Agora vamos habilitar o ssh, para isso digite `sudo systemctl enable shh`, o systemctl é um gerenciador de serviços, e o enable habilita o serviço toda vez que a máquina ligar.
+Após instalar a ISO no sdcard, abra ele no seu computador e crie um arquivo em branco com o nome `ssh`(sem extenção), ele vai habilitar o ssh, e crie outro arquivo chamado `wpa_supplicant.conf` e use o modelo abaixo com sua wifi:
+
+```
+country=BR
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+  scan_ssid=1
+  ssid="NOME_DA_REDE"
+  psk="SENHA_DA_REDE"
+}
+```
+
+Agora vamos ligar e acessa-lo. Com um teclado e um monitor ligados no rasp. Após se logar com o usuário padão `pi:raspberry`, se conecte a internet(por cabo ou wifi) e abra um terminal. Nós poderiamos fazer tudo por aqui, mas por comodidade vamos apenas pegar o endereço de ip, e habilitar o ssh para nos conectarmos remotamente.
+Para começar digite o comando `ip a` para verificar seu ip, caso tenha se conectado por wifi a interface associada será algo como `wlp6s0 ou wlan0` se for por cabo será algo como `enp12s0 ou eth0`, anote esse ip.
 
 Agora que temos o endereço de ip e habilitamos o ssh podemos nos conectar assim daqui para frente, sem a necessidade de plugar mil coisas no rasp. Supondo que seu ip seja `192.168.0.13` digite no seu pc/note digite:
 
@@ -78,8 +91,10 @@ Na segunda semana você foi incubido de configurar o raspberry junto com a Jane,
 
 * [ ] Configurar hostname
 
-* [ ] Configurar atualizar sistema
+* [ ] Alterar boot para iniciar com o CLI pedindo logins
 
-* [ ] Configurar alterar a senha
+* [ ] Atualizar sistema
+
+* [ ] Alterar a senha
 
 * [ ] Configurar locales(data, hora, teclado)
