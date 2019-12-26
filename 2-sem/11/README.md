@@ -15,6 +15,20 @@ Agora vamos ver um exemplo diferente, vamos supor que eu queira subir um contain
 O problema é que quanto mais coisas adicionamos maior isso fica, mas tem algo que pode nos ajudar. O docker-compose, com ele podemos criar "receitas" para executar os containers, e depois podemos gerencia-los mais facilmente.
 No arquivo `docker-compose.yml` nessa pasta temos um exemplo de como subir um container para uma aplicação e um banco de dados.
 
+Com o arquivo pronto só precisamos fazer um build:
+
+`docker-compose build`
+
+E depois subir o projeto:
+
+`docker-compose up`
+
+Da mesma forma caso queira para os serviços:
+
+`docker-compose down`
+
+Obs: Caso queira usar o docker dentro do rasp é possível, porém ele fica limitado a rodar apenas imagens feitas para a arquitetura ARM, caso alguma imagem não seja baseada em ARM você mesmo pode recriá-la usando ARM como base.
+
 
 ## Desafio
 
@@ -25,4 +39,4 @@ Você foi designado a criar a arquitetura do seu projeto em docker. Para isso Ja
 
 ### Tasklist
 
-* [ ]
+* [ ] Configurar serviços para rodar a aplicação.
