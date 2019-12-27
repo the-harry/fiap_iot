@@ -28,11 +28,18 @@ Caso queira fazer um POST ficaria algo assim:
 
 `curl -d "name=fulado&senha=123" http://foo.bar/api/v1/user/new`
 
+Cada requisição que você faz vai te retornar um [código http](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status), esse código vai indicar sucesso ou falha, também é possível que venha um corpo na requisição com algum dado ou mensagem. Mas muitas requisições retornarão apenas um código.
+
 ## Desafio
 
 ### User history
 
+Seu time está estudando a implementação de algumas API's e gostaria que você fizesse alguns testes com o curl mesmo para ver se essas API's atendem o que vocês precisam. Entre as necessidades temos um validador de CNPJ que deve consultar as informaçõoes dessa empresa, validações e consultas de CEP, e envio de SMS.
 
 ### Tasklist
 
-* [ ]
+* [ ] Testar a API de consultas a [CNPJ](https://receitaws.com.br/api)
+
+* [ ] Testar a API de [CEP](https://viacep.com.br/)
+
+* [ ] Testar a API de envio de SMS do [Twilio](https://www.twilio.com/)
