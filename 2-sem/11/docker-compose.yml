@@ -15,7 +15,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=1
 
-  # Esse container será o da aplicação em ruby para nosso site
+  # Esse container será o da aplicação em python para nosso site
   web:
     # Falamos para o docker buildar a imagem que criamos que se encontra
     # nessa pasta("." significa nesse diretório)
@@ -30,8 +30,8 @@ services:
     volumes:
       - .:/app
     # cada serviço deve ter apenas uma tarefa, o command é a tarefa que esse
-    # container tem que fazer. No caso configurar e iniciar o servidor do rails.
-    command: bin/setup && rails s -b 0.0.0.0 -p 3000
+    # container tem que fazer. No caso iniciar o servidor.
+    command: python server.py -p 3000
     # A parte das portas é interessante, reparou que no outro serviço não tinha
     # esse bloco das portas? Aqui vai uma regra importante:
     # * Entre os containers todas as portas que são usadas são acessiveis.

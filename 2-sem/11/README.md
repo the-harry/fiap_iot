@@ -34,9 +34,13 @@ Obs: Caso queira usar o docker dentro do rasp é possível, porém ele fica limi
 
 ### User history
 
-Você foi designado a criar a arquitetura do seu projeto em docker. Para isso Jane vai te passou uma lista de requesitos que precisam ser atendidos para esse projeto.
+Você foi designado a criar a arquitetura do seu projeto em docker. Para isso Jane vai te passou uma lista de requesitos que precisam ser atendidos para esse projeto. Pegue o projeto que você tem até agora e suba-o no docker.
 
 
 ### Tasklist
 
-* [ ] Configurar serviços para rodar a aplicação.
+* [ ] Criar Dockerfile para a aplicação.
+
+* [ ] Criar docker-compose para a aplicação.
+
+* [ ] Subir e testar o projeto.
