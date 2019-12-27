@@ -56,9 +56,9 @@ um ou mais desafios aplicando os conceitos aprendidos.
 
  - Sumário das aulas:
 
-  * `Aula 1 - Introdução ao raspberry pi e dispositivos de borda.`
+  * `Aula 1 - Introdução ao raspberry pi e dispositivos de borda.` ok
 
-  * `Aula 2 - Configuração inicial e comandos administrativos.`
+  * `Aula 2 - Configuração inicial e comandos administrativos.` ok
 
   * `Aula 3 - Introdução a Python.`
 
@@ -74,11 +74,11 @@ um ou mais desafios aplicando os conceitos aprendidos.
 
   * `Aula 9 - Integração Arduino e Rasp, comunicação serial.`
 
-  * `Aula 10 - APIs e requests http.`
+  * `Aula 10 - APIs e requests http.` ok
 
-  * `Aula 11 - Usando o docker na infraestrutura.`
+  * `Aula 11 - Usando o docker na infraestrutura.` ok
 
-  * `Aula 12 - Time series databases, Introdução ao influx.`
+  * `Aula 12 - Time series databases, Introdução ao influx.` ok
 
   * `Aula 13 - Introdução a monitoramento com Grafana.`
 
@@ -212,3 +212,7 @@ Para um melhor acompanhamento das aulas é sugerido que tenha em mão os seguint
   - 10	 Jumpers Premium Macho / Fêmea
 
 ![Jumpers](.../../img/doc/jumpers.png)
+
+* `Raspberry Pi 3+`
+
+![Raspberry](.../../img/doc/raspberry.jpg)
