@@ -13,7 +13,7 @@ Agora vamos ver um exemplo diferente, vamos supor que eu queira subir um contain
 `docker run -it --rm -p80:3000 ruby:2.6 bash` ** CORRIGIR **
 
 O problema é que quanto mais coisas adicionamos maior isso fica, mas tem algo que pode nos ajudar. O docker-compose, com ele podemos criar "receitas" para executar os containers, e depois podemos gerencia-los mais facilmente.
-No arquivo `docker-compose.yml` nessa pasta temos um exemplo de como subir um container para uma aplicação e um banco de dados.
+No arquivo `docker-compose.yml` nessa pasta temos um exemplo de como subir um container para uma site com um banco de dados.
 
 Com o arquivo pronto só precisamos fazer um build:
 

@@ -1,0 +1,55 @@
+# primeiro falamos qual a versão do docker compose usado nesse arquivo
+version: '3.7'
+
+# nesse bloco colocamos todos os serviços que vamos subir
+services:
+  # Primeiro dê um nome ao serviço, e começe a detlhar ele dentro do bloco
+  # aqui criamos o container que rodará o banco de dados da aplicação
+  postgres:
+    # Escolha uma imagem pronta colocando o nome:versão, caso não coloque a
+    # versão ele sempre pegará a última disponível
+    image: postgres:11
+    # É possível colocar variáveis de ambiente dentro de um container
+    # caso queira mais variáveis só colocar abaixo no formato:
+    # - NOME_EM_UPCASE=valor
+    environment:
+      - MYSQL_ROOT_PASSWORD=1
+
+  # Esse container será o da aplicação em ruby para nosso site
+  web:
+    # Falamos para o docker buildar a imagem que criamos que se encontra
+    # nessa pasta("." significa nesse diretório)
+    build: .
+    # O restart always nem sempre é necessário, em caso de falha ele reinicia o
+    # serviço, isso pode nos ajudar caso o banco ainda não esteja preparado para
+    # ser acessado.
+    restart: always
+    # Um volume faz uma ponte entre uma pasta na sua máquina local e no container
+    # nesse exemplo falo que a pasta em que estamos será mapeada para o diretório
+    # /app dentro do container.
+    volumes:
+      - .:/app
+    # cada serviço deve ter apenas uma tarefa, o command é a tarefa que esse
+    # container tem que fazer. No caso configurar e iniciar o servidor do rails.
+    command: bin/setup && rails s -b 0.0.0.0 -p 3000
+    # A parte das portas é interessante, reparou que no outro serviço não tinha
+    # esse bloco das portas? Aqui vai uma regra importante:
+    # * Entre os containers todas as portas que são usadas são acessiveis.
+    # * Porém para acessar de fora, seja seu localhost ou a internet, você
+    # precisa fazer um mapeamento de porta, esse mapeamento sempre começa com a
+    # porta da máquina local:container, no caso abaixo temos a porta 3000 do
+    # container que está rodando o servidor do rails sendo mapeada para a porta
+    # 80 do localhost(nossa máquina host).
+    ports:
+      - 80:3000
+    # depends_on é importante para quando queremos estabelecer uma ordem de
+    # inicialização entre os container, nosso app só pode subir quando o banco
+    # estiver pronto, talvez vocês vejam alguém usando link_to, mas ele foi
+    # deprecado.
+    depends_on:
+      - postgres
+    # Mesma coisa da outra variável de ambiente, porém dessa vez já adicionamos
+    # o caminho completo seguindo o padrão como uma url:
+    # adaptador://user:password@host/db_name
+    environment:
+      DATABASE_URL: mysql2://root:1@postgres/app_development
