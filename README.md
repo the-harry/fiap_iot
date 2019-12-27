@@ -78,7 +78,7 @@ um ou mais desafios aplicando os conceitos aprendidos.
 
   * `Aula 11 - Usando o docker na infraestrutura.`
 
-  * `Aula 12 - Bancos de dados temporais, Introdução ao influx.`
+  * `Aula 12 - Time series databases, Introdução ao influx.`
 
   * `Aula 13 - Introdução a monitoramento com Grafana.`
 
