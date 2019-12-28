@@ -61,9 +61,9 @@ TODO - explicar papéis e criar historia
 
   * `Aula 2 - Configuração inicial e comandos administrativos.` ok
 
-  * `Aula 3 - Introdução a Python.`
+  * `Aula 3 - Introdução a Python.` ok
 
-  * `Aula 4 - Variáveis e a falta de tipos no python.`
+  * `Aula 4 - Estrutura de dados no python.`
 
   * `Aula 5 - Decisões e controles de repetição no python.`
 
