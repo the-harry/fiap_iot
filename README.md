@@ -5,6 +5,7 @@ Cada aula vai estar em uma pasta seguindo o padrão `semestre/aula` ter um códi
 e também um `README.md` onde terão instruções de como o código funciona. No final de cada readme terá
 um ou mais desafios aplicando os conceitos aprendidos.
 
+TODO - explicar papéis e criar historia
 
 ### Primeiro semestre
 
@@ -80,12 +81,12 @@ um ou mais desafios aplicando os conceitos aprendidos.
 
   * `Aula 12 - Time series databases, Introdução ao influx.` ok
 
-  * `Aula 13 - Introdução a monitoramento com Grafana.`
+  * `Aula 13 - Introdução a monitoração com Grafana.` ok
 
   * `Aula 14 - Fazendo pequenas API's REST com sinatra.`
 
 
-## Hardware
+## Hardware * revisar *
 
 Para um melhor acompanhamento das aulas é sugerido que tenha em mão os seguintes itens:
 
