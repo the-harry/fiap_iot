@@ -5,11 +5,19 @@ Cada aula vai estar em uma pasta seguindo o padrão `semestre/aula` ter um códi
 e também um `README.md` onde terão instruções de como o código funciona. No final de cada readme terá
 um ou mais desafios aplicando os conceitos aprendidos.
 
+Durante os dois semestres serão feitos alguns projetos para exemplificar os conceitos vistos na aula:
+
+* Alimentador de pet
+
+* Fechadura com RFID
+
+* Monitoração de hortas
+
 TODO - explicar papéis e criar historia
 
 ### Primeiro semestre
 
-É composto por 18 aulas sobre `Arduino` e `C/C++`.
+É composto por 18 aulas sobre `Arduino` e `C++`. Caso não tenha um arduino pode usar o [tinkercad](https://www.tinkercad.com) para emular um.
 
  - Sumário das aulas:
 
@@ -50,18 +58,17 @@ TODO - explicar papéis e criar historia
   * `Aula 18 - Criando nossa lib parte 2, body.`
 
 
-
 ### Segundo semestre
 
 É composto por 14 aulas sobre `Python` e `Raspberry Pi` no Virtual Box.
 
  - Sumário das aulas:
 
-  * `Aula 1 - Introdução ao raspberry pi e dispositivos de borda.` ok
+  * `Aula 1 - Introdução ao raspberry pi e dispositivos de borda.`
 
-  * `Aula 2 - Configuração inicial e comandos administrativos.` ok
+  * `Aula 2 - Configuração inicial e comandos administrativos.`
 
-  * `Aula 3 - Introdução a Python.` ok
+  * `Aula 3 - Introdução a Python.`
 
   * `Aula 4 - Estrutura de dados no python.`
 
@@ -75,13 +82,13 @@ TODO - explicar papéis e criar historia
 
   * `Aula 9 - Integração Arduino e Rasp, comunicação serial.`
 
-  * `Aula 10 - APIs e requests http.` ok
+  * `Aula 10 - APIs e requests http.`
 
-  * `Aula 11 - Usando o docker na infraestrutura.` ok
+  * `Aula 11 - Usando o docker na infraestrutura.`
 
-  * `Aula 12 - Time series databases, Introdução ao influx.` ok
+  * `Aula 12 - Time series databases, Introdução ao influx.`
 
-  * `Aula 13 - Introdução a monitoração com Grafana.` ok
+  * `Aula 13 - Introdução a monitoração com Grafana.`
 
   * `Aula 14 - Fazendo pequenas API's REST com sinatra.`
 
@@ -208,9 +215,9 @@ Para um melhor acompanhamento das aulas é sugerido que tenha em mão os seguint
 
 * `Jumpers`
 
-  - 40	 Jumpers Premium Macho / Macho
-  - 10	 Jumpers Premium Fêmea / Fêmea
-  - 10	 Jumpers Premium Macho / Fêmea
+  - 40 Macho / Macho
+  - 10 Fêmea / Fêmea
+  - 10 Macho / Fêmea
 
 ![Jumpers](.../../img/doc/jumpers.png)
 
