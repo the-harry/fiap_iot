@@ -1,32 +1,41 @@
-# Aula 2 - Introdução a programação
+# Aula 3 - Análise estrutural do sketch usando o blink.
 
-## Algoritimos
+## Estrutura básica do sketch arduino
+Um sketch é um arquivo do arduino com a extenção `.ino`, ele pode conter código
+de `C` e `C++`. Esse código deve ficar dentro de uma pasta com o mesmo nome.
+Para fazer um programa para o arduino precisamos obrigatoriamente de duas funções:
 
-Não podemos falar de programação sem falar de lógica e algoritimos, um algoritimo nada mais é do que uma sequência finita de regras e operações. Para nós muitas vezes algumas coisas se tornam automáticas, e acabamos esquecendo desses passos, muitas vezes justificamos falando ser "algo lógico/implícito". Porém um computador não tem esse raciocínio, ele simplesmente faz o que lhe é ordenado. Então é importante que os nossos algoritimos sejam bem planejados, e que cubram o maior número de casos possíveis, caso seja viável.
+setup e loop.
 
-Imagine que você quer um suco de laranja, o que você faria? Cada passo até chegar no produto final seria uma etapa do seu algoritimo, em programação lógica é a coisa mais importante de todas, entendendo a lógica se entende quase todas as linguagens de programação, entendendo a lógica sintaxe será o menor dos seus problemas.
+Estrutura básica:
 
-## UML
+  ```
+  void setup() {
+    // aqui fica a configuração inicial, configurações gerais, etc
+  }
 
-UML ou Unified Modeling Language, é uma linguagem que nos ajuda a modelar nossos sistemas(na verdade várias coisas que podem ser representadas por fluxos). UML é uma linguagem de blocos que nos ajuda a fazer o desenho de uma solução.
-Como falamos anteriormente é muito importante projetar nosso código antes de faze-lo, para que não criemos nenhum Frankstein. Com UML podemos fazer isso facilmente.
-
-Confira a imagem a seguir com os principáis símbolos:
-
-![imagem]
-
-
-## Desafio
-
-### User history
-
-Seu time começará a projetar um protótipo de uma solução para automatizar hortas domésticas, você deve se reunír com seu grupo e planejar como será a lógica desse projeto. Os únicos requesitos pedidos foram:
-
-* A solução deve monitorar luminosidade, temperatura, umidade do solo
-
-* Deve automatizar a irrigação
+  void loop() {
+    // aqui fica a lógica principal do seu programa que será executado em loops,
+    // ao iniciar o código, ele passa uma vez pelo setup e faz a configuração inicial,
+    // depois disso ele fica nesse loop até que seja desligado.
+  }
+  ```
 
 
-### Tasklist
+## Funções especiais do arduino
+O arduino usa algumas funções especiais que não são usadas em C ou C++ puros,
+essas funções são para coisas específicas do arduino, algumas bem comuns que podemos citar são:
 
-* [ ] Fazer UML para problema descrito acima.
+* `pinMode` - configura um pino do arduino como input ou output
+* `digitalWrite` - envia um sinal para um pino
+* `delay` - faz o programa parar por alguns microsegundos
+* `analogRead` - lê o valor de um pino analôgico
+* `digitalRead` - lê o valor de um pino digital
+* `Serial.println` - imprime algum valor na porta serial
+
+Caso queira ver mais métodos disponíveis dê uma olhada [aqui](https://www.arduino.cc/reference/pt/#functions).
+
+
+# Desafio
+
+TODO ...
