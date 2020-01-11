@@ -24,6 +24,4 @@ void loop() {
   }    // desliga o led
 
   delay(1000);                       // espera um segundo
-
-  serial.println(counter); // imprime o valor do contador no serial
 }

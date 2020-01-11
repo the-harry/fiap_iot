@@ -147,4 +147,4 @@ Você está fazendo um treinamento com o senior do time para se aprimorar em pyt
 
 * [ ]
 * [ ]
-* [ ] 
+* [ ]

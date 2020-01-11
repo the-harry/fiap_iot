@@ -77,15 +77,59 @@ for x in range(0, 10):
 9
 ```
 
-Como dissemos antes, podemos usar o while quando não sabemos ao certo o numero de itens em uma coleção na qual iteraremos, ou quando queremos usar um contador externo para fazer esse controle.
+Como dissemos antes, podemos usar o while quando não sabemos ao certo o numero de itens em uma coleção na qual iteraremos, ou quando queremos usar um contador externo para fazer esse controle para iterar sobre um bloco. Por exemplo:
 
+```
+count = 0
 
+while(count < 10):
+    print(count)
+    count += 1
 
+>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
 
-while break continue
+Nesse caso iniciamos o contador com 0, e incrementamos esse valor a cada volta. Observer que a expressão `count += 1` é a mesma coisa que dizer `count = count + 1`, as outras quatro operações básicas funcionam dessa maneira abreviada.
 
+Também temos dois recursos bem interessantes para loops tanto para while quanto para for loops, que são o break e o continue, o break serve para interromper um loop antes de seu final, no exemplo a seguir temos uma lista de cores, e no loop abaixo eu quero que quando a cor for verde para que o loop seja interrompido. Se a cor não for verde ela será exibida na tela.
 
+```
+cores = ['azul', 'rosa', 'verde', 'amarelo']
 
+for cor in cores:
+    if cor == 'verde':
+        break
+    else:
+        print(cor)
+
+> azul
+rosa
+```
+
+Agora imagine que caso a cor seja rosa você quer apenas pular essa iteração mas não o loop todo, você pode usar o continue para isso:
+
+```
+cores = ['azul', 'rosa', 'verde', 'amarelo']
+
+for cor in cores:
+    if cor == 'rosa':
+        continue
+    else:
+        print(cor)
+
+> azul
+verde
+amarelo
+```
 
 ## Desafio
 
