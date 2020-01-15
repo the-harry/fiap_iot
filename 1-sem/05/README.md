@@ -1,51 +1,58 @@
-# Aula 5 - Decisões e controles de repetição no C++.
+# Aula 5 - Operações lógicas - if, else, else if.
 
 ## Conteúdo
 
-Antes de falarmos de tomadas de decisões precisamos entender os operadores logicos do python, como eles vamos fazer comparações para saber o que fazer. Segue abaixo uma lista dos principais operadores:
+Antes de falarmos de tomadas de decisões precisamos entender os operadores logicos em C/CPP, como eles vamos fazer comparações para saber o que fazer. Temos três tipos de operadores, os operadores unários, os binários, e o ternário. Segue abaixo uma lista dos principais operadores com uma explicação de cada tipo:
 
-* `==` igualdade
+- `Unários` são operadores que só precisam de um elemento, exemplo `int a = 0; a++;`. Quando falarmos de controles de repetição isso ficará mais claro.
 
-* `!=` diferente
+  * `++` Incrementa valor
 
-* `<` menor
+  * `--` Decrementa valor
 
-* `>` maior
+- `Binários` São operadores que dependem de dois elementos, esses operadores também tem suas subcategorias: aritméticos, relacionais, lógicos, de atribuição ou bitwise.
 
-* `<=` menor ou igual
+  - Operadores `Aritméticos` servem para realizar cálculos: `+, -, *, /, %`
 
-* `>=` maior ou igual
+  - Operadores `Relacionais` servem para realizar comparações: `<, <=, >, >=, ==, !=`
 
+  - Operadores `Lógicos` servem para combinar operações lógicas, temos o `&&` que representa o AND, o `||` representa o OR, e o `!` significa negação.
 
-* `not` nega uma condição
+  - Operadores de `Atribuição` como o nome já diz servem para atribuir valores, o mais conhecido é o `=`, porém também temos: `+=, -=, *=, /=, %=`, eles são apenas atalhos para casos como esse: `a = a + 1;`, isso pode ser reescrito como `a += 1;`
 
-* `and` as duas condições tem que ser verdadeiras para retornar true
+  - Operadores `Bitwise` transformam uma operação a nível de bits para realizar os cálculos, eles são muito mais performáticos e quase tudo que é calculado em computadores acaba virando uma operação bitwise. `&, |, ^, <<, >>, ~`
 
-* `or` uma das duas condições tem que ser verdadeiras para retornar true
+- `Ternário` é um tipo especial de operadores que nos permitem tomar decisões em apenas uma linha. Isso ficará mais claro ao final da aula.
 
-
-Tomar decisões no python é muito fácil, já que usamos basicamente if elif else, por não ter switch case e if ternários(em uma linha) não tem uma sintaxe muito diferente do normal.
-
-```
-idade = 19
-
-if(idade > 18):
-    print("Você pode dirigir.")
-elif(idade > 90):
-    print("Você deveria ir de uber.")
-else:
-    print("Você ainda não pode dirigir.")
-```
-
-Caso queira fazer um ternário é possivel fazer assim:
+Agora que já sabemos fazer comparações e montar operações lógicas podemos de fato tomar decisões, para isso usamos o `if`, no caso abaixo criamos uma condição que toma uma decisão baseado na idade do indivíduo.
 
 ```
-eh_legal = True
-status = "legal" if eh_legal else "chatao"
+int idade = Serial.readln();
 
-> 'legal'
+if(idade > 18) {
+    Serial.println("Você pode dirigir.");
+} else if(idade > 90) {
+    Serial.println("Você deveria ir de uber.");
+} else {
+    Serial.println("Você ainda não pode dirigir.");
+}
 ```
 
+Como falamos anteriormente também temos ternários, que são operadores para fazer um if e else simples em uma linha.
+
+```
+idade > 18 ? Serial.println("Você pode dirigir."); : Serial.println("Você ainda não pode dirigir.");
+```
+
+Ternários sempre seguem esse padrão de:
+
+`condição` ? `oque_acontece_quando_verdade` : `senão_faz_isso`
+
+Também temos o switch case, que escolhe a partir de uma série de opções qual deve ser feita em cada caso:
+
+```
+
+```
 ## Desafio
 
 ### User history

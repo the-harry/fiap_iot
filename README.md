@@ -34,6 +34,8 @@ Caso não tenha um arduino pode usar o [tinkercad](https://www.tinkercad.com) pa
 
   * `Aula 3 - Análise estrutural do sketch usando o blink.`
 
+  * `Aula 8 - Conhecendo o git.`
+
   * `Aula 4 - Variáveis, constantes e definições.`
 
   * `Aula 5 - Operações lógicas - if, else, else if.`
@@ -41,8 +43,6 @@ Caso não tenha um arduino pode usar o [tinkercad](https://www.tinkercad.com) pa
   * `Aula 6 - Controle de repetição - Loops for e while.`
 
   * `Aula 7 - Funções e retornos.`
-
-  * `Aula 8 - Conhecendo o git.`
 
   * `Aula 9 - Entendendo a estrurura de uma lib.`
 
@@ -105,7 +105,7 @@ Para um melhor acompanhamento das aulas é sugerido que tenha em mão os seguint
 ![Servo](.../../img/doc/servo.jpg)
 
 
-* `Sensor de presença PIR HC-SR501`
+* `Sensor de presença PIR DYP-ME003`
 
 ![Fonte](.../../img/doc/fonte.jpg)
 
