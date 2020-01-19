@@ -1,11 +1,13 @@
 #include <Servo.h>
 
-const int servoPin = 9;
+#define PIR 7
+const int SERVO = 9;
 
 Servo servo;
 int pos;
+int movimento;
 
-void abre(){
+void abre() {
   delay(1000);
   for(pos = 180; pos >= 0; pos--){
     servo.write(pos);
@@ -16,7 +18,7 @@ void abre(){
   fecha();
 }
 
-void fecha(){
+void fecha() {
   for(pos = 0; pos < 180; pos++){
     servo.write(pos);
     delay(15);
@@ -25,13 +27,21 @@ void fecha(){
 
 void setup() {
   Serial.begin(9600);
-  servo.attach(servoPin);
+  pinMode(PIR, INPUT);
+  servo.attach(SERVO);
   servo.write(180);
 }
 
 void loop() {
-  Serial.println("Alimentando o pet.");
-  abre();
+  movimento = digitalRead(PIR);
 
-  delay(1000)
+  if(movimento == HIGH) {
+    Serial.println("Alimentando o pet.");
+    abre();
+
+    delay(1000);
+  } else {
+    Serial.println("Nenhum miau...");
+    delay(1000);
+  }
 }
