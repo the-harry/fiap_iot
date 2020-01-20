@@ -42,21 +42,21 @@ Caso não tenha um arduino pode usar o [tinkercad](https://www.tinkercad.com) pa
 
   * `Aula 7 - Funções e retornos.`
 
-  * `Aula 8 - Conhecendo o git.`
+  * `Aula 8 - Destrinchando o git.`
 
-  * `Aula 9 - Entendendo a estrurura de uma lib.`
+  * `Aula 9 - Arrays e estruturas de dados.`
 
-  * `Aula 10 - Convertendo tipos.`
+  * `Aula 10 - Protothreading.`
 
-  * `Aula 11 - Arrays e estruturas de dados.`
+  * `Aula 11 - Projetos com alimentação externa.`
 
-  * `Aula 12 - Criando nossa lib parte 1, header.`
+  * `Aula 12 - Introdução ao RFID.`
 
-  * `Aula 13 - Criando nossa lib parte 2, body.`
+  * `Aula 13 - Criando uma lib.`
 
-  * `Aula 14 - PENDING.`
+  * `Aula 14 - Radio frequencia.`
 
-  * `Aula 15 - Switch case e ternários.`
+  * `Aula 15 - Mesh network.`
 
 
 ### Segundo semestre
