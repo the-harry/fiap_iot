@@ -15,27 +15,30 @@ void setup() {
 void loop() {
   medicao = analogRead(SENSOR_UMIDADE);
 
-  Serial.print("Umidade: ");
-  Serial.print(medicao);
-
+  //Solo umido
   if (medicao > 0 && medicao < 400) {
-    Serial.println(" Status: Solo umido");
-    apagaleds();
+    // apaga os outros leds para acender o certo
+    digitalWrite(RED_LED, LOW);
+    digitalWrite(YELLOW_LED, LOW);
+    digitalWrite(GREEN_LED, LOW);
+
     digitalWrite(GREEN_LED, HIGH);
+  //Umidade moderada
   } else if (medicao > 400 && medicao < 800) {
-    Serial.println(" Status: Umidade moderada");
-    apagaleds();
+    // apaga os outros leds para acender o certo
+    digitalWrite(RED_LED, LOW);
+    digitalWrite(YELLOW_LED, LOW);
+    digitalWrite(GREEN_LED, LOW);
+
     digitalWrite(YELLOW_LED, HIGH);
+  //Solo seco
   } else {
-    Serial.println(" Status: Solo seco");
-    apagaleds();
+    // apaga os outros leds para acender o certo
+    digitalWrite(RED_LED, LOW);
+    digitalWrite(YELLOW_LED, LOW);
+    digitalWrite(GREEN_LED, LOW);
+
     digitalWrite(RED_LED, HIGH);
   }
   delay(100);
-}
-
-void apagaleds() {
-  digitalWrite(RED_LED, LOW);
-  digitalWrite(YELLOW_LED, LOW);
-  digitalWrite(GREEN_LED, LOW);
 }

@@ -48,20 +48,36 @@ Ternários sempre seguem esse padrão de:
 
 `condição` ? `oque_acontece_quando_verdade` : `senão_faz_isso`
 
-Também temos o switch case, que escolhe a partir de uma série de opções qual deve ser feita em cada caso:
+Também temos o switch case, que escolhe a partir de uma série de opções qual deve ser feita em cada caso.
+A palavra-chave break interrompe o comando switch, e é tipicamente usada no final de cada case. Sem um comando break, o comando switch irá continuar a executar as expressões seguintes (desnecessariamente) até encontrar um break, ou até o final do comando switch ser alcançado.
 
 ```
-
+switch (var) {
+  case valor1:
+    // comando(s)
+    break;
+  case valor2:
+    // comando(s)
+    break;
+  default:
+    // comando(s)
+    break;
+}
 ```
+
 ## Desafio
 
 ### User history
 
-Você está fazendo um treinamento com o senior do time para se aprimorar em python, ele te passou alguns desafios para fazer durante as próximas semanas, nessa semana você tem que fazer um código que manipule algumas estruturas de dados.
+Seu time está iniciando um novo projeto para monitorar e automatizar hortas e jardins domésticos. Após o levantamento de requesitos, foi definido que o projeto deverá medir a umidade do solo, umidade do ar, temperatura e luminosidade. E essa solução também tem que ser capaz de irrigar automaticamente o jardim quando necessário.
+Para a primeira parte do projeto vamos implementar o sensor higrômetro para medir a umidade do solo e acender alguns leds para representar as faixas de medição.
 
+Após a base ser criada, seu time ficou responsável por refatorar esse código para que ele não precise mais de leds externos, mude o código para que caso o solo esteja seco que ele ascenda o led builtin, e imprima no console serial cada medição coletada junto com o nível umidade.
 
 ### Tasklist
 
-* [ ]
-* [ ]
-* [ ]
+* [ ] Exibir nível de Umidade
+* [ ] Acender LED_BUILTIN se estiver seco
+* [ ] Mostrar medição
+
+Tente explorar outras maneiras de fazer o mesmo código.
