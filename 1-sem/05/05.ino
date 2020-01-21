@@ -1,7 +1,7 @@
 #define SENSOR_UMIDADE A0
-#define RED_LED 5
+#define GREEN_LED 5
 #define YELLOW_LED 6
-#define GREEN_LED 7
+#define RED_LED 7
 
 int medicao;
 
@@ -9,6 +9,7 @@ void setup() {
   Serial.begin(9600);
   pinMode(SENSOR_UMIDADE, INPUT);
   pinMode(RED_LED, OUTPUT);
+  pinMode(YELLOW_LED, OUTPUT);
   pinMode(GREEN_LED, OUTPUT);
 }
 

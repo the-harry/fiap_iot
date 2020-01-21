@@ -8,7 +8,7 @@ Muitas vezes queremos que nosso código faça algumas ações repetitivas, e nã
 
 ### User history
 
-Você está fazendo um treinamento com o senior do time para se aprimorar em python, ele te passou alguns desafios para fazer durante as próximas semanas, nessa semana você tem que fazer um código que manipule algumas estruturas de dados.
+Essa semana seu time está começando outro projeto em paralelo. Essa solução tem como objetivo alimentar animais domésticos que tem donos que ficam muito tempo fora de casa ou até mesmo em casos de viagem. O responsável pelo hardware criou um protótipo para isso, a ideia é usar um motor servo para abrir e fechar uma porta para liberar comida, porém ainda não foi decidido como o motor será acionado.
 
 
 ### Tasklist
