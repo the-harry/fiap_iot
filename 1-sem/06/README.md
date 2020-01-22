@@ -2,7 +2,8 @@
 
 ## Conteúdo
 
-Muitas vezes queremos que nosso código faça algumas ações repetitivas, e não faz muito sentido escrever a mesma coisa 10x seguidas. Para isso temos controles de repetições, temos três opções disponíveis, while, for e do while.
+Muitas vezes queremos que nosso código faça algumas ações repetitivas, e não faz muito sentido escrever a mesma coisa 10x seguidas. Para isso temos controles de repetições, temos três opções disponíveis, while, for e do while. Todos eles servem para repitir algumas instruções até que uma condição seja atingida, caso isso não aconteça você acaba criando um loop infinito.
+Vamos começar entendendo o loop for,
 
 ## Desafio
 
@@ -13,6 +14,4 @@ Essa semana seu time está começando outro projeto em paralelo. Essa solução 
 
 ### Tasklist
 
-* [ ]
-* [ ]
-* [ ]
+* [ ] Refatorar o código para funcionar outro tipo de loop.

@@ -36,27 +36,27 @@ Caso não tenha um arduino pode usar o [tinkercad](https://www.tinkercad.com) pa
 
   * `Aula 4 - Variáveis, constantes e definições.`
 
-  * `Aula 5 - Operações lógicas - if, else, else if.`
+  * `Aula 5 - Operações lógicas - if, else, else if.` jardim
 
-  * `Aula 6 - Controle de repetição - Loops for e while.`
+  * `Aula 6 - Controle de repetição - Loops for e while.` pet feeder
 
-  * `Aula 7 - Funções e retornos.`
+  * `Aula 7 - Funções e retornos.` pet feeder
 
-  * `Aula 8 - Destrinchando o git.`
+  * `Aula 8 - Destrinchando o git.` jardim
 
-  * `Aula 9 - Arrays e estruturas de dados.`
+  * `Aula 9 - Arrays e estruturas de dados.` ? petfeeder
 
-  * `Aula 10 - Protothreading.`
+  * `Aula 10 - Protothreading.` jardim
 
-  * `Aula 11 - Projetos com alimentação externa.`
+  * `Aula 11 - Projetos com alimentação externa.` jardim
 
-  * `Aula 12 - Introdução ao RFID.`
+  * `Aula 12 - Introdução ao RFID.` tranca
 
-  * `Aula 13 - Criando uma lib.`
+  * `Aula 13 - Criando uma lib.` tranca
 
-  * `Aula 14 - Radio frequencia.`
+  * `Aula 14 - Radio frequencia.` tranca
 
-  * `Aula 15 - Mesh network.`
+  * `Aula 15 - Mesh network.` tranca
 
 
 ### Segundo semestre
