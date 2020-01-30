@@ -1,7 +1,17 @@
-# Aula 5 - Destrinchando o git.
+# Aula 8 - Destrinchando o git.
 
 ## Conteúdo
 
+clone
+status
+commit
+push
+pull
+
+branchs
+MR/PR
+
+gitlab/github/bitbucket
 
 ## Desafio
 
