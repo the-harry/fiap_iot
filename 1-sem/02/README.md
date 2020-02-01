@@ -13,7 +13,7 @@ Como falamos anteriormente é muito importante projetar nosso código antes de f
 
 Confira a imagem a seguir com os principáis símbolos:
 
-![imagem]
+![diagrama](../../img/1sem/02/diagrama_blocos.png)
 
 
 ## Desafio
