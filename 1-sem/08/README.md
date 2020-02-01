@@ -20,7 +20,7 @@ Criar chave ssh
 clonar o projeto
 fazer as alteracoes e enviar para o remote
 atualizar seu projeto local
-
+ 
 git clone endereco@repositorio.git - baixa o projeto
 
 git status - verifica status das alteracoes no projeto atual
