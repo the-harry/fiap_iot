@@ -1,5 +1,27 @@
 # Aula 4 - Arduino getting started.
 
+
+## Estrutura básica do sketch arduino
+Um sketch é um arquivo do arduino com a extenção `.ino`, ele pode conter código
+de `C` e `C++`. Esse código deve ficar dentro de uma pasta com o mesmo nome.
+Para fazer um programa para o arduino precisamos obrigatoriamente de duas funções:
+
+setup e loop.
+
+Estrutura básica:
+
+```
+void setup() {
+  // aqui fica a configuração inicial, configurações gerais, etc
+}
+
+void loop() {
+  // aqui fica a lógica principal do seu programa que será executado em loops,
+  // ao iniciar o código, ele passa uma vez pelo setup e faz a configuração inicial,
+  // depois disso ele fica nesse loop até que seja desligado.
+}
+```
+
 ## Variáveis e tipos no C
 Uma variável é basicamente uma caixa onde você pode guardar informações temporariamente, ao finalizar a execução do código as informações são perdidas. Para atribuir um valor a uma variavel é só escolher um nome(de preferência que faça sentido no contexto, vai te ajudar a longo prazo) e atribuir um valor que seja do tipo correto.
 
@@ -24,27 +46,6 @@ define IDADE 27
 
 Serial.println(27)
 ```
-
-## Estrutura básica do sketch arduino
-Um sketch é um arquivo do arduino com a extenção `.ino`, ele pode conter código
-de `C` e `C++`. Esse código deve ficar dentro de uma pasta com o mesmo nome.
-Para fazer um programa para o arduino precisamos obrigatoriamente de duas funções:
-
-setup e loop.
-
-Estrutura básica:
-
-  ```
-  void setup() {
-    // aqui fica a configuração inicial, configurações gerais, etc
-  }
-
-  void loop() {
-    // aqui fica a lógica principal do seu programa que será executado em loops,
-    // ao iniciar o código, ele passa uma vez pelo setup e faz a configuração inicial,
-    // depois disso ele fica nesse loop até que seja desligado.
-  }
-  ```
 
 
 ## Funções especiais do arduino

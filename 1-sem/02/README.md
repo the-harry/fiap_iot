@@ -1,6 +1,4 @@
-# Aula 2 - Introdução a programação
-
-## Sketch
+# Aula 2 - Introdução a logica de programação
 
 Não podemos falar de programação sem falar de lógica e algoritimos, um algoritimo nada mais é do que uma sequência finita de regras e operações. Para nós muitas vezes algumas coisas se tornam automáticas, e acabamos esquecendo desses passos, muitas vezes justificamos falando ser "algo lógico/implícito". Porém um computador não tem esse raciocínio, ele simplesmente faz o que lhe é ordenado. Então é importante que os nossos algoritimos sejam bem planejados, e que cubram o maior número de casos possíveis, caso seja viável.
 
@@ -14,6 +12,9 @@ Como falamos anteriormente é muito importante projetar nosso código antes de f
 Confira a imagem a seguir com os principáis símbolos:
 
 ![diagrama](../../img/1sem/02/diagrama_blocos.png)
+
+
+exemplo do suco de laranja
 
 
 ## Desafio

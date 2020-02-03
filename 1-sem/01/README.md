@@ -2,7 +2,7 @@
 
 ## Conteúdo
 
-Nesse semestre faremos alguns projetos com arduino que nos fornece um eco-sistema completo para trabalhar com microcontroladores, ele eh um projeto opensource feito por uma empresa italina, mas hoje ja temos outras fabricamentes no mercado que fazem placas similares ja que os modelos de hardware sao abertos e podem ser replicados sem maiores implicacoes. Um arduino não é simplesmente um micro-controlador, ele é uma placa de desenvolvimento que tem um micro-controlador e algumas outras peças que facilitam nosso trabalho, para programar micro-controladores "na mão" é bem mais complexo, pois precisamos geralmente montar um cirucuito e ter algumas ferramentas mais especificas, e o arduino facilita isso para nós.
+Nesse semestre faremos alguns projetos com arduino que nos fornece um ambiente completo para trabalhar com microcontroladores, ele eh um projeto opensource feito por uma empresa italina, mas hoje ja temos outras fabricamentes no mercado que fazem placas similares ja que os modelos de hardware sao abertos e podem ser copiados sem maiores implicacoes. Um arduino não é simplesmente um micro-controlador, ele é uma placa de desenvolvimento que tem um micro-controlador e algumas outras peças que facilitam nosso trabalho, para programar micro-controladores "na mão" é bem mais complexo, pois precisamos geralmente montar um cirucuito e ter algumas ferramentas mais especificas, e o arduino facilita isso para nós.
 
 Sem o arduino:
 
@@ -15,15 +15,27 @@ Com arduino:
 ![cpp](../../img/1sem/01/cpp.jpeg)
 
 
-O Arduino pode ser alimentado por uma fonte de 9v ou um cabo serial-usb(brotip: muitas impressoras usam esse cabo). A fonte geralmente é usada quando o projeto está em funcionamento mesmo(a fonte tambem pode ser substitudida por baterias...) e o cabo serial é usado para transferência de dados. O Arduino usa C++ como linguagem padrão, mas existem alternativas(mais sombrias, diga-se de passagem), porém focaremos no C++!
+O Arduino pode ser alimentado por uma fonte de 9v ou um cabo serial-usb(brotip: muitas impressoras usam esse cabo). Durante a realizacao de algum projeto precisamos trocar dadis entre o arduino e o computador, para isso, fazemos o uso do cabo serial. A fonte ou bateria de 9v sera usada para o funcionamento do projeto ja realizado(quando nao precisamos trocar dados).
+O Arduino usa C++ como linguagem padrão, mas existem alternativas(como por exemplo, python, ADA, basic, entre outros...), porém elas sao menos documentadas e a comunidade nao eh tao grande, e podem nao ser tao performaticas, entao talvez voce tenha alguma dificuldade, por isso focaremos no C++!
+
 O arduino tem alguns pinos(a quantidade muda de acordo com o modelo), esses pinos servem para fazer conexões baseadas em input e output.
 
-Temos os pinos analógicos, que são prefixados com um A maiusculo, ex: `A1`, onde seus valores variam de 0 a 1023, temos também pinos digitais, que são representados apenas por números, ex: `13`, e os pinos prefixados com `~` são pinos PWM, que sao pinos digitais que simulam um sinal analógico(veremos mais sobre isso na aula de eletronica basica). Também temos os pinos de alimentação como `3.3v`, `5v` e `GND`(Ground) e `Vin` que tem basicamente a mesma tensao de entrada do arduino, tambem temos os pinos `RX` e `TX` que servem para receber e enviar dados via serial, entre [outros](https://www.arduino.cc/en/reference/board) que veremos no decorrer das atividades.
+* `Pinos analógicos`: são prefixados com um `A` maiusculo, ex: `A1`, onde os valores de suas medicoes podem variar de 0 a 1023, ou seja um numero de 10 bit;
+
+* `pinos digitais`: são representados apenas por números, ex: `13`, e os valores de medicao sao binarios(0 e 1);
+
+* `pinos PWM`: pinos prefixados com `~`  sao pinos digitais que simulam um sinal analógico(veremos mais sobre isso na aula de eletronica basica);
+
+* `pinos de alimentação`: Podemos alimentar nosso circuito ou senssores com `3.3v`, `5v` ou `Vin` que tem basicamente a mesma tensao de entrada do arduino(um pouco menos de 9v) e o pino `GND`(Ground) que eh o terra.
+
+* `pinos RX e TX`: servem para receber e enviar dados via serial
+
+ Tambem temos [outros](https://www.arduino.cc/en/reference/board) pinos que veremos no decorrer das atividades mas nao sao tao utilizados.
 
 Esse eh o esquema de pinagem do arduino uno:
 ![pinout](../../img/1sem/01/pinout.png)
 
-Temos uma gama enorme de modelos dispoíveis, entre eles muitos que não são da empresa Arduino propriamente dito. Abaixo vou listar alguns modelos e citar algumas caracteristicas:
+Temos uma gama enorme de modelos dispoíveis, entre eles muitos que não são da empresa Arduino propriamente dito. Na sequencia veremos alguns modelos e suas caracteristicas:
 
 * `Arduino Uno` - O mais conhecido de todos, ele é um modelo bem simples e barato, e muito indicado para quem está começando, porém não tem muitos recursos especiais mas tem uma quantia razoavel de pinos, nos usaremos ele em quase todos nossos projetos. Ele usa o microcontrolador ATmega328 que eh produzido pela Atmel, ele opera na frequencia de 16MHz, ele conta com 14 pinos de entrada e saida(input e output), e 6 desses pinos podem ser usados para PWM(pulse width modulation) e do outro lado temos 6 pinos analógicos. Ele tem 32KiB de memoria flash aonde os programas sao armazenados, e tem 2KiB de RAM.
 AVISO: Cuidado ao ligar sensores de 3.3v nos pinos de input e output, ja que esses pinos operam com 5v e voce pode danificar alguma coisa.
@@ -53,11 +65,28 @@ E como o pro mini ele tem versoes de 3.3v e 5v.
 ![esp32](../../img/1sem/01/esp32.jpeg)
 
 
-Voces tambem vao ouvir falar bastante de `SHIELDS`, shields são módulos que se conectam ao arduino para fazer algo de maneira facil sem que voce tenha que montar um cirucuito completo, como por exemplo controlar um motor, usar um chip de celular no seu projeto(GPRS), ou modulos MP3 para musicas, e muitos outros.
+* `SHIELDS`: são módulos que se conectam ao arduino para fazer algo de maneira facil sem que voce tenha que montar um cirucuito completo, como por exemplo:
 
-Agora que já entendemos o básico do funcionamento do arduino vamos falar um pouco sobre a IDE(Integrated Development Environment) do Arduino. Primeiro instale ela em sua máquina, acesse [esse link](https://www.arduino.cc/en/main/software) e faça o download de acordo com seu sistema operacional.
+ - controlar um motor:
 
-Para nós as principais funções são:
+![motor](../../img/1sem/01/motor_shield.png)
+
+ - usar um chip de celular no seu projeto(GPRS):
+
+ ![motor](../../img/1sem/01/gprs.jpeg)
+
+ - modulos MP3 para musicas:
+
+ ![motor](../../img/1sem/01/mp3.jpeg)
+
+ - E muitos outros...
+
+ ![motor](../../img/1sem/01/random.png)
+
+Primeiro instale ela em sua máquina, acesse [esse link](https://www.arduino.cc/en/main/software) e faça o download de acordo com seu sistema operacional.
+
+
+Agora que já entendemos o básico do funcionamento do arduino vamos falar um pouco sobre a IDE(Integrated Development Environment) do Arduino. Uma IDE nos oferece todo um ambiente de desenvolvimento onde podemos compilar e enviar nosso codigo, debugar possiveis problemas, encontrar exemplos que nos ajudam a criar nossos projetos servindo como inspiracao e base, entre muitas outras ferramentas que acabam facilitando nosso trabalho, entre elas podemos citar algumas das principais funções:
 
 * File -> Examples: Possui diversos exemplos para se inspirar.
 
@@ -98,7 +127,7 @@ Seu treinamento comecou hoje e apos a apresentacao inicial do arduino, como muit
 
 ## Referencias e recursos uteis
 
-[site oficial do arduino](arduino.cc/)
+[Site oficial do arduino](arduino.cc/)
 
 [Esquema eletrico do arduino](https://www.arduino.cc/en/uploads/Main/arduino-uno-schematic.pdf)
 
