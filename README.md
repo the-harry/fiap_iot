@@ -1,69 +1,76 @@
 # Material IOT 2020
 
 ## Estrutura das aulas
-Esse material tem como objetivo simular um ambiente de trabalho de desenvolvimento real, ou o mais proximo possivel. As quatro primeiras aulas serao bases teoricas que precisam ser passadas, porem todas as outras aulas serao praticas.
+Este material tem como objetivo simular um ambiente de trabalho de desenvolvimento real, ou o mais próximo possível deste cenário. As quatro primeiras aulas serão bases teóricas que possuem grande importância e precisam ser estudadas, sendo todas as demais aulas práticas.
 
-Nessas aulas praticas sempre tera uma parte teorica que tera o mesmo que foi explicado na aula, um user history que eh basicamente um caso de contando uma historia que tem como objetivo trazer uma problematica para que seja resolvida, e no final teremos alguns desafios praticos. Caso queira consultar posteriormente o conteudo da aula basta ir ate a pasta da aula em especifico.
+As aulas práticas sempre abordarão a base teórica de um mesmo conteúdo explicado anteriormente em aula, ou seja, um user history (que se resume basicamente em um caso que, contando uma história, tem como objetivo trazer uma problemática a ser resolvida). No final destas, teremos também alguns desafios práticos. Caso queira consultar posteriormente o conteúdo já abordado em aula, basta ir até a pasta “aula em específico”.
 
-Cada aula vai estar em uma pasta seguindo o padrão `semestre/aula` ter um ou mais código(s)/arquivo(s) de exêmplo, e também um `README.md` onde terão instruções da aula.
+Cada aula poderá ser encontrada em uma pasta seguindo o seguinte padrão: `semestre/aula`; apresentará um ou mais código(s)/arquivo(s) de
+exemplo; e, por fim, um README.md, onde constarão as instruções da aula.
 
-O READMEs sao escritos em [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet), que eh muito usado para criar documentacoes de projetos. Todas as aulas estaram nesse repositorio do github. Para acompanhar as aulas voce pode baixar ou clonar o projeto, ou simplesmente usar o navegador para visitar as aulas e ver os arquivos de exemplo.
+Os READMEs são arquivos escritos em  [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) , linguagem muito utilizada para criar documentações de projetos. Todas as aulas estarão presentes nesse repositório do github. Para acompanhar as aulas, você pode baixar ou clonar o projeto, ou simplesmente usar o navegador para visitar as aulas e acessar os arquivos de exemplo.
 
-Durante os dois semestres serão feitos alguns projetos para exemplificar os conceitos aprendidos de maneira pratica. A historia base do projeto eh a seguinte:
+Durante os dois semestres serão realizados alguns projetos, desenvolvidos para exemplificar os conceitos aprendidos de maneira prática.
 
-Voce acaba de ser contratado pela ACME Corporation, no departamento de IOT e inovacao. No seu time temos algumas funcoes principais, temos o desenvolvedor, que faz os codigos das solucoes, temos tambem um Sysadmin que eh responsavel por cuidar de toda infraestrutura, e servicos utilizados pelo time, e temos um engenheiro eletrico, que eh o responsavel pela parte de hardware e eletronica, todo time participa ativamente das Decisões entao nao temos uma pessoa especifica para gerenciamento do projeto, ja que todos acabam fazendo isso em coletivo.
+Segue abaixo a história base deste projeto:
 
-Para esse ano algumas metas foram definidas, e a direcao da ACME fechou contrato com uma empresa para solucoes residenciais onde solicitaram a realizacao de tres projetos durante esse ano:
+Você acaba de ser contratado pela ACME Corporation. No departamento em que atuará, de IOT e inovação, o seu time possui algumas funções principais, sendo elas: desenvolvedor, responsável por desenvolver os códigos das soluções; Sysadmin, responsável por cuidar de toda a infraestrutura e serviços utilizados pelo time; e engenheiro elétrico, responsável por toda a parte de hardware e eletrônica.
 
-* `Monitoração de hortas`:
-Esse projeto visa criar uma maneira de coletar dados e diminuir o disperdicio de agua coletando informacoes sobre o jardim e irrigando ele automaticamente. Os dados coletados deveram ser exibidos em graficos para o cliente final, para que possa monitorar se tudo esta conforme o imaginado.
+Como todo o time, citado anteriormente, participa ativamente das decisões, não existe uma pessoa que exerça a função específica de gerenciar o projeto.
+
+Para este ano, algumas metas foram definidas, e a direção da ACME fechou contrato com uma empresa para soluções residenciais. Pela empresa contratada, foi solicitada a realização de três projetos durante o ano em questão:
+
+
+* `Monitoramento de hortas`:
+Esse projeto visa criar uma maneira de coletar dados e diminuir o desperdício de água, colhendo informações sobre o jardim e irrigando-o automaticamente. Os dados coletados deverão ser exibidos em gráficos para o cliente final, para que este possa acompanhar se tudo está se desenvolvendo conforme o esperado.
 
 * `Alimentador de pet`:
-Para donos de animais que ficam muito tempo fora de casa, seja por trabalho, estudo ou ate mesmo viagens esse projeto possibilita uma alimentacao desses pets de maneira automatizada, alguns requesitos ficaram em abertos para que o time escolha a melhor abordagem, esse projeto pode trabalhar com uma especie de timer para criar uma rotina de alimentacao, ou ele deve ser acionado manualmente.
+Para os donos de animais que ficam muito tempo fora de casa, seja por motivo de trabalho, estudo ou até mesmo viagens, esse projeto possibilita a estes pets o acesso a uma alimentação automatizada. Alguns requisitos sobre a abordagem ficarão em aberto para que os membros do time façam juntos a melhor escolha. Uma sugestão para este projeto é trabalhar com uma espécie de timer para criar uma rotina de alimentação para os animais, podendo ou não ser acionado manualmente.
 
 * `Fechadura com RFID`:
-Esse projeto visa criar uma rede de seguranca entre fechaduras, a ideia eh fazer uma fechadura que possa ser aberta por senha ou RFID, e a ideia eh que funcione em conjunto com outras para criar uma rede interna que caso alguma fechadura cause uma indisponibilidade ou seja violada as outras sejam travadas automaticamente ate um segundo comando.
+Este projeto visa criar uma rede de segurança entre fechaduras. A ideia é desenvolver uma fechadura que possa ser aberta por senha ou RFID, e que funcione em conjunto com outras do mesmo tipo. Desta forma, as chaves criarão uma rede interna que, em caso de falha, indisponibilidade ou violação de alguma das fechaduras, possa levar ao travamento automático das demais, até que um segundo comando seja dado.
 
-No primeiro mes na empresa voce tera um treinamento onde aprendera mais sobre arduino, programacao e eletronica, apos isso voce comecara esses projetos. Nossa deadline eh ate o final do ano. Precisamos no primeiro semestre criar os prototipos para no segundo comecar a integrar o resto da infraestrutura.
+No primeiro mês na empresa, você terá um treinamento onde aprenderá mais sobre arduino, programação e eletrônica. Após esta etapa, você começará a dar vida a estes projetos. Nossa deadline é até o final do ano.
+Precisamos no primeiro semestre criar os protótipos para, no segundo, começar a integrar o restante da infraestrutura.
 
 ### Primeiro semestre
 
-Caso não tenha um arduino pode usar o [tinkercad](https://www.tinkercad.com) para emular um.
+Caso não possua um Arduino, você pode usar o [tinkercad](https://www.tinkercad.com) para emular um.
 
   * `Aula 1 - Arduino, tipos, instalação da IDE.`
 
-  * `Aula 2 - Introdução a lógica de programação.`
+  * `Aula 2 - Introdução à lógica da programação.`
 
-  * `Aula 3 - Eletronica basica.`
+  * `Aula 3 - Eletrônica básica.`
 
   * `Aula 4 - Arduino getting started.`
 
-  * `Aula 5 - Operações lógicas - if, else, else if.` jardim
+  * `Aula 5 - Operações lógicas - if, else, else if.` - jardim
 
-  * `Aula 6 - Controle de repetição - Loops for e while.` pet feeder
+  * `Aula 6 - Controle de repetição - Loops for e while.` - pet feeder
 
-  * `Aula 7 - Funções e retornos.` pet feeder
+  * `Aula 7 - Funções e retornos.` - pet feeder
 
-  * `Aula 8 - Destrinchando o git.` jardim
+  * `Aula 8 - Destrinchando o git.` - jardim
 
-  * `Aula 9 - Arrays e estruturas de dados.` ? petfeeder
+  * `Aula 9 - Arrays e estruturas de dados.` - petfeeder
 
-  * `Aula 10 - Protothreading.` jardim
+  * `Aula 10 - Protothreading.` - jardim
 
-  * `Aula 11 - Projetos com alimentação externa.` jardim
+  * `Aula 11 - Projetos com alimentação externa.` - jardim
 
-  * `Aula 12 - Introdução ao RFID.` tranca
+  * `Aula 12 - Introdução ao RFID.` - tranca
 
   * `Aula 13 - Criando uma lib.` tranca
 
-  * `Aula 14 - Radio frequencia.` tranca
+  * `Aula 14 - RF - Rádio frequência.` - tranca
 
-  * `Aula 15 - Mesh network.` tranca
+  * `Aula 15 - Mesh network.` - tranca
 
 
 ### Segundo semestre
 
-Caso não tenha um raspberry temos algumas maneiras de [emular um](https://www.makeuseof.com/tag/emulate-raspberry-pi-pc/)(em ingles, mas mostra tres metodos) ou apenas usando [QEMU em portugues](https://www.techtudo.com.br/dicas-e-tutoriais/noticia/2016/11/aprenda-virtualizar-o-raspberry-pi-para-testar-sistemas-e-projetos-no-pc.html).
+Caso não tenha um raspberry, temos algumas maneiras de [emular um](https://www.makeuseof.com/tag/emulate-raspberry-pi-pc/)(em inglês, mas mostra três métodos) ou apenas usando [QEMU em portugues](https://www.techtudo.com.br/dicas-e-tutoriais/noticia/2016/11/aprenda-virtualizar-o-raspberry-pi-para-testar-sistemas-e-projetos-no-pc.html).
 
   * `Aula 1 - Introdução ao raspberry pi e dispositivos de borda.`
 
@@ -71,7 +78,7 @@ Caso não tenha um raspberry temos algumas maneiras de [emular um](https://www.m
 
   * `Aula 3 - Introdução a Python.`
 
-  * `Aula 4 - Estrutura de dados no python.`
+  * `Aula 4 - Estruturas de dados no python.`
 
   * `Aula 5 - Decisões e controles de repetição no python.`
 
@@ -85,14 +92,14 @@ Caso não tenha um raspberry temos algumas maneiras de [emular um](https://www.m
 
   * `Aula 10 - Time series databases, Introdução ao influx.`
 
-  * `Aula 11 - Introdução a monitoração com Grafana.`
+  * `Aula 11 - Introdução à monitoração com Grafana.`
 
 
 ## Hardware
 
-Para um melhor acompanhamento das aulas é sugerido que tenha em mão os seguintes itens, para a montagem dos protótipos em sí ainda faltará algumas peças que podem ser improvisadas facilmente, os itens a seguir serão listados pela ordem de uso nas aulas.
+Para um melhor acompanhamento das aulas, é sugerido que tenha em mãos os itens listados abaixo. Para a montagem dos protótipos em si, ainda faltarão algumas peças, que podem ser facilmente improvisadas. Os itens a seguir serão listados pela ordem em que serão utilizados nas aulas.
 
-Nao se preocupe caso nao tenha condicoes de adquirir todos os itens, pelo menos o sificiente para usar na aula sera levado pelo professor. Caso escolha usar as solucoes virtualizadas, eh importante resaltar que temos alguns problemas de consistencia, ja que um emulador nunca tera os problemas de um hardware de verdade, problemas de tempo, conexao, entre outros. Isso nao torna as solucoes virtuais inuteis, mas tenha isso em mente quando for fazer um projeto, pode ser que no simulador ele funcione perfeitamente e ao colocar para rodar de verdade ele apresente algum problema, mas essa eh a parte divertida do debug! :)
+Não se preocupe caso não tenha condições de adquirir todos os itens, pois pelo menos os essenciais, para serem utilizados em aula, serão levados pelo professor. Caso escolha usar as soluções virtualizadas, é importante ressaltar que temos alguns problemas de consistência, já que um emulador nunca apresentará os mesmos problemas de um hardware de verdade, tais como: problemas de tempo, de conexão, entre outros. Isso não torna as soluções virtuais inúteis, mas é importante ter isso em mente quando for desenvolver um projeto. Pode ser que no simulador ele funcione perfeitamente e, ao colocar para rodar de verdade, ele apresente algum problema. De qualquer forma, essa é a parte divertida do debug! :)
 
 Segue a lista dos itens usados para os projetos:
 
@@ -101,7 +108,7 @@ Segue a lista dos itens usados para os projetos:
 ![Arduino Uno](.../../img/doc/arduino.jpg)
 
 
-* `Cabo serial (muitas impressoras usam esse cabo, talvez voce tenha em casa)`
+* `Cabo serial (muitas impressoras utilizam esse cabo, por isso talvez você o tenha em casa)`
 
 ![Cabo serial](.../../img/doc/serial.jpg)
 
@@ -116,7 +123,7 @@ Segue a lista dos itens usados para os projetos:
 ![PIR](.../../img/doc/pir.jpeg)
 
 
-* `Sensor higrometo (umidade de solo)`
+* `Sensor higrômetro (umidade de solo)`
 
 ![higrometo](.../../img/doc/higrometro.jpeg)
 
@@ -126,7 +133,7 @@ Segue a lista dos itens usados para os projetos:
 ![DHT11](.../../img/doc/dht11.jpg)
 
 
-* `Modulo Sensor de Luz LDR`
+* `Módulo Sensor de Luz LDR`
 
 ![LDR](.../../img/doc/ldr.jpeg)
 
@@ -136,7 +143,7 @@ Segue a lista dos itens usados para os projetos:
 ![RELE](.../../img/doc/rele.jpeg)
 
 
-* `Solenoide para irrigação(ou um solenoide simples para testes apenas)`
+* `Solenoide para irrigação (ou um solenoide simples para testes apenas)`
 
 ![solenoide](.../../img/doc/solenoide.jpeg)
 
@@ -191,9 +198,9 @@ Segue a lista dos itens usados para os projetos:
 ![Raspberry](.../../img/doc/raspberry.jpg)
 
 
-* `Fonte universal com varias tensoes e plugs`
+* `Fonte universal com várias tensões e plugs`
 
 ![Fonte](.../../img/doc/fonte.jpeg)
 
 
-O resto e so criatividade!
+O resto fica por conta da criatividade!
