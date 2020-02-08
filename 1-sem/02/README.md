@@ -24,28 +24,38 @@ Imagine que você quer um suco de laranja, o que você faria? Cada passo até ch
 
 ## Diagrama de blocos
 
-Diagrama de blocos, é uma maneira que nos ajuda a modelar nossos sistemas(na verdade várias coisas que podem ser representadas por fluxos). UML é uma linguagem de blocos que nos ajuda a fazer o desenho de uma solução.
-Como falamos anteriormente é muito importante projetar nosso código antes de faze-lo, para que não criemos nenhum Frankstein. Com UML podemos fazer isso facilmente.
+`Diagrama de blocos`, ou em ingles `Sequential function chart(SFC)` eh uma linguagem de programacao grafica com todas as operacoes que precisamos para considera-la turing complete. A ideia consiste em criar o desenho para o fluxo de uma funcao, ou um pedaco de codigo do nosso programa. A ideia geral eh que baseados em uma `entrada` faremos um `processamento` e teremos uma `saida`. E descrevemos as etapas representadas por desenhos que sao ligados por fios. O diagrama de blocos nao tem simbolos para algumas coisas que queremos fazer como ler e escrever em sensores. Entao para os proximos exemplos usaremos o simbolo de entrada manual para representar a leitura de sensores e saida em impressora para representar a algum output que nao seja em telas.
 
 Confira a imagem a seguir com os principáis símbolos:
 
 ![diagrama](../../img/1sem/02/diagrama_blocos.png)
 
 
-exemplo do suco de laranja
+Podemos representar nosso problema da laranja de varias maneiras, um exemplo bem simples seria:
 
+![diagrama_laranja1](../../img/1sem/02/diagrama_laranja1.png)
+
+Porem se formos analisar aqui para esse algoritimo funcionar de fato precisamos adicionar varias outras etapas, isso tem o nome de `granularidade`, quanto mais granular nosso sistema for, maior sera sua capacidade de lidar com diferentes eventos e problemas, no exemplo anterior poderiamos adicionar mais granularidade descrevendo melhor como comprariamos laranjas, como iriamos de casa ate o mercado? Como escolheriamos as laranjas? Todos esses passos afetariam nosso algoritimo.
+
+Para ilustrar melhor vamos ver como ficara o diagrama de blocos do projeto pet feeder, a ideia inicial eh bem simples se detectarmos movimento perto do dispositivo ativaremos um motor que abrira o mecanismo para liberar uma quantidade de racao de um compartimento e depois fechara o motor apos algum tempo aberta.
+
+![diagrama_pet_feeder](../../img/1sem/02/diagrama_pet_feeder.png)
+
+Claro que isso eh apenas um prototipo, entao essa ideia deve ser melhorada, seria legal ter outros tipos de validacoes e monitoramentos mas vamos comecar de uma maneira simples e depois evoluimos a ideia. Quem sabe podemos colocar um intervalo de tempo minimo entre as alimentacoes para evitar alarmes falsos e resolver outros problemas que apareceram.
 
 ## Desafio
 
 ### User history
 
-Seu time começará a projetar um protótipo de uma solução para automatizar hortas domésticas, você deve se reunír com seu grupo e planejar como será a lógica desse projeto. Os únicos requesitos pedidos foram:
+Seu time começará a projetar um protótipo de uma solução para automatizar hortas domésticas, você deve se reunír com seu grupo e planejar como será a lógica desse projeto. Os requesitos sao:
 
-* A solução deve monitorar luminosidade, temperatura, umidade do solo
+* A solução deve medir umidade do solo, luminosidade, temperatura e umidade do ar.
 
-* Deve automatizar a irrigação
+* Caso o solo esteja muito seco devemos irriga-lo
+
+* Porem nao podemos ativar a irrigacao caso esteja com um nivel de luminosidade muito alta, o que queimaria nossas plantas
 
 
 ### Tasklist
 
-* [ ] Fazer UML para problema descrito acima.
+* [ ] Fazer diagrama de blocos para problema descrito acima descutindo a melhor solucao com seu squad.
