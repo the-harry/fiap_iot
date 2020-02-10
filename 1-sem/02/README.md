@@ -41,7 +41,7 @@ Para ilustrar melhor vamos ver como ficara o diagrama de blocos do projeto pet f
 
 ![diagrama_pet_feeder](../../img/1sem/02/diagrama_pet_feeder.png)
 
-Claro que isso eh apenas um prototipo, entao essa ideia deve ser melhorada, seria legal ter outros tipos de validacoes e monitoramentos mas vamos comecar de uma maneira simples e depois evoluimos a ideia. Quem sabe podemos colocar um intervalo de tempo minimo entre as alimentacoes para evitar alarmes falsos e resolver outros problemas que apareceram.
+Claro que isso eh apenas um prototipo, entao essa ideia deve ser melhorada, seria legal ter outros tipos de validacoes e monitoramentos mas vamos comecar de uma maneira simples e depois evoluimos a ideia. Quem sabe podemos colocar um intervalo de tempo minimo entre as alimentacoes para evitar alarmes falsos e resolver outros problemas que aparecerao.
 
 ## Desafio
 
