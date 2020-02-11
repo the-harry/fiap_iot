@@ -33,13 +33,13 @@ Confira a imagem a seguir com os principáis símbolos:
 
 Podemos representar nosso problema da laranja de varias maneiras, um exemplo bem simples seria:
 
-![diagrama_laranja1](../../img/1sem/02/diagrama_laranja1.png)
+![diagrama_laranja](../../img/1sem/02/diagrama_laranja.jpg)
 
 Porem se formos analisar aqui para esse algoritimo funcionar de fato precisamos adicionar varias outras etapas, isso tem o nome de `granularidade`, quanto mais granular nosso sistema for, maior sera sua capacidade de lidar com diferentes eventos e problemas, no exemplo anterior poderiamos adicionar mais granularidade descrevendo melhor como comprariamos laranjas, como iriamos de casa ate o mercado? Como escolheriamos as laranjas? Todos esses passos afetariam nosso algoritimo.
 
 Para ilustrar melhor vamos ver como ficara o diagrama de blocos do projeto pet feeder, a ideia inicial eh bem simples se detectarmos movimento perto do dispositivo ativaremos um motor que abrira o mecanismo para liberar uma quantidade de racao de um compartimento e depois fechara o motor apos algum tempo aberta.
 
-![diagrama_pet_feeder](../../img/1sem/02/diagrama_pet_feeder.png)
+![diagrama_pet_feeder](../../img/1sem/02/diagrama_pet_feeder.jpg)
 
 Claro que isso eh apenas um prototipo, entao essa ideia deve ser melhorada, seria legal ter outros tipos de validacoes e monitoramentos mas vamos comecar de uma maneira simples e depois evoluimos a ideia. Quem sabe podemos colocar um intervalo de tempo minimo entre as alimentacoes para evitar alarmes falsos e resolver outros problemas que aparecerao.
 
