@@ -50,7 +50,7 @@ Para ilustrar melhor, vamos ver como ficará o diagrama de blocos do projeto pet
 
 ![diagrama_pet_feeder](../../img/1sem/02/diagrama_pet_feeder.jpg)
 
-Claro que se trata aqui apenas de um racunho, e é por isso que essa ideia deve ser melhorada. Seria interessante haver outros tipos de validações* e monitoramentos, mas vamos começar de uma maneira simples para depois evoluirmos a ideia. Quem sabe podemos colocar, por exemplo, um intervalo de tempo mínimo entre as alimentações, evitando assim alarmes falsos e desperdícios.
+Claro que se trata aqui apenas de um racunho, e é por isso que essa ideia deve ser melhorada. Seria interessante haver outros tipos de validações e monitoramentos, mas vamos começar de uma maneira simples para depois evoluirmos a ideia. Quem sabe podemos colocar, por exemplo, um intervalo de tempo mínimo entre as alimentações, evitando assim alarmes falsos e desperdícios.
 
 
 ## Desafio
