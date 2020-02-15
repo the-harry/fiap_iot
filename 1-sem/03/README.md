@@ -10,20 +10,41 @@ A diferenca cientifica entre os dois tipos de correte sao como os eletrons se mo
 
 ## Lei de Ohm
 
-A lei de Ohm define como algumas grandezas eletricas se comportam,
+A lei de Ohm define como algumas grandezas eletricas se comportam, vamos entender cada uma delas:
 
+* `Corrente`: Eh medida em Amperes, a corrente eh basicamente a quantidade de cargas possitivas passando em um lugar em um certo instante, a corrente se move no lado oposto aos eletrons. Podemos calcular a corrente usando `a`.
 
-* `Tensao`:
+* `Tensao`: Eh medida em Volts, quando fechamos um circuito os eletrons vao em direcao as cargas positivas e acaba fazendo uma volta completa pelo caminho que tem que seguir e volta ao seu lugar original, isso cria um campo eletrico constante.  Podemos calcular a tensao usando `a`.
 
-* `Amperagem`:
+* `Resistencia`: Todo material oferece uma certa resistencia Podemos calcular a resistencia usando `as`.
 
-* `Resistencia`:
+Como devem ter reparado, podemos calcular os 3 com a mesma formula:
 
+Outra coisa importante eh a `referencia` de um circuito. Quando temos mais de um tipo de alimentacao no nosso circuito, eh importante juntarmos os grounds, para que todo o circuito tenha a mesma referencia do que eh 0v. Sem isso o circuito nao funcionara corretamente. Porem falaremos desse assunto com mais detalhes quando falarmos de projetos com alimentacao externa.
 
 ## PWM
 
 Quando queremos controlar a tensao de um circuito podemos fazer isso de algumas maneiras, as principais solucoes seriam colocar um potenciometro, que nada mais eh do que uma resistencia de valor variavel, que seria uma solucao analogica, ou podemos usar o PWM, que seria a maneira digital de fazer isso, Pulse width modulation, ou pulso por tamanho de modulacao eh uma tecnica que usamos para simular esse comportamento do potenciometro de maneira digital. Imagine que voce queira enviar uma tensao de 4v, porem ao enviar um sinal digital HIGH, voce envia 5v. A solucao eh enviar em 1s 80% do tempo HIGH, e 20% do tempo LOW, se calcularmos 80% de 5, chegaremos ao resultado 4. A ideia de controlar o tempo dos ciclos nos ajuda quando precisamos controlar a tensao de algum circuito mas nao queremos adicionar um potenciometro.
 O potenciometro eh bom para quando temos algo que consome mais energia, como uma linha de leds, ou ate mesmo um ventilador. Porem para coisas menores, e principalmente quando sao alimentadas por baterias, nossa preferencia eh usar PWM, pois como temos menos resistencia, menos energia eh perdida durante o caminho.
+
+## Componentes eletronicos
+
+Para montar nossos circuitos temos diversos dispositivo basicos que sao usados em diferentes projetos, essas pecas essenciais para a montagem de um circuito se chamam componentes eletricos, cada um deles tem uma funcao, abaixo falaremos em detalhes sobre alguns deles que usaremos mais em nossos projetos, porem existem outros porem agora vamos nos preocupar com esses que serao os mais utilizados:
+
+* `resistor`: Eh um componente feito de um material resistivo, ou seja, ele oferece mais resistencia, oque faz ele perder um pouco de energia no caminho, essa energia na verdade nao se perde, se transforma em calor. Os resistores sao medidos em OHM. E para indicar qual o valor do resistor eh utilizado uma ordem de cores, mas nao se preocupe em decorar todas, temos tabelas e calculadoras para facilitar nosso trabalho. Apenas um lembrete, para ver o codigo de cores de um resistor sempre posicione a fita prata/dourada ao lado direito.
+
+* `capacitor`: Um capacitor serve como uma bateria para armazenar energia, porem ela diferentemente da bateria descarrega quase que instantaneamente.
+
+* `diodo`: Um diodo serve para impedir que a corrente eletrica passe por algum lugar que voce nao queira, imagine ele como um bloqueador que permite a passagem de energia em uma direcao apenas. O diodo mais conhecido eh o LED, que eh um tipo de diodo que emite luz(Light-Emitting Diode).
+
+* `CI`: CI ou Circuito Integrado sao pequenos chips com circuitos prontos dentro deles que fazem alguma coisa em especifico, o bacana desses chips eh que eles revolucionaram a eletronica e a computacao permitindo cada vez circuitos mais complexos utilizando menos espaco.
+
+* `rele`: Rele ou relé um interruptor eletromecânico, a movimentação física deste interruptor ocorre quando a corrente elétrica percorre as espiras da bobina do relé, criando assim um campo magnético que por sua vez atrai a alavanca responsável pela mudança do estado dos contatos. Com isso conseguimos ativar e desativar a alimentacao energetica de algum circuito, esse componente eh muito usado para ligar e desligar motores, fechaduras, etc.
+
+* `protoboards`: Protoboards ou uma placa de ensaio, eh uma placa com varios furos, com ela podemos montar nossos prototipos sem ter que soldar tudo, as linhas sao interligadas horizontalmente e verticalmente.
+
+* `jumpers`: Sao "cabinhos" para realizar as conexoes entre sensores, atuadores, etc. Temos jumpers MF, FF e MM.
+
 
 ## Multimetro
 
@@ -38,8 +59,6 @@ Seu squad esta fazendo estudos sobre eletronica nessa semana e voce recebeu algu
 ### Tasklist
 
 * [ ] Medir a tensao de alimentacao da placa
-
-* [ ] Medir a tensao de alimentacao do pino no meio da placa
 
 * [ ] Medir a resistencia dos dois resistores apresentados
 
