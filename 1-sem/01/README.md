@@ -116,7 +116,7 @@ Serial plotter:
 
 ## Desafio
 
-### User history
+### User story
 
 Seu treinamento começou hoje e, após a apresentação inicial do arduino, como muitas pessoas foram contratadas pela ACME recentemente, foi pedido que se organizassem em squads para a realização dos projetos durante o ano, então junte seu time e podemos começar!
 
@@ -126,7 +126,7 @@ Seu treinamento começou hoje e, após a apresentação inicial do arduino, como
 * [ ] Criar um canal de comunicação
 
 
-## Referencias e recursos uteis
+## Referências e recursos úteis
 
 [Site oficial do arduino](arduino.cc/)
 

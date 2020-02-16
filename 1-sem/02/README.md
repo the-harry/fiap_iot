@@ -55,7 +55,7 @@ Claro que se trata aqui apenas de um racunho, e é por isso que essa ideia deve 
 
 ## Desafio
 
-### User history
+### User story
 
 Seu time começará a projetar um protótipo de solução para automatizar hortas domésticas, e você deve se reunir com seu grupo e planejar qual será a lógica desse projeto. Os requisitos para o projeto são:
 
@@ -71,7 +71,7 @@ Seu time começará a projetar um protótipo de solução para automatizar horta
 * [ ] Fazer o diagrama de blocos para o problema descrito acima, discutindo a melhor solução com seu squad.
 
 
-## Referencias e recursos uteis
+## Referências e recursos úteis
 
 [Video do Computerphile sobre maquina de turing](https://www.youtube.com/watch?v=dNRDvLACg5Q)
 
