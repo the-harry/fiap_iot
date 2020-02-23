@@ -42,6 +42,8 @@ Podemos representar nosso problema, referente ao suco de laranja, de diversas ma
 
 ![diagrama_laranja](../../img/1sem/02/diagrama_laranja.jpg)
 
+Desafio: Encontre o erro acima ;)
+
 Porém, se partirmos dessa análise, para esse algoritmo funcionar de fato precisaremos adicionar várias outras etapas. A este processo damos o nome de `granularidade` pois, quanto mais `granular` nosso sistema for, maior será sua capacidade de lidar com diferentes eventos e problemas.
 
 No exemplo anterior, poderíamos adicionar mais granularidade apenas descrevendo melhor como compraríamos as laranjas pra o suco, como iríamos de casa até o mercado, como escolheríamos as frutas. Todas essas informações afetariam nosso algoritmo final.
