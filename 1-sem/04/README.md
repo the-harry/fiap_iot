@@ -236,3 +236,5 @@ BONUS:
 [Funcoes do arduino](https://www.arduino.cc/reference/pt/#functions)
 
 [Documentacao sobre o Serial.read()](https://www.arduino.cc/reference/en/language/functions/communication/serial/read/)
+
+[Documentacao dos tipos, olhar sessao Data Types](https://www.arduino.cc/reference/en/#variables)

@@ -62,12 +62,12 @@ if(numero == 1 || numero == 0) {
 Como falamos anteriormente também temos ternários, que são operadores para fazer um if e else simples em uma linha. Ele eh utilizado para representar condicoes em apenas uma linha. Nao use ternarios caso precise de mais de uma condição.
 
 ```cpp
-idade > 18 ? Serial.println("Você pode dirigir."); : Serial.println("Você ainda não pode dirigir.");
+idade > 18 ? Serial.println("Você pode dirigir.") : Serial.println("Você ainda não pode dirigir.");
 ```
 
 Ternários sempre seguem o seguinte padrao:
 
-`condição` ? `oque_acontece_quando_verdade` : `oque_acontece_quando_falso`
+`condição` ? `oque_acontece_quando_verdade` : `oque_acontece_quando_falso;`
 
 
 ## Switch case
@@ -99,12 +99,13 @@ Para a primeira parte do projeto vamos implementar os sensores descritos acima u
 ### Tasklist
 
 * [ ] Medir sensores
-* [ ] Imprimir "Irrigando horta" quando for o momento de fazer a irrigacao
+* [ ] Acender o led verde quando for o momento de fazer a irrigacao
 * [ ] Antes de validar a umidade do solo leve em consideracao a luminosidade antes de ativar a irrigacao
-* [ ] Quando o solo estiver seco mas nao puder realizar a irrigacao por causa da luminosidade imprima na saida serial "Solo seco, porem muita luz para irrigar!"
+* [ ] Quando o solo estiver seco mas nao puder realizar a irrigacao por causa da luminosidade acenda o led vermelho
+
 * Bonus: Caso esteja um dia muito quente(acima de 25C), diminua o valor minimo de umidade do solo preciso para irrigar.
 
-Tente explorar outras maneiras de fazer o mesmo código.
+Tambem tente explorar outras maneiras de fazer o mesmo código.
 
 
 ## Referências e recursos úteis
