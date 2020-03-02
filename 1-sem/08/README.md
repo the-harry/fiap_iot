@@ -35,6 +35,43 @@ commit
 push
 pull
 
+## Na pratica
+
+Vou criar um repositorio novo para fazermos alguns testes na pratica para deixar esse fluxo de trabalho mais claro. Faremos um projeto que lera uma tecla digitada no teclado matricial e imprimira na porta serial esse valor. Primeiro vamos realizar a conexao dos fios, o teclado matricial funciona como uma matriz como o proprio nome diz, os quatro primeiros fios da esquerda representam as linhas e os tres ultimos as colunas. Ao pressionar um botao ele nos retorna um valor da matriz.
+
+!wiring
+
+Primeiro vou criar uma pasta para guardar o projeto chamado `demo_keyboard`, gosto de criar uma pasta chamada `workspace` dentro da home do usuario, e dentro dela colocar meus projetos:
+
+```bash
+mkdir demo_keyboard
+
+cd demo_keyboard
+
+echo "Demo Keyboard" > README.md
+```
+
+Apos criar a pasta do projeto e um README com as informacoes dele podemos comecar a desenvolver. Existem 3 solucoes principais para lidar com esses teclados matriciais, vamos comecar com a mais dificil e ir facilitando, a ideia eh controlarmos a versao do nosso codigo durante o processo, entao antes de comecar com o codigo principal vamos iniciar o repositorio e commitar essas alteracoes, para isso crie um repositorio no github e siga as instruções para fazer o primeiro commit:
+
+```bash
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:matheusam/demo_keyboard.git
+git push -u origin master
+```
+
+Apos fazer isso seu projeto ja estara no github, vamos a primeira solucao. Crie um arquivo chamado `demo_keyboard.ino`:
+
+```bash
+touch demo_keyboard.ino
+```
+
+A primeira solucao consiste em verificar linah por linha e coluna por coluna usando varios if's para achar qual botao foi apertado, tambem eh utilizado um conceito chamado interrupt, um interruptor em C/CPP eh uma maneira de parar o processamento atual para realizar outra tarefa que chegou, por exemplo um botao pressionado. Porem nao se preocupem com interruptores ainda.
+
+```cpp
+
+```
 
 Etapas:
 Baixar e instalar o git
@@ -82,6 +119,10 @@ Aproveite esse tempo para melhorar alguma coisa no codigo e treinar trabalhar co
 * [ ] Criar repositorio do projeto horta e subir os codigos.
 
 * [ ] Criar um readme para cada projeto.
+
+* [ ] Criar o projeto tranca com um readme inicialmente
+
+* [ ] Abrir um Pull Request com o codigo da implementacao da autenticacao por teclado para que possamos revisa-lo
 
 
 ## Referências e recursos úteis

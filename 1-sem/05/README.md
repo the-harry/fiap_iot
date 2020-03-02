@@ -98,12 +98,10 @@ Para a primeira parte do projeto vamos implementar os sensores descritos acima u
 
 ### Tasklist
 
-* [ ] Medir sensores
+* [ ] Medir sensores e imprimir as medicoes via serial
 * [ ] Acender o led verde quando for o momento de fazer a irrigacao
 * [ ] Antes de validar a umidade do solo leve em consideracao a luminosidade antes de ativar a irrigacao
 * [ ] Quando o solo estiver seco mas nao puder realizar a irrigacao por causa da luminosidade acenda o led vermelho
-
-* Bonus: Caso esteja um dia muito quente(acima de 25C), diminua o valor minimo de umidade do solo preciso para irrigar.
 
 Tambem tente explorar outras maneiras de fazer o mesmo código.
 

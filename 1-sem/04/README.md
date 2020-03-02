@@ -138,7 +138,6 @@ void loop() {
   }
   delay(1000); // espera um segundo e comeca novamente
 }
-
 ```
 
 ## IO - Entendendo os sensores e atuadores
