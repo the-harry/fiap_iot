@@ -59,6 +59,26 @@ if(numero == 1 || numero == 0) {
 }
 ```
 
+Para treinarmos um pouco vamos fazer um algoritimo. Escreva um programa que leia um numero, caso ele seja multiplo de 3 imprima 'fizz', caso seja multiplo de 5 imprima 'buzz', caso nao seja multiplo de 3 nem 5 imprima o proprio numero:
+
+
+```cpp
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int num = 5;
+
+  if(num % 3 == 0) {
+    Serial.println("Fizz");
+  } else if(num % 5 == 0) {
+    Serial.println("Buzz");
+  } else {
+    Serial.println(num);
+  }
+}
+```
 
 ## Ternários
 
@@ -71,6 +91,35 @@ idade > 18 ? Serial.println("Você pode dirigir.") : Serial.println("Você ainda
 Ternários sempre seguem o seguinte padrao:
 
 `condição` ? `oque_acontece_quando_verdade` : `oque_acontece_quando_falso;`
+
+Como falamos podemos usar apenas duas condicoes em ternarios, entao vamos alterar um pouco o exemplo anterior, dessa vez se for multiplo de 3 imprimiremos fizz, caso nao seja imprimiremos o numero:
+
+```cpp
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int num = 3;
+
+  num % 3 == 0 ? Serial.println("Fizz") : Serial.println(num);
+}
+```
+
+Podemos tambem fazer esse codigo incrementar o numero se aproveitando da estrutura do loop e do operador `++`:
+
+```cpp
+int num = 3;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  num % 3 == 0 ? Serial.println("Fizz") : Serial.println(num);
+  num++;
+}
+```
 
 
 ## Switch case
@@ -89,6 +138,37 @@ switch (var) {
   default:
     // comando(s) caso nao entre em nenhum outro caso
     break;
+}
+```
+
+Como no switchcase esperamos varios valores diferentes para uma mesma variavel esse exemplo nao faria muito sentido para reescrever o fizzbuzz, porem imagine que um um programa pega um codigo http e fala qual a sua descricao, poderiamos fazer algo assim:
+
+```cpp
+int http_status = 200;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  switch (http_status) {
+  case 100:
+    Serial.println("Continue");
+    break;
+  case 200:
+    Serial.println("Ok");
+    break;
+  case 300:
+    Serial.println("Multiple choices");
+  case 400:
+    Serial.println("You made something wrong");
+  case 500:
+    Serial.println("The developer made something wrong");
+    break;
+  default:
+    Serial.println("Qualquer outro codigo sem ser os listados");
+    break;
+}
 }
 ```
 
