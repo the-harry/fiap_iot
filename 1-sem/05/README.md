@@ -26,6 +26,9 @@ Antes de falarmos de tomadas de decisões precisamos entender os operadores logi
 
 - `Ternário` é um tipo especial de operadores que nos permitem tomar decisões em apenas uma linha. Isso ficará mais claro ao final da aula.
 
+
+## IF, ELSE, ELSE IF
+
 Agora que já sabemos fazer comparações e montar operações lógicas podemos de fato tomar decisões, para isso usamos o `if`, no caso abaixo criamos uma condição que toma uma decisão baseado na idade do indivíduo.
 
 ```cpp

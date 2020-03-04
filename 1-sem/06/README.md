@@ -210,6 +210,20 @@ for(int i = 0; i < 10; i++) {
 
 Observe que com o break o loop eh realmente interrompido, enquanto com o continue ele pula apenas a iteracao mas continua o loop ate o final.
 
+
+## Motores
+
+Existem varios tipos de motores, os mais conhecidos sao os motores de passo, servo e dc. No projeto petfeeder usaremos um motor servo para abrir a porta e alimentar o pet. Mas vamos entender melhor cada tipo:
+
+* `Motor DC`: Eh o motor mais conhecido, usado em diversas aplicacoes como maquinas de lavar roupas e furadeiras, eles tem uma velocidade muito alta, porem nao nos permite controlar com exatidao a posicao do motor.
+
+* `Servo motor`: O servo motor tem a capacidade de ir para uma posicao especifica, em relacao a suas coordenadas.
+
+* `Motor de passo`: O motor de passo podemos controlar sua posicao como o servo motor, porem ele tem mais precisao e a maneira de usa-lo eh um pouco diferente.
+
+Por enquanto vamos nos preocupar com o servo motor, usaremos o motor `sg90`, para controla-lo devemos indicar em qual posicao ele deve ir, porem devemos andar posicao por posicao, caso contrario ele pode fazer um movimento muito brusco e danificar alguma coisa.
+
+
 ## Desafio
 
 ### User history
@@ -219,7 +233,7 @@ Essa semana seu time está começando outro projeto em paralelo. Essa solução 
 
 ### Tasklist
 
-* [ ] Abrir fechar o motor apos ler o sensor
+* [ ] Desenvolver solução para abrir e fechar o motor ao detectar movimento no sensor PIR. (considere a angulacao maxima possivel do motor sendo 180°)
 
 
 ## Referências e recursos úteis

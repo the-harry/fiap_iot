@@ -139,7 +139,7 @@ Seu squad fez recentemente um POC para o projeto petfeeder, como daremos continu
 * [ ] Melhorar codigo inicial
 Bonus:
 * [ ] Use outro mecanismo de intervalo sem ser o delay para evitar bugs com o tempo
-
+* [ ] Repita os mesmos passos para o projeto da horta
 
 ## Referências e recursos úteis
 
