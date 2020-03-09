@@ -1,8 +1,10 @@
 #include "DHT.h"
 
-#define LDR A0
-#define DHTPIN A2
-#define SENSOR_UMIDADE A5
+#define LED_GREEN 12
+#define LED_RED 13
+#define HIGROMETRO A1
+#define LDR A2
+#define DHTPIN A3
 #define DHTTYPE DHT11
 
 DHT dht(DHTPIN, DHTTYPE);
@@ -14,11 +16,11 @@ void setup() {
 
 void loop() {
   // mede umidade do solo
-  int soil_humidity = analogRead(SENSOR_UMIDADE);
+  int soil_humidity = analogRead(HIGROMETRO);
   delay(10);
 
   // mede luminosidade
-  int light = analogRead(LDR);
+  int luminosidade = analogRead(LDR);
   delay(10);
 
   // mede umidade do ar
@@ -35,7 +37,18 @@ void loop() {
   }
   delay(10);
 
-  // imprime os resultados das medicoes
+  // verifica se pode irrigar ou nao
+  if (soil_humidity > 800 && luminosidade > 500) {
+    digitalWrite(LED_GREEN, HIGH);
+    digitalWrite(LED_RED, LOW);
+    Serial.println(" Irrigando horta");
+  } else if (soil_humidity > 800 && luminosidade < 500) {
+    digitalWrite(LED_RED, HIGH);
+    digitalWrite(LED_GREEN, LOW);
+    Serial.println("Solo seco, porem muito sol, abortando irrigacao.");
+  }
+
+  // imprime valores das medicoes
   Serial.print("Umidade do solo: ");
   Serial.println(soil_humidity);
 
@@ -47,20 +60,9 @@ void loop() {
   Serial.println(temp);
 
   Serial.print("Luminosidade: ");
-  Serial.println(light);
+  Serial.println(luminosidade);
 
-  Serial.println("=====================================");
-
-  // informa o nivel de umidade do solo
-  if (soil_humidity > 0 && soil_humidity < 400) {
-    Serial.println(" Status: Solo umido");
-  } else if (soil_humidity > 400 && soil_humidity < 800) {
-    Serial.println(" Status: Umidade moderada");
-  } else {
-    Serial.println(" Status: Solo seco");
-  }
-
-  Serial.println("=====================================");
+  Serial.println("=====================================\n\n");
 
   delay(2000);
 }
