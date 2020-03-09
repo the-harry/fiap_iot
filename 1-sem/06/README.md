@@ -46,6 +46,8 @@ void loop() {
 }
 ```
 
+Agora vamos calcular um algoritimo mais complicado para treinar um pouco. 
+
 ## While loops
 
 O while, pode ser feito de duas maneiras, similarmente ao loop for, ele realizara algo ate que a condição pare de ser verdadeira. Mas no loop while usamos um contador externo, que eh declarado antes de comecar o loop, e apos sua finalizacao o valor nao se perde. A primeira maneira segue a seguinte estrutura:

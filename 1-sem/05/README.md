@@ -168,7 +168,7 @@ void loop() {
   default:
     Serial.println("Qualquer outro codigo sem ser os listados");
     break;
-}
+ }
 }
 ```
 
@@ -177,7 +177,18 @@ void loop() {
 ### User history
 
 Seu time está iniciando um novo projeto para monitorar e automatizar hortas e jardins domésticos. Após o levantamento de requesitos, foi definido que o projeto deverá medir a umidade do solo, umidade do ar, temperatura e luminosidade. E essa solução também tem que ser capaz de irrigar automaticamente o jardim quando necessário.
+
 Para a primeira parte do projeto vamos implementar os sensores descritos acima usando o codigo de exemplo apresentado como base, queremos armazenar os valores das medicoes e verificar se deve irrigar a horta ou nao baseado na umidade do solo e no nivel de luminosidade. Entao peguem o diagrama feito na aula 2 e vamos coloca-lo em pratica!
+
+Usaremos um sensor higrometro para medir a umidade do solo e um sensor LDR para medir a luminosidade e por ultimo usaremos o DHT11 para medir a temperatura e umidade do ar, esse sensor precisa da lib DHT11 da Adafruit. Use as seguintes conexoes para esse projeto:
+
+```yaml
+LED verde: pino 12,
+LED vermelho: pino 13,
+Higrometro: pino A1,
+LDR: pino A2,
+DHT: pino A3
+```
 
 ### Tasklist
 
