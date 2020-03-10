@@ -4,13 +4,15 @@
 
 ## Operadores
 
-Antes de falarmos de tomadas de decisões precisamos entender os operadores logicos em C/CPP, com eles vamos fazer comparações para saber o que fazer. Temos três tipos de operadores, os operadores unários, os binários, e o ternário. Segue abaixo uma lista dos principais operadores com uma explicação de cada tipo:
+Antes de falarmos de tomadas de decisões, precisamos primeiramente entender os operadores lógicos em C/CPP, pois será com eles que faremos as devidas comparações para saber o que fazer.
 
-- `Unários` são operadores que só precisam de um elemento, exemplo `int a = 0; a++;`. Quando falarmos de controles de repetição isso ficará mais claro.
+Existem três tipos de operadores, sendo eles: os operadores unários, binários e ternários. Segue abaixo uma lista contendo uma explicação referente a cada tipo de operador, além de seus principais modelos:
+
+- `Unários` são operadores que precisam apenas de um elemento, como por exemplo: `int a = 0; a++;`. No momento de nosso estudo em que falarmos de controles de repetição, este conceito ficará mais claro.
 
   * `++` Incrementa valor
 
-  * `--` Decrementa valor
+  * `--` -- Decrementa valor
 
 - `Binários` São operadores que dependem de dois elementos, esses operadores também tem suas subcategorias: aritméticos, relacionais, lógicos, de atribuição ou bitwise.
 
@@ -24,12 +26,13 @@ Antes de falarmos de tomadas de decisões precisamos entender os operadores logi
 
   - Operadores `Bitwise` transformam uma operação a nível de bits para realizar os cálculos, eles são muito mais performáticos e quase tudo que é calculado em computadores acaba virando uma operação bitwise. `&, |, ^, <<, >>, ~`
 
-- `Ternário` é um tipo especial de operadores que nos permitem tomar decisões em apenas uma linha. Isso ficará mais claro ao final da aula.
+- `Ternários` considerados um tipo especial de operador, estes nos permitem tomar decisões em apenas uma linha. Isso ficará mais claro ao final desta aula.
 
 
 ## IF, ELSE, ELSE IF
 
-Agora que já sabemos fazer comparações e montar operações lógicas podemos de fato tomar decisões, para isso usamos o `if`, no caso abaixo criamos uma condição que toma uma decisão baseado na idade do indivíduo.
+Agora que já sabemos fazer comparações e montar operações lógicas, será possível de fato tomarmos decisões. Para isso usamos o if, como será
+visto no caso abaixo, em que criamos uma condição para a tomada de uma decisão com base na idade do indivíduo:
 
 ```cpp
 if(idade > 18) {
@@ -41,9 +44,9 @@ if(idade > 18) {
 }
 ```
 
-Podemos tambem usar operadores diferentes para compor uma condição, exemplos:
+Podemos também usar operadores diferentes para compor uma condição, como veremos nos exemplos a seguir.
 
-Para entrar na montnha russa precisamos ter no minimo 10 anos e 150cm de altura.
+Para entrar em uma montanha russa, precisamos ter, no mínimo, 10 anos de idade e 150cm de altura.
 
 ```cpp
 if(altura > 150 && idade > 10) {
@@ -51,7 +54,7 @@ if(altura > 150 && idade > 10) {
 }
 ```
 
-Ou podemos falar que caso um retorno seja 1 ou 0 ele eh um valor boleano.
+Ou podemos falar que, caso um retorno seja 1 ou 0, ele é um valor boleano.
 
 ```CPP
 if(numero == 1 || numero == 0) {
@@ -59,8 +62,9 @@ if(numero == 1 || numero == 0) {
 }
 ```
 
-Para treinarmos um pouco vamos fazer um algoritimo. Escreva um programa que leia um numero, caso ele seja multiplo de 3 imprima 'fizz', caso seja multiplo de 5 imprima 'buzz', caso nao seja multiplo de 3 nem 5 imprima o proprio numero:
+Para treinarmos um pouco este conteúdo, vamos fazer um algoritmo.
 
+Escreva um programa que leia um número, conforme as orientações: caso ele seja um múltiplo de 3, imprima "fizz"; caso seja um múltiplo de 5, imprima "buzz" e, caso não seja um múltiplo de 3 e nem de 5, imprima o próprio número:
 
 ```cpp
 void setup() {
@@ -82,17 +86,20 @@ void loop() {
 
 ## Ternários
 
-Como falamos anteriormente também temos ternários, que são operadores para fazer um if e else simples em uma linha. Ele eh utilizado para representar condicoes em apenas uma linha. Nao use ternarios caso precise de mais de uma condição.
+Como falamos anteriormente, temos também os operadores ternários, que trabalham desenvolvendo um if ou um else simples em apenas uma linha. Ele é utilizado, geralmente, para representar condições em apenas uma linha.
+
+Atenção: Não use ternários caso precise de mais de uma condição.
 
 ```cpp
 idade > 18 ? Serial.println("Você pode dirigir.") : Serial.println("Você ainda não pode dirigir.");
 ```
 
-Ternários sempre seguem o seguinte padrao:
+Os Ternários sempre seguem o seguinte padrão:
 
 `condição` ? `oque_acontece_quando_verdade` : `oque_acontece_quando_falso;`
 
-Como falamos podemos usar apenas duas condicoes em ternarios, entao vamos alterar um pouco o exemplo anterior, dessa vez se for multiplo de 3 imprimiremos fizz, caso nao seja imprimiremos o numero:
+Como já mencionado nesta aula, podemos usar apenas duas condições em ternários. Por isso, vamos então alterar um pouco o exemplo anterior:
+dessa vez, se for um múltiplo de 3, imprimiremos fiz e, caso não seja, imprimiremos o próprio número:
 
 ```cpp
 void setup() {
@@ -106,7 +113,7 @@ void loop() {
 }
 ```
 
-Podemos tambem fazer esse codigo incrementar o numero se aproveitando da estrutura do loop e do operador `++`:
+Podemos também fazer com que esse código incremente o número, se aproveitando da estrutura do loop e do operador `++`:
 
 ```cpp
 int num = 3;
@@ -124,8 +131,9 @@ void loop() {
 
 ## Switch case
 
-Também temos o switch case, que escolhe a partir de uma série de opções qual deve ser feita em cada caso.
-A palavra-chave break interrompe o comando switch, e é tipicamente usada no final de cada case. Sem um comando break, o comando switch irá continuar a executar as expressões seguintes (desnecessariamente) até encontrar um break, ou até o final do comando switch ser alcançado.
+O switch case, ainda não citado nesta aula, possui a função de escolher, a partir de uma série de opções, qual é mais válida e deverá ser executada em cada caso.
+
+A palavra-chave break interrompe o comando switch, e é tipicamente usada no final de cada case. Sem um comando break, o comando switch irá continuar a executar as expressões seguintes, desnecessariamente, até encontrar um break, ou até o final do comando switch ser alcançado.
 
 ```cpp
 switch (var) {
@@ -141,7 +149,7 @@ switch (var) {
 }
 ```
 
-Como no switchcase esperamos varios valores diferentes para uma mesma variavel esse exemplo nao faria muito sentido para reescrever o fizzbuzz, porem imagine que um um programa pega um codigo http e fala qual a sua descricao, poderiamos fazer algo assim:
+Como, no switch case, esperamos ver vários valores diferentes para uma mesma variável, este exemplo não faria muito sentido para reescrever o fizzbuzz. Porém, imagine que um programa pegue um código http e fale qual é a sua descrição. Poderíamos, a partir daí, desenvolver um raciocínio próximo a isso:
 
 ```cpp
 int http_status = 200;
@@ -160,8 +168,10 @@ void loop() {
     break;
   case 300:
     Serial.println("Multiple choices");
+    break;
   case 400:
     Serial.println("You made something wrong");
+    break;
   case 500:
     Serial.println("The developer made something wrong");
     break;
@@ -176,28 +186,30 @@ void loop() {
 
 ### User history
 
-Seu time está iniciando um novo projeto para monitorar e automatizar hortas e jardins domésticos. Após o levantamento de requesitos, foi definido que o projeto deverá medir a umidade do solo, umidade do ar, temperatura e luminosidade. E essa solução também tem que ser capaz de irrigar automaticamente o jardim quando necessário.
+Seu time está iniciando um novo projeto para monitorar e automatizar hortas e jardins domésticos. Após o levantamento dos requisitos, foi definido que o projeto deverá medir a umidade do solo, a umidade do ar, a temperatura e a luminosidade. Essa solução também deve ser capaz de irrigar automaticamente o jardim, quando necessário.
 
-Para a primeira parte do projeto vamos implementar os sensores descritos acima usando o codigo de exemplo apresentado como base, queremos armazenar os valores das medicoes e verificar se deve irrigar a horta ou nao baseado na umidade do solo e no nivel de luminosidade. Entao peguem o diagrama feito na aula 2 e vamos coloca-lo em pratica!
+Para a primeira parte do projeto, vamos implementar os sensores descritos acima, utilizando o código de exemplo apresentado como base. Como queremos armazenar os valores das medições e verificar se este mecanismo deve irrigar a horta ou não, baseado na umidade do solo e no nível de luminosidade, então peguem o diagrama desenvolvido na aula 2 e vamos colocá-lo em pratica!
 
-Usaremos um sensor higrometro para medir a umidade do solo e um sensor LDR para medir a luminosidade e por ultimo usaremos o DHT11 para medir a temperatura e umidade do ar, esse sensor precisa da lib DHT11 da Adafruit. Use as seguintes conexoes para esse projeto:
+Usaremos um sensor higrômetro para medir a umidade do solo, um sensor LDR para medir a luminosidade e, por último, o DHT11 para medir a temperatura e umidade do ar. Esse sensor precisa da lib DHT11 da Adafruit.
+
+Use as seguintes conexões para esse projeto:
 
 ```yaml
-LED verde: pino 12,
-LED vermelho: pino 13,
-Higrometro: pino A1,
+LED_GREEN: pino 12,
+LED_RED: pino 13,
+Higrômetro: pino A1,
 LDR: pino A2,
 DHT: pino A3
 ```
 
 ### Tasklist
 
-* [ ] Medir sensores e imprimir as medicoes via serial
-* [ ] Acender o led verde quando for o momento de fazer a irrigacao
-* [ ] Antes de validar a umidade do solo leve em consideracao a luminosidade antes de ativar a irrigacao
-* [ ] Quando o solo estiver seco mas nao puder realizar a irrigacao por causa da luminosidade acenda o led vermelho
+* [ ] Medir sensores e imprimir as medições via serial
+* [ ] Acender o LED verde quando for o momento de fazer a irrigação
+* [ ] Antes de validar a umidade do solo, leve em consideração a luminosidade do local antes de ativar a irrigação
+* [ ] Quando o solo estiver seco, mas não puder realizar a irrigação por conta da luminosidade, acenda o LED vermelho
 
-Tambem tente explorar outras maneiras de fazer o mesmo código.
+Tente também explorar outras maneiras de utilizar o mesmo código.
 
 
 ## Referências e recursos úteis
