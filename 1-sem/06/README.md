@@ -1,12 +1,14 @@
-# Aula 6 - Controle de repetição - Loops for e while.
+# Aula 6 - Controle de Repetição - Loops For e While.
 
 ## Conteúdo
 
-Muitas vezes queremos que nosso código faça algumas ações repetitivas, e não faz muito sentido escrever a mesma coisa 10x seguidas. Para isso temos controles de repetições, temos três opções disponíveis, while, for e do while. Todos eles servem para repitir algumas instruções até que uma condição seja atingida, caso o loop não seja interrompido você acaba criando um loop infinito. Vamos começar entendendo o loop for:
+Muitas vezes queremos que nosso código execute algumas ações repetitivas, porém sem precisar escrever o mesmo comando várias vezes seguidas. Para isso, temos à disposição controles de repetição, estando estes disponíveis em três opções: while, for e do while. Todos eles possuem a função de repetir as instruções desejadas até que uma condição seja atingida e, caso o loop não seja interrompido, acaba-se criando um loop infinito.
+Vamos iniciar entendendo o loop for:
 
 ## For loops
 
-Geralmente usamos o for quando sabemos exatamente o numero de ciclos que temos que realizar, declaramos o loop for informando um contador que ao acabar o loop esse valor se perde, um a condição para que esse loop se repita ate que ela seja verdadeira, e por ultimo incrementamos ou decrementamos o loop usando os operadores `++` ou `--`. Ele tem a seguinte estrutura:
+Geralmente, utilizamos o for quando sabemos exatamente o número de ciclos que temos a realizar. Declaramos o loop for informando um contador que, ao acabar o loop, esse valor se perderá. Neste caso, uma condição para que esse loop se repita, até que ela seja verdadeira, precisa por último que incrementemos ou decrementemos o loop, utilizando os operadores `++` ou `--`.
+Este loop possui a seguinte estrutura:
 
 ```cpp
 for (inicialização; condição; incremento) {
@@ -24,7 +26,7 @@ for(int i = 0; i < 10; i++) {
 > 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 ```
 
-Podemos por exemplo controlar o brilho de um led com PWM usando o valor do loop:
+Podemos, por exemplo, controlar o brilho de um LED com PWM(utilizando o valor do loop):
 
 ```cpp
 int PWMpin = 10;
@@ -46,19 +48,19 @@ void loop() {
 }
 ```
 
-Agora vamos calcular um algoritimo mais complicado para treinar um pouco. 
+Agora vamos calcular um algoritimo mais complicado para treinar um pouco.
 
 ## While loops
 
-O while, pode ser feito de duas maneiras, similarmente ao loop for, ele realizara algo ate que a condição pare de ser verdadeira. Mas no loop while usamos um contador externo, que eh declarado antes de comecar o loop, e apos sua finalizacao o valor nao se perde. A primeira maneira segue a seguinte estrutura:
+O while pode ser feito de duas maneiras e, similarmente ao loop for, executará uma ação até que a condição pare de ser verdadeira. Na primeira forma de usarmos o loop while, porém, utilizamos um contador externo que, sendo declarado antes de começar o loop, fará com que o valor não se perca após sua finalização, nos trazendo assim a diferença do loop for. A primeira maneira segue a seguinte estrutura:
 
 ```cpp
 while (condicao) {
-  // bloco de codigo
+  // bloco de código
 }
 ```
 
-Exemplo da implementacao de contar os 10 primeiros numeros comecando do 0:
+Segue um exemplo da implementação de contar os 10 primeiros números, começando do 0:
 
 ```cpp
 int count = 0;
@@ -71,7 +73,7 @@ while(count < 10) {
 > 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 ```
 
-Acima replicamos o exemplo do for porem usando o while. Caso queira fazer uma contagem ao contrario podemos simplesmente fazer:
+Acima replicamos o exemplo do for, porém usando o while. Caso você queira fazer uma contagem decrescente, podemos simplesmente fazer:
 
 ```cpp
 int count = 9;
@@ -82,9 +84,8 @@ while(count > 0) {
 }
 ```
 
-Repare que dessa vez usamos o operador `--`, que seria a mesma coisa que escrever `count = count -1;`.
-
-Tambem podemos modificar o exemplo do pwm para funcionar com um loop while:
+Repare que, desta vez, usamos o operador `--`, que seria a mesma coisa que escrever: `count = count -1;`.
+Podemos também modificar o exemplo do PWM, para que possa funcionar com um loop while:
 
 ```cpp
 int PWMpin = 10;
@@ -112,15 +113,15 @@ void loop() {
 
 ## Do while loops
 
-A segunda maneira de fazer loops while eh usando o  `do ... while` loop, o while que vimos anteriormente ele testa a condição no inicio da execucao, entao caso a primeira condição seja falsa ele nunca executa aquele bloco de codigo, porem o do while checa a condição apenas no final do bloco, logo o codigo eh executado pelo menos uma vez. Ele tem a seguinte estrutura:
+A segunda maneira de fazer loops while é usando o `do ... while` loop. O tipo de loop while que vimos anteriormente testa a condição no início da execução e, sendo assim, caso a primeira condição seja falsa, ele nunca conseguirá executar aquele bloco de códigos. Já no caso do do while, é possível checar a condição apenas no final do bloco. Logo, o código em questão será executado ao menos uma vez. Este tipo de loop tem a seguinte estrutura:
 
 ```cpp
 do {
-  // bloco de codigo
+  // bloco de código
 } while (condicao);
 ```
 
-Podemos tambem reescrever o exemplo do led abaixo usando essa estrutura:
+Podemos também reescrever abaixo o exemplo do LED, dessa vez usando essa estrutura:
 
 ```cpp
 int PWMpin = 10;
@@ -146,45 +147,45 @@ void loop() {
 }
 ```
 
-Porem apenas use esse tipo de loops caso precise que o codigo seja executado pelo menos uma vez independente ou nao de atingir a condicao desejada.
+É importante lembrar que você somente deve utilizar esse tipo de loops, caso precise que o código seja executado ao menos uma vez, independente de ser atingida (ou não) a condição desejada.
 
 ## Loops infinitos
 
-Um loop infinito eh um loop que nunca vai atingir a condicao estipulada, geralmente evitamos esses tipos de loops, porem eles tambem podem ser criados caso queria por algum motivo. Vou listar abaixo algumas maneiras de se fazer isso:
+Um loop infinito é uma variação de loop que nunca conseguirá atingir a condição anteriormente estipulada. Sendo assim, apesar de ser comum geralmente evitarmos esse tipo de loop, ele também poderá ser criado caso haja algum motivo para tal. Vou listar abaixo algumas maneiras de fazer isso:
 
-Usando o loop for apenas com `;`:
+Usando o loop `for` apenas com `;`:
 
 ```cpp
 for (;;) {
-   // bloco de codigo;
+   // bloco de código;
 }
 ```
 
-Usando o while:
+Usando o `while`:
 
 ```cpp
 while(1) {
-   // bloco de codigo;
+   // bloco de código;
 }
 ```
 
-Usando do while:
+Usando `do...while`:
 
 ```cpp
 do {
-   bloco de codigo;
+   bloco de código;
 }
 while(1);
 ```
 
-No geral voce nao vai usar isso, mas eh importante saber que existe.
+De forma geral, serão muito raros os casos em que este tipo de loop precisará ser utilizado, mas, mesmo assim, é importante não nos esquecermos de que eles existem.
 
 
-## Manipulacao de loops
+## Manipulação de loops
 
-Tambem temos recursos para sair manualmente de um loop ou pular apenas uma iteracao dele, esses recursos podem ser muito interessantes quando queremos interromper o codigo em uma condicao especial ou ate mesmo pular uma das iteracoes do loop sem interromper as proximas.
+Dispomos também de recursos que nos permitem sair manualmente de um loop ou mesmo pular apenas uma de suas iterações, sendo esses recursos muito interessantes quando queremos interromper o código em uma condição especial, ou até mesmo pular uma das iterações do loop sem que seja preciso interromper as próximas.
 
-* `break`: Ja vimos esse comando no switch case, mas podemos usa-lo de forma semelhante nos loops vistos hoje.
+* `break`: Já vimos esse comando no switch case, mas podemos também usá-lo de forma semelhante nos loops vistos hoje, conforme segue abaixo:
 
 ```cpp
 for(int i = 0; i < 10; i++) {
@@ -197,7 +198,7 @@ for(int i = 0; i < 10; i++) {
 > 0, 1, 2, 3, 4, 5, 6
 ```
 
-* `continue`: O continue simplesmente pula a iteracao:
+* `continue`: O continue simplesmente pulará a iteração:
 
 ```cpp
 for(int i = 0; i < 10; i++) {
@@ -210,32 +211,32 @@ for(int i = 0; i < 10; i++) {
 > 0, 1, 2, 3, 4, 5, 6, 8, 9
 ```
 
-Observe que com o break o loop eh realmente interrompido, enquanto com o continue ele pula apenas a iteracao mas continua o loop ate o final.
+Observe que, com o break, o loop foi realmente interrompido, enquanto com o continue ele pulou apenas a iteração, mas continuou o loop até o final.
 
 
 ## Motores
 
-Existem varios tipos de motores, os mais conhecidos sao os motores de passo, servo e dc. No projeto petfeeder usaremos um motor servo para abrir a porta e alimentar o pet. Mas vamos entender melhor cada tipo:
+Existem vários tipos de motores, sendo que os mais conhecidos são os motores de passo, servo e DC. No projeto petfeeder, usaremos um motor servo para abrir a porta e alimentar o pet. Mas, primeiramente, vamos entender melhor cada um dos tipos citados:
 
-* `Motor DC`: Eh o motor mais conhecido, usado em diversas aplicacoes como maquinas de lavar roupas e furadeiras, eles tem uma velocidade muito alta, porem nao nos permite controlar com exatidao a posicao do motor.
+* `Motor DC`: sendo o motor mais conhecido, o motor DC é usado em diversas aplicações, como máquinas de lavar roupas e furadeiras. Eles possuem uma velocidade muito alta, porém não nos permitem controlar com exatidão a posição do motor.
 
-* `Servo motor`: O servo motor tem a capacidade de ir para uma posicao especifica, em relacao a suas coordenadas.
+* `Servo motor`: o servo motor tem a capacidade de ir para uma posição específica em relação às suas coordenadas.
 
-* `Motor de passo`: O motor de passo podemos controlar sua posicao como o servo motor, porem ele tem mais precisao e a maneira de usa-lo eh um pouco diferente.
+* `Motor de passo`: apesar de podermos controlar sua posição, como no caso do servo motor, este possui mais precisão, além da maneira de usá-lo ser também um pouco diferente.
 
-Por enquanto vamos nos preocupar com o servo motor, usaremos o motor `sg90`, para controla-lo devemos indicar em qual posicao ele deve ir, porem devemos andar posicao por posicao, caso contrario ele pode fazer um movimento muito brusco e danificar alguma coisa.
+Por enquanto, vamos nos preocupar com o servo motor: usaremos em nosso projeto o motor sg90 e, para controlá-lo, deveremos indicar em qual posição ele deve ir. Porém, é importante ressaltar que devemos andar posição por posição, pois, caso contrário, ele poderá fazer um movimento muito brusco e danificar alguma coisa.
 
 
 ## Desafio
 
 ### User history
 
-Essa semana seu time está começando outro projeto em paralelo. Essa solução tem como objetivo alimentar animais domésticos que tem donos que ficam muito tempo fora de casa ou até mesmo em casos de viagem. O responsável pelo hardware criou um protótipo para isso, a ideia é usar um motor servo para abrir e fechar uma porta para liberar comida, para ativar a o motor sera usado um sensor de presenca PIR.
-
+Essa semana seu time está começando outro projeto em paralelo. Essa solução tem como objetivo alimentar animais domésticos, que possuem donos que ficam muito tempo fora de casa, ou mesmo em casos em que precisem viajar. O responsável pelo hardware criou um protótipo para isso, sendo que a ideia é usar um motor servo para abrir e fechar uma porta para liberar comida.
+Para que o motor seja ativado, será necessário o uso de um sensor de presença PIR.
 
 ### Tasklist
 
-* [ ] Desenvolver solução para abrir e fechar o motor ao detectar movimento no sensor PIR. (considere a angulacao maxima possivel do motor sendo 180°)
+* [ ] Desenvolver uma solução para abrir e fechar o motor ao detectar movimento no sensor PIR. (considere a angulação máxima possível do motor como sendo 180°)
 
 
 ## Referências e recursos úteis
