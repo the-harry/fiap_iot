@@ -3,11 +3,13 @@
 
 ## Conteúdo
 
-## Declarar e chamar funcoes
+## Declarar e chamar funções:
 
-Funcoes sao um bloco de codigo que eh executado quando chamado, primeiro declaramos uma funcao e colocamos seu conteudo, e posteriormente fazemos a chamada de fato.
-Funcoes servem para separar nosso codigo e dar mais significado aos trecos de codigos, isso sem contar que nos ajuda a ter um codigo menos repetitivo(DRY - Dont Repeat Yourself). Claro que poderiamos fazer instrucao por instrucao as repetindo infinitamente, mas isso provavelmente ficaria muito pesado, demorado, e faria um inferno a vida da proxima pessoa que pegasse para cuidar do projeto.
-O ato de declarar uma funcao eh bem parecido com o de declarar uma variavel, colocamos o tipo da funcao, seguido de um nome e dentro fazemos nosso codigo. Talvez voce esteja se perguntando, mas o que seria esse tipo da funcao? A ideia eh que uma funcao execute uma quantidade finita de passos e retorne algum valor, o tipo do retorno da funcao eh o que usamos como base para declarar seu tipo, por exemplo, imagine que temos uma funcao que recebe dois numeros inteiros, os soma e retorna o valor. Podemos declarar essa funcao assim:
+As Funções são blocos de códigos, que são executados quando chamados. Primeiramente, declaramos uma função e colocamos seu conteúdo e, num segundo momento, fazemos a chamada de fato. Funções servem para, além de separar nosso código e dar mais significado aos trechos de códigos, nos ajudar a ter uma codificação menos repetitiva (processo chamado DRY, ou seja, Don’t Repeat Yourself).
+
+Claro que poderíamos desenvolver instrução por instrução, as repetindo infinitamente, mas isso provavelmente tornaria o processo muito pesado e demorado, fazendo “um inferno” na vida da próxima pessoa que se disponibilizasse a cuidar do projeto. O ato de declarar uma função é bem parecido com o de declarar uma variável, pois colocaremos o tipo da função, seguido de um nome e, dentro deste, faremos o nosso código.
+
+Talvez você esteja se perguntando: mas o que seria esse tipo da função? A ideia é que uma função execute uma quantidade finita de passos e retorne algum valor, sendo que o tipo do retorno da função é o que utilizaremos como base para declarar seu tipo. Por exemplo: imagine que temos uma função que recebe dois números inteiros, os soma e retorna o valor. Podemos declarar essa função da seguinte forma:
 
 ```cpp
 int soma(int a, int b) {
@@ -15,15 +17,15 @@ int soma(int a, int b) {
 }
 ```
 
-Podemos chamar a funcao acima da seguinte maneira:
+Podemos chamar a função acima da forma que segue abaixo:
 
 ```cpp
 soma(1, 2);
 ```
 
-O que me retornaria 3.
+O que nos retornaria o valor inteiro 3.
 
-Uma funcao pode ou nao receber argumentos, que sao variaveis que serao usadas dentro da funcao e depois destruidas, no exemplo acima a e b sao argumentos. Poderiamos escrever a mesma funcao sem argumentos caso tenhamos todos os valores dentro dela:
+Uma função pode ou não receber argumentos, que são variáveis que serão usadas dentro da função e depois destruídas. No exemplo acima, a e b são argumentos. Poderíamos escrever a mesma função sem estes argumentos, caso tenhamos todos os valores dentro dela:
 
 ```cpp
 int soma() {
@@ -34,14 +36,16 @@ int soma() {
 }
 ```
 
-No caso para chamar essa funcao seria:
+No caso acima, para chamar essa função usaríamos:
 
 ```cpp
 soma();
 ```
-O que tambem nos retornaria 3. Reparem que sem os argumentos nossas funcoes ficam bem mais "engessadas", se quisessemos calcular outros valores teriamos que modificar a funcao, o que nao eh muito pratico.
+O que também nos retornaria o valor inteiro 3.
 
-No caso acima a pegamos a e b, e retonamos o resultado, sempre que colocamos a palavra return no meio de uma funcao ela sai dessa funcao e nao executa as linhas abaixo. Por exemplo:
+Reparem que, sem os argumentos citados, nossas funções ficam bem mais "engessadas". Caso quiséssemos calcular outros valores, teríamos que modificar a função, o que não seria muito prático.
+
+No caso acima, pegamos a e b e retornamos o resultado, pois, sempre que colocarmos a palavra `return` no meio de uma função, ela sairá da mesma e não executará as linhas abaixo. Por exemplo:
 
 ```cpp
 int soma(int a, int b) {
@@ -51,7 +55,7 @@ int soma(int a, int b) {
 }
 ```
 
-O codigo acima teria o mesmo resultado do primeiro, porque nao eh possivel chegar no segundo return uma vez que a funcao foi terminada. E para chamarmos nossa funcao apos ser declarada eh so fazer isso:
+O código acima teria o mesmo resultado do primeiro, pois não será possível chegar ao segundo return, uma vez que a função em questão já foi terminada. Neste caso, para chamarmos nossa função após ser declarada, é só fazer isso:
 
 ```cpp
 soma(3, 6);
@@ -59,7 +63,7 @@ soma(3, 6);
 > 9
 ```
 
-Poderiamos fazer a mesma coisa para somar numeros reais:
+Poderíamos utilizar o mesmo processo para somar números reais:
 
 ```cpp
 float soma(float a, float b) {
@@ -67,9 +71,11 @@ float soma(float a, float b) {
 }
 ```
 
-No caso usamos float mas poderiamos ter usado double tambem.
+No caso, usamos o tipo float, mas poderíamos também ter optado pelo double.
 
-Porem nem toda funcao tem um retorno, muitas funcoes, como o proprio setup e loop que sao declaras com um void na frente e nao possuem a palavra return dentro dela, funcoes void, ou funcoes sem retorno, servem para executar um bloco de codigo dentro dela mas sem retornar nada. Imagine que temos uma funcao que desliga um motor:
+É importante destacar que nem toda função tem um retorno. Muitas delas, como o próprio setup e loop (que são declaradas com um void na frente e, dessa forma, não possuem a palavra return dentro dela), funções void, ou mesmo funções sem retorno, servem para executar um bloco de códigos dentro dela, mas sem nos retornar nenhuma informação.
+
+Imagine que temos uma função que desliga um motor:
 
 ```cpp
 void desliga() {
@@ -77,9 +83,9 @@ void desliga() {
 }
 ```
 
-Essa funcao nao precisa me retornar nada, apenas desligar um motor, entao nesses casos podemos usar o void.
+Essa função não precisa me retornar qualquer informação, visto que aciona apenas o desligamento do motor. Quando se tratar de um caso como este, podemos usar o void.
 
-Outro recurso interessante no C++ eh o `Function Overload`, que nos permite criar a mesma funcao com mais de um tipo diferente. Imagine que temos dois metodos, um para somar inteiros, e outro para somar reais, ficaria algo assim:
+Outro recurso interessante no C++ é o `Function Overload`, que nos permite criar a mesma função com mais de um tipo diferente. Imagine que temos dois métodos, sendo um para somar inteiros, e outro para somar reais. Pensando nessa vertente, poderíamos desenvolver algo assim:
 
 ```cpp
 int somaInt(int a, int b) {
@@ -122,31 +128,33 @@ soma(3.3, 3.3);
 
 ## Escopos
 
-Uma observacao importante quando falamos de funcoes, sao os escopos, ou namespaces, ao declarar uma variavel dentro de uma funcao ela so existira la, caso tente chama-la de fora recebera um erro falando que ela nao existe, apenas variaveis globais podem ser chamadas em qualquer lugar, uma variavel global eh declarada fora da funcao, geralemtne no inicio do codigo.
-Mas evitem colocar tudo como variaveis globais pois isso nao eh muito bacana, ja que eh mais facil alterar algo que nao deveria ser alterado e sem contar um monte de memoria disperdicada que armazenara informacoes que nao sao mais uteis, sempre que possivel use funcoes, e deixe exposto apenas variaveis que realmente sao usadas em varios lugares.
-Apenas use variaveis globais caso va usar a mesma variavel ou constante em varios lugares, porem sempre que possivel prefira passar os valores necessarios por argumentos.
+Outra observação importante, quando falamos de funções, são os escopos (ou namespaces). Ao declararmos uma variável dentro de uma função, ela somente existirá lá, caso tente chamá-la de fora. Fazendo isso, você receberá um erro falando que ela não existe, pois apenas variáveis globais podem ser chamadas em qualquer lugar.
+
+Uma variável global é declarada fora da função, ou seja, no início do código. Mas evitem colocar tudo como variáveis globais, pois isso pode não ser  muito interessante, visto que é mais fácil alterar algo que não deveria ser alterado, sem contar a quantidade de memória desperdiçada que armazenaria informações não mais úteis. Sempre que possível faça uso das funções, deixando expostas apenas variáveis que serão realmente utilizadas em diversos lugares. Use as variáveis globais somente caso seja preciso fazer uso da mesma variável ou constante em diversos lugares. Caso seja possível, prefira sempre passar os valores necessários por meio de argumentos.
 
 
 ## Desafio
 
 ### User history
 
-Seu squad fez recentemente um POC para o projeto petfeeder, como daremos continuidade ao projeto eh importante fazer um codigo mais limpo e legivel, junte-se com seu squad e quebre seu codigo em mais funcoes, aproveite tambem esse tempo para testar seu codigo e ir fazendo melhorias e consertando bugs.
+Seu squad fez recentemente um POC para o projeto petfeeder, que será a forma como darão continuidade ao projeto. É importante ressaltar que o melhor será desenvolver um código mais limpo e legível. Por isso, junte-se com seu squad e quebre seu código em maior quantidade de funções, aproveitando também esse tempo para testar seu código e ir fazendo melhorias e o ajuste dos bugs.
 
 ### Tasklist
 
-* [ ] Quebrar codigo em funcoes
-* [ ] Melhorar codigo inicial
-Bonus:
-* [ ] Use outro mecanismo de intervalo sem ser o delay para evitar bugs com o tempo
+* [ ] Quebrar código em funções
+* [ ] Melhorar código inicial
+
+Bônus:
+
+* [ ] Use outro mecanismo de intervalo, sem ser o delay, para evitar bugs com o tempo
 * [ ] Repita os mesmos passos para o projeto da horta
 
 ## Referências e recursos úteis
 
-[Explicação amigavel sobre funcoes W3C](https://www.w3schools.com/cpp/cpp_functions.asp)
+[Explicação amigável sobre funções W3C](https://www.w3schools.com/cpp/cpp_functions.asp)
 
-[Continuacao do W3C sobre argumentos de funcoes](https://www.w3schools.com/cpp/cpp_function_param.asp)
+[Continuação do W3C sobre argumentos de funções](https://www.w3schools.com/cpp/cpp_function_param.asp)
 
-[Explicacao sobre Function Overloading](https://www.w3schools.com/cpp/cpp_function_overloading.asp)
+[Explicação sobre Function Overloading](https://www.w3schools.com/cpp/cpp_function_overloading.asp)
 
-[Manual CPP funcoes(nao tao amigavel)](http://www.cplusplus.com/doc/tutorial/functions/)
+[Manual CPP funções(não tão amigável)](http://www.cplusplus.com/doc/tutorial/functions/)
