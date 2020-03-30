@@ -15,7 +15,7 @@ Com arduino:
 ![cpp](../../img/1sem/01/cpp.jpeg)
 
 
-O Arduino pode ser alimentado por uma fonte de 9v ou por um cabo serial-usb (brotip: muitas impressoras utilizam este cabo). Durante a realização de qualquer projeto, precisamos realizar a troca de dados entre o arduino e o computador e, para isso, fazemos o uso do cabo serial. A fonte ou bateria de 9v será usada para o funcionamento do projeto já realizado (quando não precisamos trocar dados). O Arduino usa C++ como linguagem padrão, mas existem alternativas, como por exemplo: python, ADA, basic, entre outros. Apesarem de serem possibilidades, estas porém são menos documentadas e a comunidade não é tão grande, além de poderem não ser tão performáticas, então talvez crie para você alguma dificuldade. Por isso, focaremos no C++!
+O Arduino pode ser alimentado por uma fonte de 9v ou por um cabo serial-usb (brotip: muitas impressoras utilizam este cabo). Durante a realização de qualquer projeto, precisamos realizar a troca de dados entre o arduino e o computador e, para isso, fazemos o uso do cabo serial. A fonte ou bateria de 9v será usada para o funcionamento do projeto já realizado (quando não precisamos trocar dados). O Arduino usa C++ como linguagem padrão, mas existem alternativas, como por exemplo: python, ADA, basic, entre outros. Apesar de serem possibilidades, estas porém são menos documentadas e a comunidade não é tão grande, além de poderem não ser tão performáticas, então talvez crie para você alguma dificuldade. Por isso, focaremos no C++!
 
 O arduino apresenta alguns pinos (a quantidade muda de acordo com o modelo), sendo a função desses pinos fazer conexões baseadas em input e output.
 
