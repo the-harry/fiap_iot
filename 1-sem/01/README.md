@@ -87,7 +87,7 @@ Hoje possuímos dois tipos disponíveis desse modelo, sendo: os que são PTH (pl
 Primeiro instale a IDE em sua máquina, acesse [esse link](https://www.arduino.cc/en/main/software) e faça o download de acordo com o seu sistema operacional.
 
 
-Agora que já entendemos o básico do funcionamento do arduino, vamos alar um pouco sobre a IDE (Integrated Development Environment) do arduino. ma IDE nos oferece todo um ambiente de desenvolvimento, onde podemos ompilar e enviar nosso código, debugar possíveis problemas, encontrar xemplos que nos ajudem a criar nossos projetos (servindo como inspiração e ase), entre muitas outras ferramentas que acabam facilitando nosso trabalho. ntre elas podemos citar algumas das principais funções:
+Agora que já entendemos o básico do funcionamento do arduino, vamos alar um pouco sobre a IDE (Integrated Development Environment) do arduino. ma IDE nos oferece todo um ambiente de desenvolvimento, onde podemos compilar e enviar nosso código, debugar possíveis problemas, encontrar exemplos que nos ajudem a criar nossos projetos (servindo como inspiração e base), entre muitas outras ferramentas que acabam facilitando nosso trabalho. entre elas podemos citar algumas das principais funções:
 
 * File -> Examples: Possui diversos exemplos para se inspirar.
 
