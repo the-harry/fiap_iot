@@ -1,4 +1,4 @@
-## Aula 9 - Arrays e estruturas de dados.
+## Aula 10 - Arrays e estruturas de dados.
 
 ## Conteúdo
 
@@ -16,7 +16,7 @@ E as chamamos assim:
 
 ### Matrizes
 
-Matrizes sao arrays bidimensionais. 
+Matrizes sao arrays bidimensionais.
 
 ### Outras estruturas
 
