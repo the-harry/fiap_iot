@@ -8,6 +8,8 @@ A primeira solucao consiste em verificar linah por linha e coluna por coluna usa
 
 ```
 
+![Teclado matricial](../../img/1sem/08/teclado.png)
+
 ## Desafio
 
 ### User history
