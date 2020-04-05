@@ -53,7 +53,7 @@ Caso não possua um Arduino, você pode usar o [tinkercad](https://www.tinkercad
 
   * `Aula 8 - Destrinchando o git.` - jardim
 
-  * `Aula 9 - Arrays e estruturas de dados.` - petfeeder
+  * `Aula 9 - Arrays e estruturas de dados.` - tranca
 
   * `Aula 10 - Protothreading.` - jardim
 

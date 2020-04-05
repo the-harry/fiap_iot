@@ -13,7 +13,7 @@ Antigamente os projetos eram gerenciados em pacotes tarball, que era basicamente
 Existem varios sistemas de controle de versao, porem atualmente o mercado usa o git como padrao. Mas nem sempre foi assim, antes era comum empresas usarem o `svn`, `mercurial`, porem eles eram mais dificeis de usar, tanto que existia uma profissao para o controlador de versao, cujo trabalho era fazer commits e releases o dia todo.
 O git foi criado em um ato de revolta do Linus Torvalds, criador e mantedor do kernel linux, pois segundo ele todas as ferramentas da epoca eram horriveis, mas ele conseguia ainda se contentar com uma empresa chamada `BitKeeper`, que tambem eh uma ferramenta de controle de versao, porem eh uma solucao proprietaria. No inicio ela permitia uso gratis para projetos opensource, mas depois quis cobrar. A resposta do Linus na epoca, foi: "Eu faco algo melhor que isso em 2 semanas!", e ele fez.
 
-O principal do git que foi o que matou seu concorrentes, foi o fato de ele trabalhar com um sistema distribuido ao invez de um centralizado, o que significa que cada maquina com uma copia do repositorio se torna como se fosse um servidor, ao invez de ter um servidor centralizado onde todo controle deve ser feito la. Isso da mais seguranca para trabalhar, ja que mesmo que voce estrague tudo que tem em sua maquina ainda eh possivel puxar o que existe em outra maquina qualquer.
+O principal do git que foi o que matou seu concorrentes, foi o fato de ele funcionar como um sistema distribuido ao invez de um centralizado, o que significa que cada maquina com uma copia do repositorio se torna como se fosse um servidor, ao invez de ter um servidor centralizado onde todo controle deve ser feito la. Isso da mais seguranca para trabalhar, ja que mesmo que voce estrague tudo que tem em sua maquina ainda eh possivel puxar o que existe em outra maquina qualquer.
 
 ## Git o que?
 
@@ -22,86 +22,139 @@ Voces ja conhecem o `github` e provavelmente ja deve ter ouvido falar do `gitlab
 ## Uso basico
 
 Certo, entendemos que vamos usar a ferramenta git com o github para gerenciar as mudancas de nosso projeto, primeira coisa que temos que fazer eh instalar o git na nossa maquina, caso use linux apenas use seu gerenciador de pacotes preferido e o instale, usando o apt: `sudo apt install git`.
-Caso use windows eh preciso instalar o (gitbash)[]
+Caso use windows eh preciso instalar o [gitbash](https://git-scm.com/download/win), que fora fornecer o git nos diponibiliza alguns comandos do linux para trabalhar mais facilmente.
 
-glossario:
-branchs
-remote
-commit
+#### Glossario:
 
-clone
-status
-commit
-push
-pull
+* branch: Eh uma ramificacao do seu projeto, uma versão criada a partir de outra branch. A principal branch eh a `master`, imagine ela como o tronco da nossa arvore, e as outras branchs como galhos.
+
+* remote: Eh o endereco do nosso repositorio remoto, como o nome diz. Ele tem uma url e um apelido, o mais comum de vermos eh o `origin`, que eh o nome dado automaticamente para o primeiro remote.
+
+* commit: Representa uma alteracao no codigo que entra para a arvore do nosso projeto.
+
+* clone: `git clone git@github.com:matheusam/fiap_iot.git` baixa um projeto.
+
+* status: `git status` mostrao status atual dos arquivos. Quando um arquivo sofre uma alteracao ele ficara vermelho, depois disso voce pode commitar essa mudanca adicionando o arquivo aos arquvios rastreados daquele commit ou descartar as alteracoes.
+
+* add: `git add file.c` adiciona um arquivo as mudancas que vamos commitar.
+
+* commit: `git commit -m "Mensagem do commit."` para fazer um commit voce precisa escrever uma mensagem sobre oque foi feite, procure ser breve e claro.
+
+* push: `git push origin master` Envia suas alteracoes da branch master para o remote.
+
+* pull: `git pull origin master` Atualiza a sua branch master, o pull na verdade eh a uniao do comando `fetch` que busca as alteracoes e traz para sua maquina, e o `merge`, que aplica as alteracoes.
+
 
 ## Na pratica
 
-Vou criar um repositorio novo para fazermos alguns testes na pratica para deixar esse fluxo de trabalho mais claro. Faremos um projeto que lera uma tecla digitada no teclado matricial e imprimira na porta serial esse valor. Primeiro vamos realizar a conexao dos fios, o teclado matricial funciona como uma matriz como o proprio nome diz, os quatro primeiros fios da esquerda representam as linhas e os tres ultimos as colunas. Ao pressionar um botao ele nos retorna um valor da matriz.
+Para praticar o que vimos hoje, vou criar um projeto para acender um led quando apertarmos um push button. Depois voces farao isso no projeto da horta, para que quando o botao for pressionado ele ative a irrigacao manualmente. Primeiro vamos entender um push button:
 
-!wiring
+Ao apertar o botao o contato se fecha e passa a energia de A para D ou de B para C.
 
-Primeiro vou criar uma pasta para guardar o projeto chamado `demo_keyboard`, gosto de criar uma pasta chamada `workspace` dentro da home do usuario, e dentro dela colocar meus projetos:
+![Button](../../img/1sem/08/button.png)
 
-```bash
-mkdir demo_keyboard
+Geralmente se utilizam resistores juntos aos push buttons, para evitar que ruidos ativem ele sem querer.
 
-cd demo_keyboard
+Podemos usar um modulo de arduino que faz isso, e segue o seguinte esquema:
 
-echo "Demo Keyboard" > README.md
+![Push Button Module](../../img/1sem/08/pb_module.png)
+
+Vamos comecar nosso codigo apenas acendendo o led, daqui a pouco implementamos o botao:
+
+```cpp
+// botao.ino
+#define LED 13
+
+void setup() {
+  digitalWrite(LED, HIGH);
+}
+
+void loop() {
+  delay(1000);
+}
 ```
 
-Apos criar a pasta do projeto e um README com as informacoes dele podemos comecar a desenvolver. Existem 3 solucoes principais para lidar com esses teclados matriciais, vamos comecar com a mais dificil e ir facilitando, a ideia eh controlarmos a versao do nosso codigo durante o processo, entao antes de comecar com o codigo principal vamos iniciar o repositorio e commitar essas alteracoes, para isso crie um repositorio no github e siga as instruções para fazer o primeiro commit:
+Acesse o github e crie uma conta caso ainda nao tenha.
+
+Instale o git na sua maquina.
+
+Crie um novo projeto no github. Ao criar um projeto sem arquivos ele vai te mostrar um bloco de comandos como os a seguir:
 
 ```bash
+# inicia um repositorio git
 git init
-git add README.md
+# adiciona o arquivo readme para ser commitado, adicione os arquivos que precisar
+git add botao.ino
+# primeiro commit do projeto
 git commit -m "first commit"
-git remote add origin git@github.com:matheusam/demo_keyboard.git
+# Adiciona o remote, so eh preciso esse comando a primeira vez
+git remote add origin git@github.com:seu_user/nome_do_projeto.git
+# envia as mudancas para o servidor, o -u so precisa na primeira vez para sincronizar
 git push -u origin master
 ```
 
-Apos fazer isso seu projeto ja estara no github, vamos a primeira solucao. Crie um arquivo chamado `demo_keyboard.ino`:
+Com isso o codigo do nosso repositorio local ja estara no github. Agora vamos implementar o botao, para isso vamos criar uma branch, fazer o trabalho la e depois abrir um PR a partir dela.
+Antes de comecar a nossa nova feature, vamos criar uma nova branch. A maneira mais facil de fazer isso eh usando o comando checkout com a flag b:
 
-```bash
-touch demo_keyboard.ino
-```
+`git checkout -b nova_branch`
 
-A primeira solucao consiste em verificar linah por linha e coluna por coluna usando varios if's para achar qual botao foi apertado, tambem eh utilizado um conceito chamado interrupt, um interruptor em C/CPP eh uma maneira de parar o processamento atual para realizar outra tarefa que chegou, por exemplo um botao pressionado. Porem nao se preocupem com interruptores ainda.
+O checkout muda de branchs, passando o argumento -b ele cria a branch caso nao exista. Importante, a branch eh criada a partir da branch que voce esta, caso esteja na master, a `nova_branch` vai ser uma copia da master naquele instante, se rodar esse comando a partir da `branch_do_zezinho`, a `nova_branch` vai ter a historia do zezinho, e nao o que tem na master. Entao cuidado com isso.
+
+Nosso codigo atualizado fica mais ou menos assim:
 
 ```cpp
+// botao.ino
+#define LED 13
+#define BUTTON 8
 
+void setup() {
+  pinMode(OUTPUT, BUTTON);
+}
+
+void loop() {
+  digitalWrite(LED, digitalRead(BUTTON));
+  delay(1000);
+}
 ```
 
-Etapas:
-Baixar e instalar o git
-Criar chave ssh
-clonar o projeto
-fazer as alteracoes e enviar para o remote
-atualizar seu projeto local
+Salve e vamos adicionar as mudancas, e fazer um commit:
 
-git clone endereco@repositorio.git - baixa o projeto
+```
+git add botao.ino
+git commit -m "Botao ativa irrigacao manual"
 
-git status - verifica status das alteracoes no projeto atual
+# nessa hora eh importante fazer o push apontando para a branch que voce criou, so que no remote
+git push origin nova_branch
+```
 
-git add nome_arquivo - comeca rastrear as mudancas do nome_arquivo
-git add . - Adionar todos arquivos daquela pasta
+Com isso o remote tera a sua branch com seus commits, ao abrir a interface grafica voce vera que foi commitado na nova_branch e ele ja te da a opcao de abrir um PR/MR. Ness hora voce fala com qual branch quer mergear, geralmente a branch que originou a sua. No nosso caso a master.
 
-git commit -m "mensagem do commit" - Um commit eh um conjunto de alteracoes que foram adiionadas, ao fazer esse comando ele pegara todas as alteracoes adicionadas no passo anterior e criar um conjunto de alteracoes
-
-git push origin master - o comando push envia seu commit local para o repositorio remoto, os proximos argumentos depois do push sao o remote(99% das vezes sera origin) e a branch (que no nosso caso eh a master que eh a principal)
-
-
-
-git pull origin master - Traz as alteracoes da branch master no repositorio remoto para a sua branch local, caso tenham mudancas no mesmo lugar, o git vai reclamar falando que tem um conflito, escolha qual das alteracoes deve permanecer
-
-O git pull eh a combinacao de dois comandos, o fetch e o merge. O git fetch traz as alteracoes mas nao as aplica no seu codigo, o merge eh o cara que junta tudo, quando damos um pull ele busca as alteracoes e ja aplica para nos.
+Apos o MR/PR ter sido aberto outras pessoas devem revisar seu codigo antes de ser mergeado, assim caso algum erro passe a responsabilidade eh compartilhada. Sempre esperem o code review!
 
 
 ## Boas praticas para gerenciar seu projeto
 
-branchs
-MR/PR
+Quando estamos versionando um sistema para valer, nao podemos commitar tudo na master, seria horrivel ter 20 pessoas trabalhando na mesma branch. Entao uma maneira de nao ter tantos conflitos no codigo, eh que cada um crie uma branch para fazer uma nova feature no projeto. Dessa maneira garantimos que o codigo que esta na master sempre sera um codigo estavel.
+
+Para fazer isso pegamos a branch e criamos um MR(Merge request) ou PR(Pull request), ambos sao essencialmente a mesma coisa, porem no gitlab se chama MR e no github PR. Um pull request eh feito pela interface web. Nele vc mostra as alteracoes daquela branch em forma de [diff](https://en.wikipedia.org/wiki/Diff), e geralmente tambem se escreve um resumo explicando.
+
+Algumas outras boas praticas no git envolvem:
+
+* `Commits pequenos`: Faca commits pequenos e constantes, sempre tente fazer com que um commit tenha apenas um objetivo, para que a granularidade das alteracoes seja maior.
+
+* `Escreva mensagens de commits claras`: Ao escrever o commit seja breve e claro, nao seja generico se possivel. Uma regrinha legal tambem eh a [50/72](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html), basicamente a mensagem nao pode passar de 50 caracteres, caso precise mais que isso, pule uma linha e continue, porem a primeira linha ainda tem que respeitar os 50 caracters, e a segunda parte apos o espaco nao pode passar de 72 caracters:
+
+```
+Alguma mensagem de commit que respeite 50 colunas
+
+Apos pular uma linha voce pode escrever uma mensagem mais comprida.
+```
+
+* `Evite alterar a historia ja escrita`: Evite alterar a historia do projeto se possivel.
+
+* `Nao commite arquivos gerados`: Arquivos do seu editor de texto ou qualquer coisa assim devem ser ignorados pelo arquivo `.gitignore`
+
+* `Nunca commite na master`: Nunca commite na master, sempre puxe uma branch e mergeie usando PR/MR.
 
 ## Desafio
 
@@ -112,17 +165,17 @@ Aproveite esse tempo para melhorar alguma coisa no codigo e treinar trabalhar co
 
 ### Tasklist
 
-* [ ] Criar conta no github caso nao tenha ainda e configura-la.
-
-* [ ] Criar repositorio do projeto petfeeder e subir os codigos.
+* [ ] Criar conta no github caso nao tenha ainda e configure-a.
 
 * [ ] Criar repositorio do projeto horta e subir os codigos.
 
-* [ ] Criar um readme para cada projeto.
+* [ ] Abrir um Pull Request com o codigo da implementacao do push button para irrigar a horta.
 
-* [ ] Criar o projeto tranca com um readme inicialmente
+* [ ] Criar repositorio do projeto petfeeder e subir os codigos.
 
-* [ ] Abrir um Pull Request com o codigo da implementacao da autenticacao por teclado para que possamos revisa-lo
+* [ ] Criar um readme para cada projeto(petfeeder e horta). [Algumas dicas pra escrever um README top!](https://medium.com/@meakaakka/a-beginners-guide-to-writing-a-kickass-readme-7ac01da88ab3)
+
+* [ ] Criar o projeto tranca com apenas um readme inicialmente.
 
 
 ## Referências e recursos úteis
@@ -136,3 +189,5 @@ Aproveite esse tempo para melhorar alguma coisa no codigo e treinar trabalhar co
 [Comparacao dos sistemas de controle de versao](https://biz30.timedoctor.com/git-mecurial-and-cvs-comparison-of-svn-software/)
 
 [Boas praticas no git](https://deepsource.io/blog/git-best-practices/)
+
+[Gitbash download](https://git-scm.com/download/win)
