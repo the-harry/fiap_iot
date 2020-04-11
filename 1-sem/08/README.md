@@ -108,7 +108,7 @@ Nosso codigo atualizado fica mais ou menos assim:
 #define BUTTON 8
 
 void setup() {
-  pinMode(OUTPUT, BUTTON);
+  pinMode(BUTTON, OUTPUT);
 }
 
 void loop() {
