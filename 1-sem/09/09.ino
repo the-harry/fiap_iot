@@ -1,56 +1,93 @@
-#include <Keypad.h>
+#include "DHT.h"
 
-const byte ROWS = 4;
-const byte COLS = 3;
+#define LED_GREEN 12
+#define LED_RED 13
+#define HIGROMETRO A1
+#define LDR A2
+#define DHTPIN A3
+#define DHTTYPE DHT11
+#define BUTTON 8
+#define RELE_PIN 7
 
-char hexaKeys[ROWS][COLS] = {
-  {'1', '2', '3'},
-  {'4', '5', '6'},
-  {'7', '8', '9'},
-  {'*', '0', '#'}
-};
+DHT dht(DHTPIN, DHTTYPE);
 
-byte rowPins[ROWS] = {11, 10, 9, 8};
-byte colPins[COLS] = {7, 6, 5};
+int soil_humidity = 0;
+int luminosidade = 0;
+float air_humidity = 0;
+float temp = 0;
 
-Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
+void update_metrics() {
+  soil_humidity = analogRead(HIGROMETRO);
+  delay(10);
 
-char password[4];
-int i = 0;
+  luminosidade = analogRead(LDR);
+  delay(10);
+
+  air_humidity = dht.readHumidity();
+  if (isnan(air_humidity)) {
+    Serial.println("Erro ao ler DHT.");
+  }
+  delay(10);
+
+  temp = dht.readTemperature();
+  if (isnan(temp)) {
+    Serial.println("Erro ao ler DHT.");
+  }
+  delay(10);
+}
+
+boolean should_irrigate() {
+  return (soil_humidity > 800 && luminosidade > 500) || digitalRead(BUTTON) == HIGH;
+}
+
+boolean too_much_sun() {
+  return soil_humidity > 800 && luminosidade < 500;
+}
+
+void print_metrics() {
+  Serial.println("=====================================\n\n");
+  Serial.print("Umidade do solo: ");
+  Serial.println(soil_humidity);
+
+  Serial.print("Umidade do ar: ");
+  Serial.print(air_humidity);
+  Serial.println("%");
+
+  Serial.print("Temperatura: ");
+  Serial.println(temp);
+
+  Serial.print("Luminosidade: ");
+  Serial.println(luminosidade);
+  Serial.println("=====================================\n\n");
+}
 
 void setup() {
+  pinMode(BUTTON, INPUT);
+  pinMode(RELE_PIN, OUTPUT);
   Serial.begin(9600);
+  dht.begin();
+  digitalWrite(RELE_PIN, LOW);
 }
 
 void loop() {
-  char keyStroke = customKeypad.getKey();
+  update_metrics();
 
-  if (keyStroke == '*') {
-    reset();
-  } else if (keyStroke) {
-    password[i++] = keyStroke;
-    Serial.println(keyStroke);
+  if (should_irrigate() == true) {
+    Serial.println(" Irrigando horta");
+    digitalWrite(LED_GREEN, HIGH);
+    digitalWrite(LED_RED, LOW);
+
+    digitalWrite(RELE_PIN, HIGH);
+  } else if (too_much_sun() == true) {
+    Serial.println("Solo seco, porem muito sol, abortando irrigacao.");
+    digitalWrite(LED_RED, HIGH);
+    digitalWrite(LED_GREEN, LOW);
+
+    digitalWrite(RELE_PIN, LOW);
+  } else {
+    digitalWrite(RELE_PIN, LOW);
   }
 
-  if (i == 4) {
-    delay(200);
-
-    if (!(strncmp(password, "1234", 4))) {
-      Serial.println("Bem vindo");
-    } else {
-      Serial.println("Sai fora");
-    }
-
-    i = 0;
-    delay(2000);
-  }
-}
-
-void reset() {
-  while (i != 0) {
-    password[i--] = "";
-  }
-
-  Serial.println("Cleared...");
-  delay(500);
+  print_metrics();
+  delay(2000);
 }
