@@ -35,11 +35,13 @@ A primeira solucao consiste em verificar linah por linha e coluna por coluna usa
 
 ### User history
 
-
+Altere o codigo aprendido na aula de hoje para ler uma senha de 4 digitos e comparar com uma senha padrao `1234`. O programa deve autorizar ou nao o acesso.
 
 ### Tasklist
 
+* [ ] Escrever programa para validar senha digitada no teclado pelo usuario.
 
+* [ ] Caso esteja autorizado abra a solenoide da fechadura.
 
 ## Referências e recursos úteis
 
