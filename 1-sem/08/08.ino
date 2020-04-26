@@ -11,7 +11,7 @@
 DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
-  pinMode(INPUT, BUTTON);
+  pinMode(BUTTON, INPUT);
   Serial.begin(9600);
   dht.begin();
 }
