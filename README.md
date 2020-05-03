@@ -67,6 +67,8 @@ Caso não possua um Arduino, você pode usar o [tinkercad](https://www.tinkercad
 
   * `Aula 15 - Mesh network.` - tranca
 
+  * `Aula 16 - Motores de passo e sistemas de transmissão` - BONUS
+
 
 ### Segundo semestre
 
