@@ -57,13 +57,13 @@ Caso não possua um Arduino, você pode usar o [tinkercad](https://www.tinkercad
 
   * `Aula 10 - Arrays e estruturas de dados.` - tranca
 
-  * `Aula 11 - Introdução ao RFID.` - tranca
+  * `Aula 11 - Comunicação por HTTP.` - tranca
 
-  * `Aula 12 - Protothreading.` - jardim - tranca
+  * `Aula 12 - Introdução ao RFID.` - tranca
 
-  * `Aula 13 - Criando uma lib.` tranca
+  * `Aula 13 - Protothreading.` - jardim - tranca
 
-  * `Aula 14 - Comunicação por HTTP.` - tranca
+  * `Aula 14 - Criando uma lib.` tranca
 
   * `Aula 15 - Mesh network.` - tranca
 
