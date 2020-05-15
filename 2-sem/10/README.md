@@ -54,7 +54,7 @@ Lembrando que o influxdb possui libs para várias linguagem, o que facilita a in
 
 ## Desafio
 
-### User history
+### User story
 
 Seu time deseja iniciar uma monitoração na aplicação que foi desenvolvida até agora, a ideia é primeiro criar um banco para armazenar essas informações, foi feito uma votação e o time decidiu usar o influx. Nessa etapa do projeto você deve criar um serviço do influx com docker-compose e deixar o ambiente pronto para as próximas etapas.
 

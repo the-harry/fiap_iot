@@ -138,7 +138,7 @@ Lembrando que essas estruturas podem e devem ser misturadas em exemplos reais.
 
 ## Desafio
 
-### User history
+### User story
 
 Você está fazendo um treinamento com o senior do time para se aprimorar em python, ele te passou alguns desafios para fazer durante as próximas semanas, nessa semana você tem que fazer um código que manipule algumas estruturas de dados.
 

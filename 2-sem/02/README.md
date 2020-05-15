@@ -83,7 +83,7 @@ OBS: Comandos com o prefixo `$` podem ser rodados por usuários normais, e coman
 
 ## Desafio
 
-### User history
+### User story
 
 Na segunda semana você foi incubido de configurar o raspberry junto com a Jane, para prosseguir com a fase de desenvolvimento.
 

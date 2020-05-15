@@ -19,7 +19,7 @@ Depois de criar e salvar tudo, uma coisa que pode ser bem útil é exportar o JS
 
 ## Desafio
 
-### User history
+### User story
 
 Seu time deseja iniciar uma monitoração na aplicação que foi desenvolvida até agora, como na última já foi criado o banco agora vamos montar uma dashboard no grafana para facilitar a visualisação desses dados.
 

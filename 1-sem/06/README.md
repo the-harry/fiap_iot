@@ -229,7 +229,7 @@ Por enquanto, vamos nos preocupar com o servo motor: usaremos em nosso projeto o
 
 ## Desafio
 
-### User history
+### User story
 
 Essa semana seu time está começando outro projeto em paralelo. Essa solução tem como objetivo alimentar animais domésticos, que possuem donos que ficam muito tempo fora de casa, ou mesmo em casos em que precisem viajar. O responsável pelo hardware criou um protótipo para isso, sendo que a ideia é usar um motor servo para abrir e fechar uma porta para liberar comida.
 Para que o motor seja ativado, será necessário o uso de um sensor de presença PIR.

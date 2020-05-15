@@ -32,7 +32,7 @@ Cada requisição que você faz vai te retornar um [código http](https://develo
 
 ## Desafio
 
-### User history
+### User story
 
 Seu time está estudando a implementação de algumas API's e gostaria que você fizesse alguns testes com o curl mesmo para ver se essas API's atendem o que vocês precisam. Entre as necessidades temos um validador de CNPJ que deve consultar as informaçõoes dessa empresa, validações e consultas de CEP, e envio de SMS.
 

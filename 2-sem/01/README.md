@@ -15,7 +15,7 @@ Um dispositivo muito usado para dispositivos de borda é o raspberry pi, ele é 
 
 ## Desafio
 
-### User history
+### User story
 
 Jhon Doe criou uma startup voltada para monitoramento doméstico e você foi contratado por ele essa semana e hoje é seu primeiro dia(Parabéns! ;), e ele e seu time projetaram uma solução para monitorar jardins, solução na qual você os ajudará a criar. A sua ideia é criar algo que seja escalavel conforme a necessidade do cliente para prover um GAAS(Garde As A Service) onde seriam oferecidos serviços desde monitoração do solo, luz, humidade, entre outros.
 A empresa ainda é pequena e temos poucos funcionários, apenas o que precisamos para fazer o trabalho sair. Temos o Jhon Doe que cuida da parte do negócio, temos o Fulano Foo, que cuida do código, e a Jane Doe, que cuida da infra e hardware. A ideia é que no início você aprenda um pouco com cada um e posteriormente escolha seu destino, jovem padawan. Sempre lembrando que independente do caminho que decidir trilhar, você deve pelo menos entender os outros assuntos para se tonar um jedi.

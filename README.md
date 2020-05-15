@@ -3,7 +3,7 @@
 ## Estrutura das aulas
 Este material tem como objetivo simular um ambiente de trabalho de desenvolvimento real, ou o mais próximo possível deste cenário. As quatro primeiras aulas serão bases teóricas que possuem grande importância e precisam ser estudadas, sendo todas as demais aulas práticas.
 
-As aulas práticas sempre abordarão a base teórica de um mesmo conteúdo explicado anteriormente em aula, ou seja, um user history (que se resume basicamente em um caso que, contando uma história, tem como objetivo trazer uma problemática a ser resolvida). No final destas, teremos também alguns desafios práticos. Caso queira consultar posteriormente o conteúdo já abordado em aula, basta ir até a pasta “aula em específico”.
+As aulas práticas sempre abordarão a base teórica de um mesmo conteúdo explicado anteriormente em aula, ou seja, um User story (que se resume basicamente em um caso que, contando uma história, tem como objetivo trazer uma problemática a ser resolvida). No final destas, teremos também alguns desafios práticos. Caso queira consultar posteriormente o conteúdo já abordado em aula, basta ir até a pasta “aula em específico”.
 
 Cada aula poderá ser encontrada em uma pasta seguindo o seguinte padrão: `semestre/aula`; apresentará um ou mais código(s)/arquivo(s) de
 exemplo; e, por fim, um README.md, onde constarão as instruções da aula.

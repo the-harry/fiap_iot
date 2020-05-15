@@ -135,7 +135,7 @@ Uma variável global é declarada fora da função, ou seja, no início do códi
 
 ## Desafio
 
-### User history
+### User story
 
 Seu squad fez recentemente um POC para o projeto petfeeder, que será a forma como darão continuidade ao projeto. É importante ressaltar que o melhor será desenvolver um código mais limpo e legível. Por isso, junte-se com seu squad e quebre seu código em maior quantidade de funções, aproveitando também esse tempo para testar seu código e ir fazendo melhorias e o ajuste dos bugs.
 

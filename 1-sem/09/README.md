@@ -2,29 +2,28 @@
 
 ## Conteúdo
 
-Nessa aula falaremos um pouco sobre projetos com alimentação externa e daremos uma Introdução ao esp8266, que usaremos no projeto da tranca.
+Nesta aula, falaremos um pouco sobre projetos com alimentação externa e daremos início a uma introdução ao esp8266, conteúdo que usaremos no projeto da tranca.
 
-Nas aula 3 falamos sobre uma coisa chamada referencia, devemos nos lembrar de ter sempre todos nossos grounds conectados juntos para ter a mesma referencia do que eh 0v.
+Lembre-se de que, durante a aula 3, falamos sobre algo chamado referência. Quando tratamos de referências, é importante não esquecermos de ter sempre todos os nossos grounds conectados juntos, para assim ter a mesma referência do que é 0v.
 
-Quando temos um projeto que depende de uma alimentação externa, seja ela por uma fonte ou ate mesmo direto na tomada, precisamos de algo para usar como interuptor para controlar quando ligar ou desligar o que quisermos controlar.
-Para fazer isso podemos utilizar reles e transistores, rele eh um dispositivo eletromecanico que ao energizar um lado ele fecha o cirucito como se fosse um interuptor normal. O transistor funciona de maneira eletronica, mas nao falaremos dele.
+Quando temos um projeto que depende de uma alimentação externa, seja ela por uma fonte ou direto da tomada, precisamos de algo para usar como interruptor, para assim podermos monitorar quando ligar ou desligar o que quisermos controlar. Para isso, podemos utilizar reles e transistores, sendo que, enquanto o rele é um dispositivo eletromecânico que, ao energizar um lado, fecha o circuito como se fosse um interruptor normal, o transistor funciona de maneira eletrônica (neste conteúdo, não nos aprofundaremos nele).
 
-Um rele pode ter varios canais, que sao entradas para conectar dispositivos que queremos ligar. No exemplo usaremos um rele 5v de 1 canal.
+Um rele pode apresentar vários canais, que são entradas para conectar dispositivos que quisermos ligar. No exemplo, utilizaremos um rele 5v de 1 canal.
 
-Para conectar do lado do arduino, o `+` vai no 5v, o `-` no gnd, e o `S` vai em qualquer pino digital.
-No exemplo vamos abrir e fechar a fechadura solenoide, o gnd do solenoide vai direto no gnd da fonte de alimentação externa, a parte positiva da fonte vai no bourne do meio `COM` ou `VCC`, agora  temos duas opcoes para ligar nossa fechadura, de um lado temos `NC` e do outro `NO`.
-Quando escolhemos `NO - Normally Open` o cirucito so sera energizado ao enviar 5v para o pino `S`, se escolhermos `NC - Normally Closed` sera ao contrario. Como queremos nossa fechadura fechada ate que mandemos ela abrir vamos escolher o `NO`.
+Para conectar do lado do arduino, o + vai no `5v`, o - no `gnd`, e o `S` vai em qualquer pino digital. No exemplo, iremos abrir e fechar a fechadura solenoide. Dessa forma, o gnd do solenoide irá direto no gnd da fonte de alimentação externa e a parte positiva da fonte irá no bourne do meio `COM` ou `VCC`.
+
+Após o procedimento citado, teremos duas opções para ligar nossa fechadura, sendo: de um lado o NC e do outro o NO. Quando escolhermos a opção NO (`Normally Open`), o circuito somente será energizado ao enviar 5v para o pino S e, se escolhermos a opção NC (`Normally Closed`), o processo ocorrerá ao contrário. Como queremos nossa fechadura fechada até que ordenemos que ela se abra, iremos escolher o NO.
 
 ![RELE](../../img/doc/rele.jpeg)
 
 
 ### Implementando no esp8266
 
-A pinagem no esp8266 eh um pouco diferente, vou deixar abaixo uma imagem com referencia dos pinos:
+O funcionamento da pinagem, no esp8266, ocorre de forma um pouco diferente e, por isso, vou deixar abaixo uma imagem com a referência dos pinos:
 
 ![esp](../../img/doc/esp.png)
 
-No caso estamos usando o pino d4, que na verdade eh o pino GPIO 2, que declaramos abaixo, o gnd nao tem diferenca, e para alimentar os 5v do rele usamos o pino Vin que tem a mesma tensao de entrada da placa, que por padrao de usb temos 5v.
+Neste caso, perceba que estamos usando o pino d4 (que na verdade é o pino GPIO 2), que declaramos abaixo. O gnd não possui diferença e, para alimentar os 5v do rele, usaremos o pino Vin, que apresenta a mesma tensão de entrada da placa (que, por padrão de usb, são 5v).
 
 snipet:
 
@@ -56,21 +55,21 @@ void loop() {
 }
 ```
 
-Atencao, muito cuidado ao lidar com fontes de tensao externas, mesmo que seja baixa tensao. Sempre desligue tudo antes de trocar conexoes, e sempre faca tudo com seguranca!
+Atenção: muito cuidado ao lidar com fontes de tensão externa, mesmo que se trate de uma baixa tensão. Sempre desligue tudo antes de trocar conexões, manuseando o material com total segurança!
 
 ## Desafio
 
-### User history
+### User story
 
-Para finalizar o projeto da horta voce deve implementar a solenoide que irrigara de fato nosso jardim, ative a solenoide utilizando um rele ligado a uma fonte de 12v.
+Para finalizar o projeto da horta, você deve implementar a solenoide que irrigará de fato nosso jardim. Para isso, ative a solenoide utilizando um rele ligado a uma fonte de 12v.
 
 ### Tasklist
 
-* [ ] Implementar rele.
+* [ ] Implementar rele.
 
-* [ ] Refatorar codigo e revisar com o grupo.
+* [ ] Refatorar o código e revisar com o grupo.
 
-* [ ] Abrir pull request no github com as alteracoes de hoje para o professor revisar.
+* [ ] Abrir o pull request no github com as alterações de hoje para o professor revisar.
 
 
 ## Referências e recursos úteis

@@ -223,7 +223,7 @@ void loop() {
 
 # Desafio
 
-### User history
+### User story
 
 Desenvolver um algoritmo que, ao receber a letra `H` na porta serial, ligue o LED e, caso receba o `L`, desligue o LED.
 

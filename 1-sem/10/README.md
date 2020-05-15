@@ -122,7 +122,7 @@ Imagem do teclado:
 
 ## Desafio
 
-### User history
+### User story
 
 Altere o codigo aprendido na aula de hoje para ler uma senha de 4 digitos e comparar com uma senha padrao `1234`. O programa deve autorizar ou nao o acesso.
 

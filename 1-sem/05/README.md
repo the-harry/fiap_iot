@@ -184,7 +184,7 @@ void loop() {
 
 ## Desafio
 
-### User history
+### User story
 
 Seu time está iniciando um novo projeto para monitorar e automatizar hortas e jardins domésticos. Após o levantamento dos requisitos, foi definido que o projeto deverá medir a umidade do solo, a umidade do ar, a temperatura e a luminosidade. Essa solução também deve ser capaz de irrigar automaticamente o jardim, quando necessário.
 
