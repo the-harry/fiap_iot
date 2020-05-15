@@ -32,7 +32,7 @@ Obs: Caso queira usar o docker dentro do rasp é possível, porém ele fica limi
 
 ## Desafio
 
-### User history
+### User story
 
 Você foi designado a criar a arquitetura do seu projeto em docker. Para isso Jane vai te passou uma lista de requesitos que precisam ser atendidos para esse projeto. Pegue o projeto que você tem até agora e suba-o no docker.
 
