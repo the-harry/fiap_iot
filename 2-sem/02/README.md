@@ -1,4 +1,4 @@
-# Aula 1 - Configuração inicial e comandos administrativos.
+# Aula 2 - Configuração inicial do rasp e comandos linux basicos.
 
 ## Conteúdo
 
@@ -57,7 +57,7 @@ OBS: Comandos com o prefixo `$` podem ser rodados por usuários normais, e coman
   `$ sudo -i`
 
 * Atualizar source lists e pacotes:
-  `# apt update && sudo apt upgrade`
+  `# apt update && apt upgrade`
 
 * Conexão por SSH por senha:
   `$ ssh user@host_ou_ip`
@@ -80,6 +80,17 @@ OBS: Comandos com o prefixo `$` podem ser rodados por usuários normais, e coman
 
 * Não sabe o que o comando faz? Dê uma olhada no manual:
 `$ man nome_do_comando`
+
+## Outras features do rasp
+
+### GPIO
+
+
+### BLE
+
+### Camera
+
+### Display
 
 ## Desafio
 

@@ -1,45 +1,71 @@
-# Aula 10 - APIs e requests http.
+# Aula 8 - Time series databases, Introdução ao InfluxDB.
 
 ## Conteúdo
 
-Atualmente com essa onda de micro-serviços é impossivel não se falar de API's REST. Quando criamos uma comunicação por protocolo HTTP isso nos traz muitas vantagens, como por exemplo saber que todas nossas aplicações vão seguir um padrão para se comunicar, isso também facilita para ter um ambiente com muitas linguagens diferentes.
-Quando falamos de requisições HTTP, tudo é baseado em algumas RFC's, como a [RFC7231](https://tools.ietf.org/html/rfc7231). Para definir o padrão de comunicação foi criado uma coisa chamada verbos, verbos nos dizem qual tipo de ação está sendo feita.
-Você provavelmente já ouviu falar do GET ou POST, porém temos vários outros verbos também, mas os principais são:
+Existem vários tipos de bancos de dados, temos bancos de dados relacionais, que tem tabelas com relacionamentos, temos bancos não relacionais, que são bancos para documentos ou coisas sem uma estrutura muito bem definida, entre outros. Mas um tipo muito interessante são os bancos de dados temporais(Time series databases). Como o nome já diz eles são bancos de dados que está relacionado ao tempo, oferecem a possibilidade de armazenar informações históricas a respeito de um determinado objeto que nele está sendo mantido.
+Esse tipo de banco de dados é muito interessante para IOT, pois podemos armazenar todas as mudanças de estado de alguma coisa e depois manipular esses dados da maneira que quisermos, seja para montar tabelas, gráficos, ou apenas fazer queries.
+Hoje vamos falar sobre o InfluxDB, porém existem outras alternativas, como o Graphite, TimescaleDB e o OpenTSDB.
 
-* GET - Verbo usado para requisitar um recurso
+Para escrever no InfluxDB usamos um protocolo chamado `Line Protocol`, que é um protocolo baseado em texto para escrever um ponto no influx. Quando falo um ponto e não um registro é porque em um banco temporal as coisas são chamas um pouco diferentes, abaixo tem um glossário explicando melhor esses termos:
 
-* POST - Verbo usado para enviar um recurso
+* `Database` - O nome do banco mesmo, até aqui tudo normal.
 
-* DELETE - Verbo usado para apagar um recurso
+* `Data Point`(ponto) - Um registro no banco, essa associação com ponto fica mais facil de lembrar se imaginar que um gráfico é formado por vários pontos
 
-* PUT - Verbo usado para editar vários atributos de um recurso de uma vez
+* `Field`(campo) - É apenas um campo onde um valor é armazenado para poder ser acessado posteriormente
 
-* PATCH - Verbo usado para editar apenas um atributo de um recurso
+* `Tag`(marcação) - Uma tag funciona quase como um campo, porém são campos que geralmente são usados em queries, eles funcionam QUASE como um index em um banco de dados relacional.
 
-Agora que entendemos os verbos temos que entender um pouco sobre endpoints, eles são caminhos na nossa aplicação e cada caminho tem um verbo associado a ele. Por exemplo, podemos pegar a posição atual do ISS(International Space Station) fazendo uma requisição GET para http://api.open-notify.org/iss-now.json.
+* `Measurements` - É uma estrutura de dados do InfluxDB baseado em string para representar dados armazenados em campos associados. Exemplo, podemos ter uma serie de medições de um sensor de movimento.
 
-Agora a parte importante, como fazer essas requisições? Caso seja uma requisição GET é só colocar no navegador o link que ele deve funcionar, porém quando usamos outros verbos isso não é possível. Podemos usar o Postman ou o Curl. Para que vocês se habituem melhor eu recomendo fortemente que usem o Curl.
+* `Series` - É um agrupamento de medições pelo conjunto das tag_set(as tags presentes em um ponto) e field_set(as fields presentes em um ponto)
 
-Para fazer uma requisição GET com curl só precisamos fazer:
+Esses são os principais que vocês devem saber. Mas caso queiram ver todos tem um link [aqui](https://docs.influxdata.com/influxdb/v1.7/concepts/glossary/).
 
-`curl http://api.open-notify.org/iss-now.json`
+Instale o influx na sua máquina ou suba um container. Para iniciar o console digite `influx`, para começar a primeira coisa vai ser criar um novo banco.
 
-Caso queira fazer um POST ficaria algo assim:
+Para isso podemos usar o comando `CREATE DATABASE teste` onde teste é o nome do banco.
 
-`curl -d "name=fulado&senha=123" http://foo.bar/api/v1/user/new`
+Para ver os bancos disponíveis usamos `SHOW DATABASES`
 
-Cada requisição que você faz vai te retornar um [código http](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status), esse código vai indicar sucesso ou falha, também é possível que venha um corpo na requisição com algum dado ou mensagem. Mas muitas requisições retornarão apenas um código.
+E para escolher o banco que vamos usar `USE teste`
+
+Agora podemos começar a inserir data points no nosso banco. Como falamos anteriormente eles usam o line protocol para escrever no banco, esse protocolo segue a seguinte estrutura:
+
+`<measurement>[,<tag-key>=<tag-value>...] <field-key>=<field-value>[,<field2-key>=<field2-value>...] [unix-nano-timestamp]`
+
+Primeiro temos o nome da medição, seguido por uma virgula sem espaço vem as tags, sempre colocando a chave e o valor da tag. Depois temos um espaço o valor da medição(chave e valor) e por último um timestamp no formato unix-nano. Para inserir no banco colocamos o prefixo INSERT e o payload:
+
+`INSERT cpu,host=serverA,region=us_west value=0.64`
+
+Podemos ver nosso registro de algumas formas:
+
+`SELECT "host", "region", "value" FROM "cpu"`
+
+`SHOW MEASUREMENTS`
+
+`SHOW SERIES`
+
+Também podemos usar o curl para fazer requisições HTTP para a API do influx:
+
+`curl -G 'http://localhost:8086/query?pretty=true' --data-urlencode "db=teste" --data-urlencode "q=SELECT \"host\" FROM \"region\", \"value\" FROM \"cpu\"`
+
+Lembrando que o influxdb possui libs para várias linguagem, o que facilita a insersão de datapoints no dia-a-dia dentro de nossas aplicações, mas caso não queira usar a lib a API é uma alternativa.
 
 ## Desafio
 
 ### User story
 
-Seu time está estudando a implementação de algumas API's e gostaria que você fizesse alguns testes com o curl mesmo para ver se essas API's atendem o que vocês precisam. Entre as necessidades temos um validador de CNPJ que deve consultar as informaçõoes dessa empresa, validações e consultas de CEP, e envio de SMS.
+Seu time deseja iniciar uma monitoração na aplicação que foi desenvolvida até agora, a ideia é primeiro criar um banco para armazenar essas informações, foi feito uma votação e o time decidiu usar o influx. Nessa etapa do projeto você deve criar um serviço do influx com docker-compose e deixar o ambiente pronto para as próximas etapas.
 
 ### Tasklist
 
-* [ ] Testar a API de consultas a [CNPJ](https://receitaws.com.br/api)
+* [ ] Criar docker
 
-* [ ] Testar a API de [CEP](https://viacep.com.br/)
+* [ ] Criar banco de dados `metrics`
 
-* [ ] Testar a API de envio de SMS do [Twilio](https://www.twilio.com/)
+* [ ] Fazer um insert de um datapoint
+
+* [ ] Consultar o datapoint
+
+Atenção: As duas últimas partes são essenciais para garantir que tudo funcione devidamente.

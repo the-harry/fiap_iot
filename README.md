@@ -61,40 +61,34 @@ Caso não possua um Arduino, você pode usar o [tinkercad](https://www.tinkercad
 
   * `Aula 12 - Introdução ao RFID.` - tranca
 
-  * `Aula 13 - Protothreading.` - jardim - tranca
-
-  * `Aula 14 - Criando uma lib.` tranca
-
-  * `Aula 15 - Mesh network.` - tranca
-
-  * `Aula 16 - Motores de passo e sistemas de transmissão` - BONUS
-
 
 ### Segundo semestre
 
 Caso não tenha um raspberry, temos algumas maneiras de [emular um](https://www.makeuseof.com/tag/emulate-raspberry-pi-pc/)(em inglês, mas mostra três métodos) ou apenas usando [QEMU em portugues](https://www.techtudo.com.br/dicas-e-tutoriais/noticia/2016/11/aprenda-virtualizar-o-raspberry-pi-para-testar-sistemas-e-projetos-no-pc.html).
 
-  * `Aula 1 - Introdução ao raspberry pi e dispositivos de borda.`
+  * `Aula 1 - Integrando nosso gadget.`
 
-  * `Aula 2 - Configuração inicial e comandos administrativos.`
+  * `Aula 2 - Configuração inicial do rasp e comandos linux basicos.`
 
-  * `Aula 3 - Introdução a Python.`
+  * `Aula 3 - Python 101.`
 
-  * `Aula 4 - Estruturas de dados no python.`
+  * `Aula 4 - Integração Arduino e Rasp, comunicação serial.`
 
-  * `Aula 5 - Decisões e controles de repetição no python.`
+  * `Aula 5 - Protocolo HTTP.`
 
-  * `Aula 6 - Funções no python.`
+  * `Aula 6 - Criando uma API.`
 
-  * `Aula 7 - Integração Arduino e Rasp, comunicação serial.`
+  * `Aula 7 - Usando o docker no projeto.`
 
-  * `Aula 8 - APIs e requests http.`
+  * `Aula 8 - Time series databases, Introdução ao InfluxDB.`
 
-  * `Aula 9 - Usando o docker na infraestrutura.`
+  * `Aula 9 - Introdução à monitoração com Grafana.`
 
-  * `Aula 10 - Time series databases, Introdução ao influx.`
+  * `Aula 10 - Trabalhando com alertas.`
 
-  * `Aula 11 - Introdução à monitoração com Grafana.`
+  * `Aula 11 - Protocolo MQTT.`
+
+  * `Aula 12 - Protocolo BLE.`
 
 
 ## Hardware

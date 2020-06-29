@@ -1,145 +1,45 @@
-# Aula 5 - Decisões e controles de repetição no python.
+# Aula 5 - Protocolo HTTP.
 
 ## Conteúdo
 
-Antes de falarmos de tomadas de decisões precisamos entender os operadores logicos do python, como eles vamos fazer comparações para saber o que fazer. Segue abaixo uma lista dos principais operadores:
+Atualmente com essa onda de micro-serviços é impossivel não se falar de API's REST. Quando criamos uma comunicação por protocolo HTTP isso nos traz muitas vantagens, como por exemplo saber que todas nossas aplicações vão seguir um padrão para se comunicar, isso também facilita para ter um ambiente com muitas linguagens diferentes.
+Quando falamos de requisições HTTP, tudo é baseado em algumas RFC's, como a [RFC7231](https://tools.ietf.org/html/rfc7231). Para definir o padrão de comunicação foi criado uma coisa chamada verbos, verbos nos dizem qual tipo de ação está sendo feita.
+Você provavelmente já ouviu falar do GET ou POST, porém temos vários outros verbos também, mas os principais são:
 
-* `==` igualdade
+* GET - Verbo usado para requisitar um recurso
 
-* `!=` diferente
+* POST - Verbo usado para enviar um recurso
 
-* `<` menor
+* DELETE - Verbo usado para apagar um recurso
 
-* `>` maior
+* PUT - Verbo usado para editar vários atributos de um recurso de uma vez
 
-* `<=` menor ou igual
+* PATCH - Verbo usado para editar apenas um atributo de um recurso
 
-* `>=` maior ou igual
+Agora que entendemos os verbos temos que entender um pouco sobre endpoints, eles são caminhos na nossa aplicação e cada caminho tem um verbo associado a ele. Por exemplo, podemos pegar a posição atual do ISS(International Space Station) fazendo uma requisição GET para http://api.open-notify.org/iss-now.json.
 
-* `not` nega uma condição
+Agora a parte importante, como fazer essas requisições? Caso seja uma requisição GET é só colocar no navegador o link que ele deve funcionar, porém quando usamos outros verbos isso não é possível. Podemos usar o Postman ou o Curl. Para que vocês se habituem melhor eu recomendo fortemente que usem o Curl.
 
-* `and` as duas condições tem que ser verdadeiras para retornar true
+Para fazer uma requisição GET com curl só precisamos fazer:
 
-* `or` uma das duas condições tem que ser verdadeiras para retornar true
+`curl http://api.open-notify.org/iss-now.json`
 
-Tomar decisões no python é muito fácil, já que usamos basicamente if elif else, por não ter switch case e if ternários(em uma linha) não tem uma sintaxe muito diferente do normal.
+Caso queira fazer um POST ficaria algo assim:
 
-```
-idade = 19
+`curl -d "name=fulado&senha=123" http://foo.bar/api/v1/user/new`
 
-if(idade > 18):
-    print("Você pode dirigir.")
-elif(idade > 90):
-    print("Você deveria ir de uber.")
-else:
-    print("Você ainda não pode dirigir.")
-```
-
-Caso queira fazer um ternário é possivel fazer assim:
-
-```
-eh_legal = True
-status = "legal" if eh_legal else "chatao"
-
-> 'legal'
-```
-
-Muitas vezes temos uma coleção de itens, por exemplo em uma lista e queremos iterar(passar um por um), temos basicamente dois tipos de loops, o for e o while. O for usamos quando sabemos o número de itens que vamos iterar, quando isso pode variar ou não sabemos ao certo a quantia usamos o while.
-
-Imagine que você tem uma lista com preços, e quer multiplicar cada item por dois e adicionar em outra lista:
-
-```
-list = [1, 2, 3, 4, 5]
-new_list = []
-
-for x in list:
-    new_list.append(x * 2)
-
-print(new_list)
-
-> [2, 4, 6, 8, 10]
-```
-
-Também podemos iterar sobre um intervalo, podemos falar pra começar um loop no indice 0 e iterar 10 vezes.
-
-```
-for x in range(0, 10):
-    print(x)
->0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-```
-
-Como dissemos antes, podemos usar o while quando não sabemos ao certo o numero de itens em uma coleção na qual iteraremos, ou quando queremos usar um contador externo para fazer esse controle para iterar sobre um bloco. Por exemplo:
-
-```
-count = 0
-
-while(count < 10):
-    print(count)
-    count += 1
-
->0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-```
-
-Nesse caso iniciamos o contador com 0, e incrementamos esse valor a cada volta. Observer que a expressão `count += 1` é a mesma coisa que dizer `count = count + 1`, as outras quatro operações básicas funcionam dessa maneira abreviada.
-
-Também temos dois recursos bem interessantes para loops tanto para while quanto para for loops, que são o break e o continue, o break serve para interromper um loop antes de seu final, no exemplo a seguir temos uma lista de cores, e no loop abaixo eu quero que quando a cor for verde para que o loop seja interrompido. Se a cor não for verde ela será exibida na tela.
-
-```
-cores = ['azul', 'rosa', 'verde', 'amarelo']
-
-for cor in cores:
-    if cor == 'verde':
-        break
-    else:
-        print(cor)
-
-> azul
-rosa
-```
-
-Agora imagine que caso a cor seja rosa você quer apenas pular essa iteração mas não o loop todo, você pode usar o continue para isso:
-
-```
-cores = ['azul', 'rosa', 'verde', 'amarelo']
-
-for cor in cores:
-    if cor == 'rosa':
-        continue
-    else:
-        print(cor)
-
-> azul
-verde
-amarelo
-```
+Cada requisição que você faz vai te retornar um [código http](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status), esse código vai indicar sucesso ou falha, também é possível que venha um corpo na requisição com algum dado ou mensagem. Mas muitas requisições retornarão apenas um código.
 
 ## Desafio
 
 ### User story
 
-Você está fazendo um treinamento com o senior do time para se aprimorar em python, ele te passou alguns desafios para fazer durante as próximas semanas, nessa semana você tem que fazer um código que manipule algumas estruturas de dados.
-
+Seu time está estudando a implementação de algumas API's e gostaria que você fizesse alguns testes com o curl mesmo para ver se essas API's atendem o que vocês precisam. Entre as necessidades temos um validador de CNPJ que deve consultar as informaçõoes dessa empresa, validações e consultas de CEP, e envio de SMS.
 
 ### Tasklist
 
-* [ ]
-* [ ]
-* [ ]
+* [ ] Testar a API de consultas a [CNPJ](https://receitaws.com.br/api)
+
+* [ ] Testar a API de [CEP](https://viacep.com.br/)
+
+* [ ] Testar a API de envio de SMS do [Twilio](https://www.twilio.com/)
