@@ -45,21 +45,21 @@ Caso não possua um Arduino, você pode usar o [tinkercad](https://www.tinkercad
 
   * `Aula 4 - Arduino getting started.`
 
-  * `Aula 5 - Operações lógicas - if, else, else if.` - jardim
+  * `Aula 5 - Operações lógicas - if, else, else if.`
 
-  * `Aula 6 - Controle de repetição - Loops for e while.` - pet feeder
+  * `Aula 6 - Controle de repetição - Loops for e while.`
 
-  * `Aula 7 - Funções e retornos.` - pet feeder
+  * `Aula 7 - Funções e retornos.`
 
-  * `Aula 8 - Destrinchando o git.` - jardim
+  * `Aula 8 - Destrinchando o git.`
 
-  * `Aula 9 - Projetos com alimentação externa.` - jardim - tranca
+  * `Aula 9 - Projetos com alimentação externa.`
 
-  * `Aula 10 - Arrays e estruturas de dados.` - tranca
+  * `Aula 10 - Arrays e estruturas de dados.`
 
-  * `Aula 11 - Comunicação por HTTP.` - tranca
+  * `Aula 11 - Comunicação por HTTP.`
 
-  * `Aula 12 - Introdução ao RFID.` - tranca
+  * `Aula 12 - Introdução ao RFID.`
 
 
 ### Segundo semestre
