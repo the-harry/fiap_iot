@@ -83,14 +83,10 @@ OBS: Comandos com o prefixo `$` podem ser rodados por usuários normais, e coman
 
 ## Outras features do rasp
 
-### GPIO
+O Raspberry ja vem com algumas outras coisas legais, como bluetooth, conexoes para displays e camera, e também os 40 GPIOs(general-purpose input/output) disponíveis para conectar sensores e modulos.
+Um ponto bacana disso eh poder usar python no lugar de C++, porem muitas nao eh preciso, ja que para coisas simples na maioria das vezes, um arduino ja pode resolver seu problema.
 
-
-### BLE
-
-### Camera
-
-### Display
+![GPIO](../../img/2sem/02/gpio.jpg)
 
 ## Desafio
 
@@ -109,3 +105,10 @@ Na segunda semana você foi incubido de configurar o raspberry junto com a Jane,
 * [ ] Alterar a senha
 
 * [ ] Configurar locales(data, hora, teclado)
+
+## Referências e recursos úteis
+
+[Pagina oficial do Raspberry pi](https://www.raspberrypi.org/)
+[Download Raspian image](https://www.raspberrypi.org/downloads/)
+[Documentacao sobre GPIO](https://www.raspberrypi.org/documentation/usage/gpio/)
+[raspi-config](https://www.raspberrypi.org/documentation/configuration/raspi-config.md)
