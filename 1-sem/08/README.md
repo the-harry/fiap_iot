@@ -37,7 +37,7 @@ Certo, entendemos que vamos usar a ferramenta git com o github para gerenciar as
 
 * commit: Representa uma alteração no código que entra para a árvore do nosso projeto.
 
-* clone: `git clone git@github.com:matheusam/fiap_iot.git` baixa um projeto.
+* clone: `git clone git@github.com:the-harry/fiap_iot.git` baixa um projeto.
 
 * status: `git status` mostrao status atual dos arquivos. Quando um arquivo sofre uma alteracao ele ficará vermelho, depois disso você pode commitar essa mudança adicionando o arquivo aos arquivos rastreados daquele commit ou descartar as alterações.
 
