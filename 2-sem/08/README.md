@@ -69,3 +69,8 @@ Seu time deseja iniciar uma monitoração na aplicação que foi desenvolvida at
 * [ ] Consultar o datapoint
 
 Atenção: As duas últimas partes são essenciais para garantir que tudo funcione devidamente.
+
+
+## Referências e recursos úteis
+
+[]()

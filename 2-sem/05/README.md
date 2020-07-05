@@ -43,3 +43,7 @@ Seu time está estudando a implementação de algumas API's e gostaria que você
 * [ ] Testar a API de [CEP](https://viacep.com.br/)
 
 * [ ] Testar a API de envio de SMS do [Twilio](https://www.twilio.com/)
+
+## Referências e recursos úteis
+
+[]()

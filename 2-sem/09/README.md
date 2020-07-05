@@ -34,3 +34,8 @@ Seu time deseja iniciar uma monitoração na aplicação que foi desenvolvida at
 * [ ] Montar dashboard
 
 * [ ] Exportar JSON
+
+
+## Referências e recursos úteis
+
+[]()

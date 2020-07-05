@@ -44,3 +44,8 @@ Você foi designado a criar a arquitetura do seu projeto em docker. Para isso Ja
 * [ ] Criar docker-compose para a aplicação.
 
 * [ ] Subir e testar o projeto.
+
+
+## Referências e recursos úteis
+
+[]()
