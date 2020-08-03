@@ -1,67 +1,64 @@
-# Aula 1 - Integrando nosso gadget.
+# Aula 1 - Integrando nosso Gadget.
 
 ## Conteúdo
 
-### Retro do semestre passado
+### Retrô do semestre passado:
 
-No ultimo semestre, aprendemos como criar um dispositivo fisico utilizando placas de desenvolvimento como arduino, esp8266, sensores e atuadores. Com o objetivo principal de coletar metricas, claro que em alguma situacoes nos apenas queriamos ativar algum LED ou motor, porem o "ouro do IOT" como muitos dizem, sao as metricas coletadas por sensores.
+No último semestre, aprendemos como criar um dispositivo físico, utilizando placas de desenvolvimento como: arduino, esp8266, sensores e atuadores. Com o objetivo principal de coletar métricas, mesmo que em algumas situações nós apenas quiséssemos ativar algum LED ou motor, podemos considerar que o "ouro do IOT" (como muitos dizem), são as métricas coletadas por sensores.
 
-### O que faremos esse semestre
+### O que faremos neste semestre:
 
-Esse semestre levaremos nosso dispositivo a outro patamar, faremos Integraçoes com outras tecnologias e serviços, para que possamos principalmente analisar esses dados, armazena-los de uma maneira integra e com precisao temporal, e geracao de alertas, como email, SMS, mensagem no slack, etc.
+Esse semestre levaremos nosso dispositivo a outro patamar. Faremos integrações com outras tecnologias e serviços, para que assim possamos, principalmente, analisar esses dados, armazenando-os de maneira íntegra e com maior precisão temporal, além de desenvolver um sistema geração de alertas, como e-mail, SMS, mensagem no slack, etc.
 
-Temos diversas ferramentas quando nos referimos a IOT, e com isso existem varias stacks que podem ser criadas, porem aqui tentaremos criar uma infraestrutura baseada em containers, onde teremos um servico para receber dados, um servico para o banco onde esses dados serao persistidos, e um servico que consumira esses dados para gerar graficos e alertas.
+Dispomos de diversas ferramentas quando nos referimos a IOT e, com isso, existem várias stacks que podem ser criadas. Porém, neste estudo, tentaremos criar uma infraestrutura baseada em containers, onde teremos um serviço para o recebimento dos dados, outro para o banco onde esses dados serão armazenados, além de um terceiro serviço que consumirá esses dados, gerando assim os gráficos e alertas que necessitaremos.
 
 ![Arquitetura](../../img/2sem/01/arquitetura.png)
 
-Na parte responsavel por receber os dados, veremos algumas alternativas para fazer isso, como receber os dados via porta serial, ou por HTTP ou outro protocolo. A ideia eh ilustrar como podemos fazer a mesma coisa de varias maneiras diferentes.
+No que diz respeito à etapa responsável por receber os dados em questão, veremos algumas alternativas para desenvolver esta parte, como fazendo este recebimento dos dados acontecer via porta serial, por HTTP ou outro protocolo. A ideia é ilustrar como poderemos chegar ao mesmo objetivo final de diversas maneiras diferentes.
 
 ### Cloud VS Fog VS Edge
 
-### CORRIGIR ESSA PARTE
+Quando lidamos com o processamento de métricas, existem algumas abordagens arquiteturais que podemos realizar, sendo a mais simples e conhecida delas o envio dos dados dos sensores diretamente para a cloud, para que essas métricas sejam processadas todas lá. O problema dessa abordagem, porém, é a quantia absurda de tráfego de rede com a qual teremos que lidar, além de possíveis gargalos no servidor (tornando também a segurança um risco, uma vez que transitamos mais dados pela WAN). Em resposta a isso, nasceram duas abordagens que procuram trazer esse processamento de dados para mais perto dos sensores. Esses modelos são: o FOG e o EDGE.
 
-Quando lidamos com o processamento de metricas, existem algumas abordagens arquiteturais que podemos tomar, a mais simples e conhecida eh enviar os dados dos sensores diretamente para a cloud, para que essas metricas sejam processadas todas la. O problema dessa abordagem, eh a quantia absurda de trafego de rede que vamos ter que lidar, possiveis gargalos no servidor, segurança tambem se torna um risco, uma vez que transitamos mais dados pela WAN.
-Em resposta a isso, nasceram duas abordagens que procuram trazer esse processamento de dados para mais perto dos sensores, esses modelos sao o FOG e o EDGE.
+Neste ponto, o segredo é entender aonde iremos processar nossos dados, sabendo que, com essa escolha, impactaremos consideravelmente a arquitetura a ser definida. Quando nos referimos a EDGE e FOG, sabemos que a ideia é trazer o processamento para mais perto da coleta de métricas, porém... O que diferencia um do outro?
 
-Entao a chave aqui, eh entender onde que vamos processar nossos dados, e essa escolha vai impactar em como sua arquitetura sera definida. Quando nos referimos a edge e fog, sabemos que a ideia eh trazer o processamento mais perto da coleta de metricas, porem o que diferencia um do outro?
+Quando falamos de EDGE Computing, temos sensores conectados diretamente ao dispositivo e que farão o processamento das métricas. A ideia é que ele atue como um filtro: processando as métricas e levando ao cloud apenas informações que são relevantes, trazendo dessa forma mais segurança, já que não teremos mais aquela grande quantidade de dados transitando de maneira crua. Podemos tratá-los no EDGE e enviá-los para o cloud.
 
-Quando falamos de edge computing, temos sensores conectados diretamente no dispositivo que fara o processamento das metricas, a ideia eh que ele atue como um filtro, processando as metricas e informando o cloud apenas coisas que sao relevantes, dessa forma trazendo mais seguranca, ja que nao vamos ter mais tantos dados transitando de maneira crua, podemos tratar eles no edge e enviar para o cloud.
-Podemos exemplificar esse modelo da seguinte forma:
+Abaixo, podemos exemplificar esse modelo da seguinte forma:
 
-* Ex1 - Um ESP32/8266 coleta metricas, filtra, e em casos de alertas ele envia um request para uma API.
+* Ex1 - Um ESP32/8266 coleta métricas, as filtra e, em casos de alertas, envia um request para uma API.
 
-* Ex2 - Um arduino uno coleta metricas, envia por serial para um raspberry, que por vez processa as metricas e em casos de alertas ele envia um request para uma API.
+* Ex2 - Um arduino uno coleta métricas, as envia por serial para um raspberry (que, por sua vez, processa as métricas) e, em casos de alertas, envia um request para uma API.
 
-Observem que em ambos os casos, temos os sensores diretamente ligados nos dispositivos intermediarios. Porem voce deve estar se perguntando, o que acontece quando nao consigo ligar o sensor diretamente nele?
+Observem que, em ambos os casos, temos os sensores diretamente ligados nos dispositivos intermediários. Porém, você deve estar se perguntando: O que acontece quando não consigo ligar o sensor diretamente nele?
 
-Bem, nesse caso, podemos fazer uma Fog Network, a ideia de fog, sao dispositivos na mesma LAN trocando metricas, realizando essa filtragem e o armazenamento de algumas metricas relevantes.
-A vantagem de usar uma rede fog, eh que podemos estar fisicamente mais distantes e ainda ter essa conexão. Um exemplo de protocolo muito utilizado para fog eh o LoraWan.
+Bem, nesse caso, podemos fazer uma FOG Network. A ideia básica de FOG, é que se trata de dispositivos na mesma LAN trocando métricas, realizando essa filtragem e o armazenamento de algumas métricas relevantes. A vantagem de usar uma rede FOG, é que podemos estar fisicamente mais distantes e, ainda assim, dispor dessa conexão. Um exemplo de protocolo muito utilizado para FOG é o LoraWan.
 
-Esse cenario de fog poderiamos descrever algo como:
+Esse cenário de FOG poderia ser descrito da seguinte forma:
 
 * Ex1:
 
-    * A - Device A coleta metricas de temperatura, caso a temperatura passe de 50 graus ele chama outro dispositivo na rede que verifica o nivel de CO2.
+    * A – “Device A” coleta métricas de temperatura e, caso a temperatura ultrapasse os 50 graus, comunica-se com outro dispositivo na rede para fazer a verificação do nível de CO2.
 
-    * B - Device B mede os niveis de CO2, caso ele receba um request do device A, ele compara as metricas e verifica se tem muito CO2 e muito calor, o que poderia indicar um incendio, caso seja, ele atua o device C.
+    * B – “Device B” mede os níveis de CO 2 e, caso ele receba um request do “Device A”, compara as métricas e verifica se há muito CO 2 e muito calor, podendo indicar um incêndio. Caso se trate de fato de um incêndio, ele acionará o “Device C”.
 
-    * C - O device C controla os sprinklers do predio, ele recebe um aviso de incendio e os ativa.
+    * C - O “Device C”, por controlar os sprinklers do prédio, receberá o aviso de incêndio e os ativará.
 
-Com essa abordagem garantimos uma resposta rapida, com baixa latencia, ja que essas metricas nao tiveram nem que sair de minha rede para poder ser processada, em um exemplo como no descrito acima, essa pequena diferenca de nanosegundos no processamento pode salvar ou nao uma vida.
+Com essa abordagem, garantiremos uma resposta rápida e com baixa latência, visto que essas métricas não tiveram sequer que sair da minha rede para serem processadas. Em um exemplo como o que vimos acima, essa pequena diferença de nanosegundos no processamento pode salvar uma vida.
 
 
 ### O que vamos precisar?
 
-Nao se preocupe caso voce nao tenha um rasp, mas se possivel tenha uma maquina com linux, faca um dualboot ou uma maquina virtual com alguma distribuicao mais amigavel como debian, ou ubuntu, pois usaremos alguns recursos que estarão apenas disponiveis nesse SO.
+Não se preocupe caso você não tenha um rasp, mas, se possível, tenha uma máquina com Linux e faça um dualboot, ou uma máquina virtual com alguma distribuição “mais amigável” (como debian ou ubuntu, pois usaremos alguns recursos que estarão apenas disponíveis nesse SO).
 
-Tambem precisamos ajustar nossos projetos para enviar as metricas da maneira correta para recebermos do outro lado, mas isso vai variar dependendo da tecnica que formos usar, a primeira implementacao nossa sera enviando dados pela porta serial, ja que fizemos bastante isso semestre passado.
+Também precisamos ajustar nossos projetos, para o correto envio das métricas e o correto recebimento do outro lado, mesmo que isso varie dependendo da técnica que formos utilizar. Nossa primeira implementação será enviando dados pela porta serial, já que fizemos bastante isso durante o semestre passado.
 
-Versao atualizada do pet feeder:
+Versão atualizada do pet feeder:
 
 https://github.com/the-harry/pet_feeder/tree/v_2
 
 
-Versao atualizada do smart garden:
+Versão atualizada do smart garden:
 
 https://github.com/the-harry/smart_garden/tree/v_2
 
