@@ -56,6 +56,8 @@ A primeira coisa que precisamos agora sao logs, implemente um mecanismo de log u
 Fora isso, precisamos implementar alguma logica no arquivo main.py para que possamos alimentar os pets, a ideia eh que em caso de menos de uma hora, o gato passar 5 vezes proximo ao sensor devemos alimenta-lo.
 Esse desafio se torna interessante pois isso era uma coisa que nao poderiamos fazer no arduino sem ter um modulo de tempo, ja que ele por si so nao consegue calcular o tempo.
 
+Ao acabar suba a atividade no github, a entrega sera feita na proxima aula.
+
 ### Tasklist
 
 * [ ] Implementar logs no sistema
