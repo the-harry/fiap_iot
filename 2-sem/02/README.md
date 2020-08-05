@@ -1,10 +1,10 @@
-# Aula 2 - Configuração inicial do rasp e comandos linux basicos.
+# Aula 2 - Configuração inicial do rasp e comandos Linux básicos.
 
 ## Conteúdo
 
-Nessa aula veremos a configuração inicial do raspberry pi e alguns comandos úteis.
+Nessa aula veremos a configuração inicial do raspberry pi, além de alguns comandos bastante úteis para nosso estudo.
 
-Após instalar a ISO no sdcard, abra ele no seu computador e crie um arquivo em branco com o nome `ssh`(sem extenção), ele vai habilitar o ssh, e crie outro arquivo chamado `wpa_supplicant.conf` e use o modelo abaixo com sua wifi:
+Após instalar a ISO no sdcard, abra-o no seu computador e crie um arquivo em branco com o nome `ssh` (sem extensão). Este arquivo irá habilitar o ssh. Na sequência, crie outro arquivo chamado `wpa_supplicant.conf` e utilize o modelo abaixo com sua rede wifi:
 
 ```
 country=BR
@@ -18,18 +18,25 @@ network={
 }
 ```
 
-Agora vamos ligar e acessa-lo. Com um teclado e um monitor ligados no rasp. Após se logar com o usuário padão `pi:raspberry`, se conecte a internet(por cabo ou wifi) e abra um terminal. Nós poderiamos fazer tudo por aqui, mas por comodidade vamos apenas pegar o endereço de ip, e habilitar o ssh para nos conectarmos remotamente.
-Para começar digite o comando `ip a` para verificar seu ip, caso tenha se conectado por wifi a interface associada será algo como `wlp6s0 ou wlan0` se for por cabo será algo como `enp12s0 ou eth0`, anote esse ip.
+Agora vamos ligá-lo e acessá-lo, com um teclado e um monitor diretamente ligados no rasp. Após se logar com o usuário padrão `pi:raspberry`, conecte-se à internet (via cabo ou wifi) e abra um terminal.
 
-Agora que temos o endereço de ip e habilitamos o ssh podemos nos conectar assim daqui para frente, sem a necessidade de plugar mil coisas no rasp. Supondo que seu ip seja `192.168.0.13` digite no seu pc/note digite:
+Nós poderíamos fazer tudo por aqui, mas, por comodidade, vamos apenas pegar o endereço de ip e habilitar o ssh para nos conectarmos remotamente. Para começar, digite o comando `ip a` para verificar seu ip.
 
-- OBS: Caso use linux é bem provavel que ele já tenha ssh, mas se você usa windows ~~deveria usar linux~~ pode usar o Putty,
+Caso tenha se conectado por wifi à interface associada, seu ip será algo como wlp6s0 ou wlan0. Se a conexão acontecer por cabo, então teremos algo como enp12s0 ou eth0.
+
+Atenção: anote esse ip.
+
+Agora que temos o endereço de ip e habilitamos o ssh, poderemos nos conectar assim daqui para frente, sem a necessidade de plugar mil coisas no rasp. Supondo que seu ip seja 192.168.0.13, digite no seu pc/note:
+
+`sudo systemctl enable ssh`
+
+- OBS: Caso utilize o Linux, é bem provável que ele já tenha ssh, mas, se você usar o Windows, ~~deveria usar o Linux~~ pode usar o Putty:
 
 `ssh pi@192.168.0.13`
 
-Após colocar a senha já estará logado e podemos continuar a configuração.
-Digite o comando [sudo raspi-config](https://www.raspberrypi.org/documentation/configuration/raspi-config.md) para configurarmos nosso terminal. A maior parte das opções disponíveis nessa ferramenta são possíveis de se configurar "na mão", mas o `raspi-config` nos provê uma interface facilitada para isso.
-Você pode navegar no menu que abrirá usando as setas, enter e esc. Temos as seguintes opções:
+Após colocar a senha, você já estará logado e poderemos assim continuar a configuração. Digite o comando [sudo raspi-config](https://www.raspberrypi.org/documentation/configuration/raspi-config.md) para que possamos configurar o nosso terminal.
+
+A maior parte das opções disponíveis nessa ferramenta são possíveis de se configurar "na mão", porém o raspi-config nos provê uma interface mais facilitada para isso. Você pode navegar no menu que abrirá usando as setas, o ENTER e o ESC. Dispomos então das seguintes opções:
 
 ```
 │        1 Change User Password     Alterar senha do usuário
@@ -43,14 +50,17 @@ Você pode navegar no menu que abrirá usando as setas, enter e esc. Temos as se
 │        9 About raspi-config       Mostra uma ajuda sobre o raspi-config
 ```
 
-Ao iniciar seu raspi a primeira vez é legal alterar a senha(ou criar outro usuário), configurar o acesso a rede, colocar os locales corretos caso não estejam, mudar o hostname e fazer um update. Vamos relembrar alguns comandos de linux que nos ajudarão no dia-a-dia:
+Ao iniciar seu raspi pela primeira vez, é interessante alterar a senha (ou criar outro usuário), configurar o acesso à rede, colocar os locales corretos (caso não estejam), mudar o hostname e fazer um update.
 
-OBS: Comandos com o prefixo `$` podem ser rodados por usuários normais, e comandos prefixados com `#` devem ser executados como root.
+Vamos relembrar alguns comandos de Linux que nos ajudarão no dia-a-dia:
 
-* Navegar entre pastas(dica: aperte tab para ver os caminhos disponíveis da sua pasta atual):
+OBS: Comandos com o prefixo `$` podem ser rodados por usuários normais, enquanto comandos prefixados com `#` devem ser executados como root.
+
+* Navegar entre pastas (dica: aperte TAB para ver os caminhos disponíveis de sua pasta atual):
+
 `$ cd /caminho/x`
 
-* Verificar o endereço IP, MAC e outras informações de interfaces
+* Verificar o endereço IP, MAC e outras informações de interfaces:
   `$ ip a`
 
 * Virar root:
@@ -64,27 +74,32 @@ OBS: Comandos com o prefixo `$` podem ser rodados por usuários normais, e coman
 
 * Gerenciar serviços:
 
-  - Verificar o status
+  - Verificar o status:
     `# systemctl status nome_do_serviço`
-  - Iniciar o serviço
+
+  - Iniciar o serviço:
     `# systemctl start nome_do_serviço`
-  - Parar o serviço    
+
+  - Parar o serviço:    
     `# systemctl stop nome_do_serviço`
-  - Habilita o serviço na inicialização do sistema operacional
+
+  - Habilitar o serviço na inicialização do sistema operacional:
     `# systemctl enable nome_do_serviço`
-  - Desabilita o serviço na inicialização do sistema operacional
+
+  - Desabilitar o serviço na inicialização do sistema operacional:
     `# systemctl disable nome_do_serviço`
 
-* Caso queira ver processos associados a alguma porta use o ss:
+* Caso queira ver processos associados a alguma porta, utilize o ss:
   `# ss -tupln`
 
-* Não sabe o que o comando faz? Dê uma olhada no manual:
+* Não sabe o que certo comando faz? Dê uma olhada no manual:
 `$ man nome_do_comando`
 
 ## Outras features do rasp
 
-O Raspberry ja vem com algumas outras coisas legais, como bluetooth, conexoes para displays e camera, e também os 40 GPIOs(general-purpose input/output) disponíveis para conectar sensores e modulos.
-Um ponto bacana disso eh poder usar python no lugar de C++, porem muitas nao eh preciso, ja que para coisas simples na maioria das vezes, um arduino ja pode resolver seu problema.
+O Raspberry já vem com algumas outras ferramentas bem legais, como bluetooth, conexões para displays e câmera, além dos 40 GPIOs (general-purpose input/output) disponíveis para conectar sensores e módulos.
+
+Um ponto bacana disso é poder usar python no lugar de C++, o que em muitos casos, porém, não será preciso, uma vez que, quando se tratar de coisas consideradas mais simples, na maioria das vezes um arduino já poderá resolver seu problema.
 
 ![GPIO](../../img/2sem/02/gpio.jpg)
 
@@ -96,19 +111,22 @@ Na segunda semana você foi incubido de configurar o raspberry junto com a Jane,
 
 ### Tasklist
 
-* [ ] Configurar hostname
+* [ ] Configurar o hostname
 
-* [ ] Alterar boot para iniciar com o CLI pedindo logins
+* [ ] Alterar o boot para iniciar com o CLI pedindo logins
 
-* [ ] Atualizar sistema
+* [ ] Atualizar o sistema
 
 * [ ] Alterar a senha
 
-* [ ] Configurar locales(data, hora, teclado)
+* [ ] Configurar locales (data, hora, teclado)
 
 ## Referências e recursos úteis
 
 [Pagina oficial do Raspberry pi](https://www.raspberrypi.org/)
+
 [Download Raspian image](https://www.raspberrypi.org/downloads/)
-[Documentacao sobre GPIO](https://www.raspberrypi.org/documentation/usage/gpio/)
+
+[Documentação sobre GPIO](https://www.raspberrypi.org/documentation/usage/gpio/)
+
 [raspi-config](https://www.raspberrypi.org/documentation/configuration/raspi-config.md)

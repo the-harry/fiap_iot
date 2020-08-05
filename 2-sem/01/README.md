@@ -66,10 +66,17 @@ https://github.com/the-harry/smart_garden/tree/v_2
 ## Referências e recursos úteis
 
 [InfluxDB](https://www.influxdata.com/)
+
 [Grafana](https://grafana.com/)
+
 [Docker](https://www.docker.com/)
+
 [rfc 7231 - protocolo HTTP](https://tools.ietf.org/html/rfc7231)
+
 [MQTT](https://mqtt.org/)
+
 [Raspberry](https://www.raspberrypi.org/)
+
 [OpenFog Reference Architecture for Fog Computing](https://www.iiconsortium.org/pdf/OpenFog_Reference_Architecture_2_09_17.pdf)
+
 [Fog definition](https://internetofthingsagenda.techtarget.com/definition/fog-computing-fogging)
