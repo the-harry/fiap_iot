@@ -4,9 +4,83 @@
 
 Nessa aula veremos a configuração inicial do raspberry pi, além de alguns comandos bastante úteis para nosso estudo.
 
-Após instalar a ISO no sdcard, abra-o no seu computador e crie um arquivo em branco com o nome `ssh` (sem extensão). Este arquivo irá habilitar o ssh. Na sequência, crie outro arquivo chamado `wpa_supplicant.conf` e utilize o modelo abaixo com sua rede wifi:
+Após [baixar](https://www.raspberrypi.org/downloads/raspberry-pi-os/) a ISO, grave ela no sdcard, para isso use o comando `dd`, caso o sdcard nao esteja formatado, tu pode formata-lo usando alguma ferramenta como gparted e depois fazer o seguinte para copiar a imagem:
 
+Primeiro localizamos onde esta montado nosso SDcard usando o comando `lsblk -p` que nos dara um output assim mostrando os dispositivos conectados:
+
+```bash
+NAME                  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+sda                     8:0    0 223.6G  0 disk  
+├─sda1                  8:1    0   243M  0 part  /boot
+└─sda5                  8:5    0 223.3G  0 part  
+  └─sda5_crypt        254:0    0 223.3G  0 crypt
+    ├─unix--vg-root   254:1    0 215.8G  0 lvm   /
+    └─unix--vg-swap_1 254:2    0   7.6G  0 lvm   [SWAP]
+sdb                     8:16   0 223.6G  0 disk  
+├─sdb1                  8:17   0   500M  0 part  
+├─sdb2                  8:18   0 222.5G  0 part  
+└─sdb3                  8:19   0   574M  0 part  
+mmcblk0               179:0    0  29.7G  0 disk  
 ```
+
+Discos sda geralmente sao os primarios e sdb secundarios, no caso nosso sdcard eh o dispositivo `mmcblk0`.
+
+Para copiar a imagem que baixamos vamos ate a pasta do arquivo e usamos o seguinte comando para descompactar e gravar a imagem no cartão:
+
+OBS: O troque o nome do arquivo caso precise.
+
+```bash
+# descompactar o arquivo
+unzip 2020-05-27-raspios-buster-full-armhf.zip
+
+# gravar imagem no dispositivo
+
+sudo dd bs=4M if=2020-05-27-raspios-buster-full-armhf.img of=/dev/mmcblk0 status=progress conv=fsync
+```
+
+Abra o SDcard no seu computador:
+
+```bash
+# para ver onde ele montou a particao
+lsblk -p
+
+NAME                              MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+/dev/sda                            8:0    0 223.6G  0 disk
+├─/dev/sda1                         8:1    0   243M  0 part  /boot
+└─/dev/sda5                         8:5    0 223.3G  0 part
+  └─/dev/mapper/sda5_crypt        254:0    0 223.3G  0 crypt
+    ├─/dev/mapper/unix--vg-root   254:1    0 215.8G  0 lvm   /
+    └─/dev/mapper/unix--vg-swap_1 254:2    0   7.6G  0 lvm   [SWAP]
+/dev/sdb                            8:16   0 223.6G  0 disk
+├─/dev/sdb1                         8:17   0   500M  0 part
+├─/dev/sdb2                         8:18   0 222.5G  0 part
+└─/dev/sdb3                         8:19   0   574M  0 part
+/dev/mmcblk0                      179:0    0  29.7G  0 disk
+├─/dev/mmcblk0p1                  179:1    0   256M  0 part  /media/harry/boot
+└─/dev/mmcblk0p2                  179:2    0   6.6G  0 part  /media/harry/rootfs
+```
+
+Agora vamos para a particao de boot fazer uns ultimos ajustes:
+
+```bash
+cd /media/harry/boot
+```
+
+E crie um arquivo em branco com o nome `ssh` (sem extensão). Este arquivo irá habilitar o ssh.
+
+```bash
+touch ssh
+```
+
+Na sequência, crie outro arquivo chamado `wpa_supplicant.conf` e utilize o modelo abaixo com sua rede wifi:
+
+```bash
+vim wpa_supplicant.conf
+```
+
+E adicione o seguinte conteudo, coloque o nome e senha da rede:
+
+```bash
 country=BR
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -17,6 +91,8 @@ network={
   psk="SENHA_DA_REDE"
 }
 ```
+
+Quando estiver pronto saia e salve o arquivo, aperte `ESC`, `:wq`, `ENTER`.
 
 Agora vamos ligá-lo e acessá-lo, com um teclado e um monitor diretamente ligados no rasp. Após se logar com o usuário padrão `pi:raspberry`, conecte-se à internet (via cabo ou wifi) e abra um terminal.
 
@@ -111,15 +187,7 @@ Na segunda semana você foi incubido de configurar o raspberry junto com a Jane,
 
 ### Tasklist
 
-* [ ] Configurar o hostname
-
-* [ ] Alterar o boot para iniciar com o CLI pedindo logins
-
-* [ ] Atualizar o sistema
-
-* [ ] Alterar a senha
-
-* [ ] Configurar locales (data, hora, teclado)
+* [ ] Acessar o raspi por ssh e colocar o nome na lista de presença
 
 ## Referências e recursos úteis
 
