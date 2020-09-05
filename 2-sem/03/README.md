@@ -4,77 +4,90 @@
 
 ### Sobre o Python
 
-O Python oferece uma maneira fácil e amigavel de interagir com seu código. Python é uma linguagem `interpretada`, o que significa que não precisamos compilar nosso código e ele pode ser feito orientado a objetos, o que torna mais fácil reaproveitar código. Os arquivos tem a extenção `.py` e podem ser rodados como scripts ou como programas mais complexos. Python é bastante usado para análise de grandes volumes de dados entre outras aplicações, e o grande número de biblíotecas existentes é incontavel.
+O Python oferece uma maneira fácil e amigável de interagir com o seu código. A função do Python trata-se de uma linguagem interpretada, o que significa que, com ele, não precisaremos compilar nosso código e ele poderá ser feito orientado a objetos, o que tornará mais fácil o processo de reaproveitamento do código posteriormente. Estes arquivos possuem a extensão .py e podem ser rodados como scripts ou como programas mais complexos.
 
-Listarei abaixo algumas caracteristicas da sintaxe que devemos nos lembrar do dia a dia:
+O Python é bastante usado para análise de grandes volumes de dados, entre outras aplicações, uma vez que o grande número de bibliotecas existentes é incontável.
+
+Listarei abaixo algumas características da sintaxe que devemos nos lembrar no dia a dia:
 
 * O código é organizado por blocos de identação, por isso não fechamos ifs, loops, etc.
 
-* Houve uma quebra de compatibilidade entre a versão 2 e 3. Cuidado para não usar sintaxe antiga(a menos que precise).
+* Houve uma quebra de compatibilidade entre as versões 2 e 3. Cuidado para não utilizar a sintaxe antiga (a menos que seja preciso).
 
-Para instalar o python no windows ou mac vá na página de [downloads](https://www.python.org/downloads/) e siga as instruções para sua plataforma e versão escolhida do python, caso use linux procure informações específicas de como instalar na sua distro.
+Para instalar o Python no Windows ou Mac, vá na página de downloads e siga as instruções para sua plataforma e versão escolhida do Python. Caso utilize o Linux, procure informações específicas de como instalar na sua distro.
 
-Ao instalar o python você poderá usar o IDLE(REPL, shell do python) ou escrever em um arquivo e depois executá-lo chamando `python meu_codigo.py` ou caso você coloque na primeira linha do arquivo qual deve ser o interpretador ele pode ser executado literalmente como um script, e.g. na primeira linha do seu código tem `#!/usr/bin/python` isso diz que o interpretador padrão desse código será o python localizado em /usr/bin. Logo podemos rodar esse código assim: `./meu_codigo.py`
+Ao instalar o Python, você poderá usar o IDLE (REPL, shell do python) ou escrever em um arquivo e depois executá-lo com o nome `python meu_codigo.py`. Caso você coloque na primeira linha do arquivo qual será o interpretador, ele poderá ser executado literalmente como um script, e.g.
 
-Com o python instalado vamos escolher um editor para fazermos nosso código, eu recomendo o Atom, algumas outras alternativas legais também são o PyCharm, VsCode, mas caso queira usar o Vim ou qualquer outro editor fique a vontade, apenas use um que você se sinta melhor. Abra um novo arquivo e o salve como `intro.py` e vamos começar.
+Se, por exemplo, a primeira linha do seu código possui `#!/usr/bin/python`, isso quer dizer que o interpretador padrão desse código será o python localizado em /usr/bin. Logo, podemos rodar esse código assim: `./meu_codigo.py`
 
-Apenas por curiosidade, o nome Python foi escolhido por causa da comedia britanica dos anos 70 [Monty Python](https://docs.python.org/2/faq/general.html#why-is-it-called-python).
+Com o Python instalado, o próximo passo será escolher um editor para fazermos nosso código (eu recomendo o Atom, além de outras alternativas interessantes serem o PyCharm e o VsCode), mas, caso você prefira utilizar o Vim ou qualquer outro editor, fique à vontade! É importante que você faça a sua escolha visando sempre aquele em que você se sinta melhor em trabalhar.
+
+Abra um novo arquivo, salve-o como `intro.py` e vamos começar.
+
+Obs: Apenas por curiosidade, o nome Python foi escolhido fazendo referência à comedia britânica dos anos 70, [Monty Python](https://docs.python.org/2/faq/general.html#why-is-it-called-python).
 
 
 ### Gerenciador de pacotes
 
-Quando se programa em qualquer linguagem é imprecendivel o uso de bicliotecas, ou libs, para que não precisemos implementar toda a lógica na mão. Uma lib nada mais é do que um pedaço de código que faz alguma coisa útil e pode ser reaproveitado em outros sistemas.
+Quando se programa em qualquer linguagem, é imprescindível o uso de bibliotecas (ou libs), para que não precisemos implementar toda a lógica na mão. Uma lib nada mais é do que um pedaço de código que possui uma função útil e que pode ser reaproveitado em outros sistemas.
 
 #### pip e pip3
 
-As libs se comportam como pacotes do linux, precisamos de um gerenciador de pacotes para poder de fato instalar alguma coisa. O gerenciador de pacotes do python é o `pip`(python 2.x) ou `pip3`(python 3.x).
+Como as libs se comportam como pacotes do Linux, precisamos de um gerenciador de pacotes para poder de fato instalar algo. O gerenciador de pacotes do python é o `pip` (python 2.x) ou `pip3` (python 3.x).
 
-Para instalar a lib certifique-se que já tenha o python3.x instalado, e atualize o pip:
+
+Para instalar a lib, certifique-se de que já tenha o python3.x instalado, para depois atualizar o pip:
 
 `sudo pip3 install --upgrade pi`
 
-Após isso podemos instalar a lib que quisermos com o comando:
+Após isso, podemos instalar a lib que quisermos, seguindo o comando abaixo:
 
 `pip3 install nome_do_pacote`
 
-Voce pode procurar pacotes em [pypi.org](https://pypi.org/).
+Obs: Você pode procurar pacotes em [pypi.org](https://pypi.org/).
 
-Apos instalar eles na sua maquina, voce precisa importa-los no seu codigo:
+Após instalá-los em sua máquina, você precisará importá-los em seu código:
 
 ```python
 import foo
 ```
 
-Voces tambem verao isso de maneiras um pouco diferente como:
+Será possível também verem este comando de maneiras um pouco diferentes, como por exemplo:
 
 ```python
 from foo import bar
 ```
 
-Mas nao se preocupe com isso agora, geralmente as libs explicam como funcina a importacao delas nos docs.
+Mas não se preocupe com isso agora, pois geralmente as libs explicam como funcionará a importação delas nos docs.
 
-#### Gerenciando dependencias
 
-Conforme vamos colocando libs no nosso projeto, elas criam as nossas dependencias, eh importante controlar a versao dos pacotes usados no projeto, pois pode acontecer de outra pessoa tentar rodar seu projeto e instalar uma versao errada de alguma dependencia, fazendo o projeto nao utilizavel. Para evitar dores de cabeca, sempre que tiver uma nova lib no seu projeto a adicione ao seu arquivo `requirements.txt`, onde ele guarda essas referencias, felizmente voce nao precisa verificar lib por lib, podemos usar o seguinte comando para atualizar esse arquivo:
+#### Gerenciando dependências
+
+Conforme vamos colocando libs no nosso projeto, elas criam as nossas dependências, o que é importante para controlarmos a versão dos pacotes usados no projeto. A importância desse controle se dá pelo fato de poder acontecer de uma outra pessoa tentar rodar seu projeto, instalando nele uma versão errada de alguma dessas dependências, fazendo com que o projeto se torne não utilizável. Para evitar essas e outras dores de cabeça, sempre que houver uma nova lib no seu projeto, adicione-a ao seu arquivo `requirements.txt` (onde são guardadas essas referências).
+
+Felizmente, você não precisará verificar lib por lib, uma vez que podemos utilizar o seguinte comando para atualizar esse arquivo:
 
 `pip3 freeze > requirements.txt`
 
-Quando quisermos instalar as dependencias em outra maquina podemos simplesmente rodar:
+Quando quisermos instalar as dependências em outra máquina, poderemos simplesmente rodar:
 
 `pip3 install -r requirements.txt`
 
 
 ### Bases
 
-Bem, vamos começar como todos outros tutoriais de programação, fazendo um hello world. Para fazer isso é bem simples, podemos fazer assim:
+Bem, vamos começar como todos os outros tutoriais de programação: fazendo um “hello world”. Para fazer isso é bem simples, conforme segue abaixo:
 
 `print("Hello World!")`
 
-Para fazer comentários no código usamos #:
+Para fazermos comentários no código, usamos #:
 
 `# Sempre é bom dar um espaço do '#' antes de fazer o comentário.`
 
-As variáveis no python são bem simples, elas tem que começar com uma letra, podem ter números, hífens, underline, mas não podem começar com números. Basicamente quando é um valor numérico declaramos:
+As variáveis no Python são bem simples, pois elas têm que começar com uma letra (podendo também ter números, hifens e underlines). É importante lembrar que elas não podem começar com números.
+
+Basicamente, quando se trata de um valor numérico, declaramos:
+
 
 ```python
 age = 18
@@ -86,7 +99,7 @@ Caso seja uma string:
 name = 'Jhon Doe'
 ```
 
-Caso queira juntar uma variável com uma string você pode fazer o seguinte:
+Caso queira juntar uma variável com uma string você poderá fazer o seguinte:
 
 ```python
 name = 'Jhon Doe'
@@ -96,18 +109,18 @@ work = 'Programmer'
 print("%s is a %s" % (name, work))
 ```
 
-Que vai imprimir: `Jhon Doe is a Programmer`.
+Que irá imprimir: `Jhon Doe is a Programmer`.
 
-Temos estrururas de dados mais complexas. Esses são dois dos cinco principais tipos, que são numeros, strings, listas, tuplas e dicionários. Porém vamos deixar para falar delas mais pra frente.
+Temos outras estruturas de dados mais complexas. Esses são dois dos cinco principais tipos, que são: números, strings, listas, tuplas e dicionários. Porém, vamos deixar para falar delas em um outro momento mais adiante.
 
 
 ### Operadores
 
 #### Aritméticos
 
-Também temos os operadores aritméticos como `+`, `-`, `*` e `/`. Porém temos alguns outros que também são bem interessantes:
+Dispomos de operadores chamados aritméticos, como `+`, `-`, `*` e `/`. Porém temos alguns outros que também são bem interessantes:
 
-* `%` - Módulo, retorna o resto de uma divisão.
+* `%` - Módulo, que retorna o resto de uma divisão.
 
 * `**` - Eleva um número ao quadrado.
 
@@ -117,7 +130,7 @@ Sempre se lembre quando for fazer operações que a ordem de precedencia importa
 
 #### Logicos
 
-Antes de falarmos de tomadas de decisões precisamos entender os operadores logicos do python, como eles vamos fazer comparações para saber o que fazer. Segue abaixo uma lista dos principais operadores:
+Antes de falarmos de tomadas de decisões, precisamos entender os operadores lógicos do Python e como eles nos ajudarão a fazer comparações, para assim sabermos o que fazer. Segue abaixo uma lista dos principais operadores:
 
 * `==` igualdade
 
