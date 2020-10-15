@@ -52,6 +52,10 @@ Também podemos usar o curl para fazer requisições HTTP para a API do influx:
 
 Lembrando que o influxdb possui libs para várias linguagem, o que facilita a insersão de datapoints no dia-a-dia dentro de nossas aplicações, mas caso não queira usar a lib a API é uma alternativa.
 
+## Integrando na nossa API
+
+
+
 ## Desafio
 
 ### User story
