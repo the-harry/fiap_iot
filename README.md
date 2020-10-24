@@ -84,7 +84,7 @@ Caso não tenha um raspberry, temos algumas maneiras de [emular um](https://www.
 
   * `Aula 9 - Introdução à monitoração com Grafana.`
 
-  * `Aula 10 - Trabalhando com alertas.`
+  * `Aula 10 - Trabalhando com alertas no grafana.`
 
   * `Aula 11 - Protocolo MQTT.`
 
