@@ -13,25 +13,25 @@ Para os donos de animais que ficam muito tempo fora de casa, seja por motivo de 
 
 ### Primeiro semestre
 
-Caso não possua um Arduino, você pode usar o [tinkercad](https://www.tinkercad.com) para emular um, mas algumas coisas ficam meio limitadas.
+Caso não possua um Arduino, você pode usar o [tinkercad](https://www.tinkercad.com) para emular um.
 
   - `Aula 1 - O que é IOT?`
 
-  - `Aula 2 - Arduino, placas de desenvolvimento, instalação da IDE.` blink
+  - `Aula 2 - Arduino, placas de desenvolvimento, instalação da IDE.`
 
-  - `Aula 3 - Eletrônica básica.` brincar c as parada fazer um push button com led e tals
+  - `Aula 3 - Eletrônica básica.`
 
-  - `Aula 4 - Sensores e atuadores - pt1` pelo menos um execicio de cada
+  - `Aula 4 - Sensores e atuadores - pt1.`
 
-  - `Aula 5 - Sensores e atuadores - pt2.` explorar com mais calma uns exemplos pra eles ficarem a vonts
- 
+  - `Aula 5 - Sensores e atuadores - pt2.`
+
   - `Aula 6 - Comunicação por HTTP.`
 
   * `Aula 7 - Projetos com alimentação externa.`
 
   - `Aula 8 - Tipos de motores e suas aplicacoes.`
 
-  - `Aula 9 - Comunicação por RF`
+  - `Aula 9 - Comunicação por RF.`
 
   - `Aula 10 - Registradores.`
 
@@ -121,21 +121,6 @@ Segue a lista dos itens usados para os projetos:
 * `Protoboard 830 pontos`
 
 ![Protoboard](.../../img/doc/proto.jpeg)
-
-
-* `Kit RFID Sensor e cartão/tag - RFID-RC522`
-
-![MFRC522](.../../img/doc/MFRC522.jpg)
-
-
-* `Teclado Matricial de Membrana 12 Teclas`
-
-![KB](.../../img/doc/teclado.jpeg)
-
-
-* `Fechadura solenoide`
-
-![Lock](.../../img/doc/lock.jpeg)
 
 
 * `Leds`

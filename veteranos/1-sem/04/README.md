@@ -1,4 +1,7 @@
-# Aula 4 - Arduino getting started.
+# Aula 4 - Sensores e atuadores - pt1
+
+
+ PELO MENOS UM EXECICIO DE CADA
 
 ## Estrutura básica do sketch arduino
 
@@ -17,7 +20,6 @@ void loop() {
   // depois disso, permanecerá nesse loop até que seja desligado ou haja uma interrupção.
 }
 ```
-
 
 ## Tipos no C/C++
 
@@ -226,8 +228,6 @@ void loop() {
 ### User story
 
 Desenvolver um algoritmo que, ao receber a letra `H` na porta serial, ligue o LED e, caso receba o `L`, desligue o LED.
-
-* [ ] Diagrama de blocos
 
 * [ ] Codigo arduino
 

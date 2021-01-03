@@ -1,13 +1,12 @@
-# Aula 1 - Arduino, tipos, instalação da IDE
+# Aula 2 - Arduino, placas de desenvolvimento, instalação da IDE.
 
 ## Conteúdo
 
-Neste semestre faremos alguns projetos com o arduino, que nos fornece um ambiente completo para trabalhar com microcontroladores. O arduino se trata de um projeto opensource, realizado inicialmente por uma empresa italiana, mas que hoje já apresenta no mercado outras fabricantes que produzem placas similares (já que os modelos de hardware são abertos e podem ser copiados sem maiores implicações). Um arduino não é simplesmente um microcontrolador, mas sim uma placa de desenvolvimento que possui nela um microcontrolador e algumas outras peças, com a finalidade de facilitar o nosso trabalho. O processo para programar microcontroladores &quot;na mão&quot; é bem mais complexo, pois geralmente precisaríamos montar um circuito e ter algumas ferramentas mais específicas. Está aí a importância do arduino, que tornou para nós o processo muito mais simples e descomplicado.
+Neste semestre faremos alguns projetos com o arduino, que nos fornece um ambiente completo para trabalhar com microcontroladores. O arduino se trata de um projeto opensource, realizado inicialmente por uma empresa italiana, mas que hoje já apresenta no mercado outras fabricantes que produzem placas similares (já que os modelos de hardware são abertos e podem ser copiados sem maiores implicações). Um arduino não é simplesmente um microcontrolador, mas sim uma placa de desenvolvimento que possui nela um microcontrolador e algumas outras peças, com a finalidade de facilitar o nosso trabalho. O processo para programar microcontroladores "na mão" é bem mais complexo, pois geralmente precisaríamos montar um circuito e ter algumas ferramentas mais específicas. Está aí a importância do arduino, que tornou para nós o processo muito mais simples e descomplicado.
 
 Sem o arduino:
 
 ![programmer](../../img/1sem/01/programmer.jpeg)
-![assembly](../../img/1sem/01/assembly.png)
 
 Com arduino:
 
@@ -64,6 +63,10 @@ Hoje possuímos dois tipos disponíveis desse modelo, sendo: os que são PTH (pl
 
 ![esp32](../../img/1sem/01/esp32.jpeg)
 
+* `Teensy 2.0` -
+
+![teensy](../../img/1sem/01/teensy.jpeg)
+
 
 * `SHIELDS`: São módulos que se conectam ao arduino para fazer algo de maneira fácil, sem que você tenha que montar um circuito completo, como por exemplo:
 
@@ -73,15 +76,15 @@ Hoje possuímos dois tipos disponíveis desse modelo, sendo: os que são PTH (pl
 
  - Usar um chip de celular no seu projeto(GPRS):
 
- ![motor](../../img/1sem/01/gprs.jpeg)
+ ![gprs](../../img/1sem/01/gprs.jpeg)
 
  - Módulos MP3 para músicas:
 
- ![motor](../../img/1sem/01/mp3.jpeg)
+ ![mp3](../../img/1sem/01/mp3.jpeg)
 
  - E muitos outros...
 
- ![motor](../../img/1sem/01/random.png)
+ ![random](../../img/1sem/01/random.png)
 
 
 Primeiro instale a IDE em sua máquina, acesse [esse link](https://www.arduino.cc/en/main/software) e faça o download de acordo com o seu sistema operacional.
@@ -114,7 +117,13 @@ Serial plotter:
 
 ![plotter](../../img/1sem/01/plotter.jpeg)
 
+## Na pratica
+
+blink e outro exemplo
+
 ## Desafio
+
+
 
 ### Tasklist
 

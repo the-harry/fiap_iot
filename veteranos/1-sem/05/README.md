@@ -1,4 +1,7 @@
-# Aula 5 - Operações lógicas - if, else, else if.
+# Aula 5 - Sensores e atuadores - pt2.
+
+
+ EXPLORAR COM MAIS CALMA UNS EXEMPLOS PRA ELES FICAREM A VONTS
 
 ## Conteúdo
 

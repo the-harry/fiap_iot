@@ -107,7 +107,11 @@ IMPORTANTE: Sempre que for usar o multímetro e nao souber o quanto de energia v
 
 Caso queira medir a corrente é importante fazer com que o seu multímetro faça parte do circuito.
 
+ADD FOTO MOSTRANDO O LANCE ACIMA!
+
 # Desafio
+
+brincar c as parada fazer um push button com led e tals
 
 ### User story
 
