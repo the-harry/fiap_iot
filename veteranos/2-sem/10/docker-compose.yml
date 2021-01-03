@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    restart: always
+    volumes:
+      - .:/api
+    command: ./server
+    ports:
+      - 80:3000
+
+  influxdb:
+    image: influxdb
+    restart: always
+    ports:
+      - 8086:8086
+    volumes:
+      - influx-data:/var/lib/influxdb
+
+  grafana:
+      image: grafana/grafana
+      restart: always
+      ports:
+        - 3000:3000
+      volumes:
+        - grafana-data:/var/lib/grafana
+
+volumes:
+  influx-data:
+  grafana-data:

@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    restart: always
+    volumes:
+      - .:/api
+    command: ./server
+    ports:
+      - 80:3000
