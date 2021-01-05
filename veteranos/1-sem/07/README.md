@@ -57,6 +57,9 @@ void loop() {
 
 Atenção: muito cuidado ao lidar com fontes de tensão externa, mesmo que se trate de uma baixa tensão. Sempre desligue tudo antes de trocar conexões, manuseando o material com total segurança!
 
+## Comentar sobre baterias em serie e paralelo
+
+
 ## Desafio
 
 ### User story
