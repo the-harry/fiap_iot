@@ -6,12 +6,12 @@ Neste semestre faremos alguns projetos com o arduino, que nos fornece um ambient
 
 Sem o arduino:
 
-![programmer](../../img/1sem/01/programmer.jpeg)
+![programmer](../../img/1sem/02/programmer.jpeg)
 
 Com arduino:
 
-![arduino](../../img/1sem/01/arduino.jpeg)
-![cpp](../../img/1sem/01/cpp.jpeg)
+![arduino](../../img/1sem/02/arduino.jpeg)
+![cpp](../../img/1sem/02/cpp.jpeg)
 
 
 O Arduino pode ser alimentado por uma fonte de 9v ou por um cabo serial-usb (brotip: muitas impressoras utilizam este cabo). Durante a realização de qualquer projeto, precisamos realizar a troca de dados entre o arduino e o computador e, para isso, fazemos o uso do cabo serial. A fonte ou bateria de 9v será usada para o funcionamento do projeto já realizado (quando não precisamos trocar dados). O Arduino usa C++ como linguagem padrão, mas existem alternativas, como por exemplo: python, ADA, basic, entre outros. Apesar de serem possibilidades, estas porém são menos documentadas e a comunidade não é tão grande, além de poderem não ser tão performáticas, então talvez crie para você alguma dificuldade. Por isso, focaremos no C++!
@@ -31,7 +31,7 @@ O arduino apresenta alguns pinos (a quantidade muda de acordo com o modelo), sen
 Temos também [outros](https://www.arduino.cc/en/reference/board) pinos, que veremos no decorrer de nossas atividades, embora não sejam tão utilizados.
 
 Segue abaixo como funciona o esquema de pinagem do arduino uno:
-![pinout](../../img/1sem/01/pinout.png)
+![pinout](../../img/1sem/02/pinout.png)
 
 Temos uma gama enorme de modelos disponíveis, entre eles muitos que não são da empresa Arduino propriamente dita. Na sequência veremos alguns modelos e suas características.
 
@@ -39,52 +39,52 @@ Temos uma gama enorme de modelos disponíveis, entre eles muitos que não são d
 
 AVISO: Cuidado ao ligar sensores de 3.3v em pinos de input e output, pois esses pinos operam com 5v e, tentando fazer essa ligação, você poderá danificar alguma coisa.
 
-![uno](../../img/1sem/01/uno_types.png)
+![uno](../../img/1sem/02/uno_types.png)
 
 Hoje possuímos dois tipos disponíveis desse modelo, sendo: os que são PTH (plate through hole), em que você pode remover o microcontrolador; e o SMD (surface mount device), que possui o microcontrolador já soldado na placa. Apesar da diferença citada, ambos funcionam da mesma maneira.
 
 * `Arduino pro mini` - Este modelo é bem conhecido pelo seu tamanho, pois são bem pequenos e geralmente usados para projetos mais discretos, como o Rubber Ducky, teclados mecânicos, etc. Ele possui versões de 3.3v e 5v, sendo que o de 3.3v opera na frequência de 8MHz, e o de 5v com 16MHz. Vale salientar que ele não possui as entradas fêmeas, o que significa que você precisará soldar algumas coisas. Além disso, este modelo também não apresenta USB, então para programa-lo você precisará de um FTDI ou cabo serial.
 
-![pro mini](../../img/1sem/01/promini.jpeg)
+![pro mini](../../img/1sem/02/promini.jpeg)
 
 * `Arduino pro micro` - Este modelo lembra bastante o arduino pro mini, porém com um ponto de diferença: por apresentar o suporte a USB, este arduino facilita bastante o nosso trabalho, uma vez que não precisaremos de nenhum cabo especial para programa-lo. Ele também usa outro chip, o ATmega32U4, além de ser composto por 12 pinos de IO, onde 5 são PWM, 4 são analógicos. Conta ainda com 32KiB de memória flash e 2.5KiB de RAM. Assim como o pro mini, ele também se apresenta nas versões de 3.3v e 5v.
 
-![pro micro](../../img/1sem/01/pro_micro.jpeg)
+![pro micro](../../img/1sem/02/pro_micro.jpeg)
 
 * `Arduino Mega 2560` - Um dos maiores modelos disponíveis da categoria, este é muito utilizado em impressoras 3D, cortadoras a laser e CNC&#39;s. Ele opera com 16MHz, tendo 54 pinos de IO, onde 15 são PWM, 16 são analógicos, além de incríveis 256KiB de memória flash, 8KiB de RAM e 4 portas seriais.
 
-![mega](../../img/1sem/01/mega.jpeg)
+![mega](../../img/1sem/02/mega.jpeg)
 
 * `Esp8266` - Apesar do modelo não pertencer à empresa Arduino, ele se destaca por seu tamanho pequeno e pela quantidade enorme de recursos que já vem embutidas em suas funções, não precisando ser compradas a parte, como, por exemplo, o módulo de wifi, 520 KiB SRAM de memória, que se sobressai à capacidade de alguns arduinos. O upload do código para a placa é um pouco mais complexo e algumas funções se apresentam um pouco diferentes das que estão presentes em arduinos convencionais. Sendo assim, sempre que usar um ESP, é muito importante verificar se a lib que será utilizada suportará o seu dispositivo. Este modelo opera com 3.3v na frequência de 80 MHz.
 
-![ESP8266](../../img/1sem/01/8266.jpeg)
+![ESP8266](../../img/1sem/02/8266.jpeg)
 
 * `Esp32` - Este modelo é o sucessor do ESP8266, já apresentando suporte para bluetooth e BLE (versão mais nova do bluetooth, que gasta menos energia). Ele possui 520 KiB de memória flash, sendo ainda disponibilizado em duas versões de processadores, sendo eles: 32-bit LX6 microprocessador, que possui apenas um core como as outras placas vistas antes; e um com o microprocessador Xtensa dual-core, que tem mais poder de processamento (o que nos abre portas para experiências bastante diferentes, como realizar operações em paralelo).
 
-![esp32](../../img/1sem/01/esp32.jpeg)
+![esp32](../../img/1sem/02/esp32.jpeg)
 
-* `Teensy 2.0` -
+* `Teensy 2.0` - A linha Teensy eh bem conhecida por ter varios pinos e ser muito utilizada para teclados mecanicos, porem tem um preco mais elevado.
 
-![teensy](../../img/1sem/01/teensy.jpeg)
+![teensy](../../img/1sem/02/tensey.jpg)
 
 
 * `SHIELDS`: São módulos que se conectam ao arduino para fazer algo de maneira fácil, sem que você tenha que montar um circuito completo, como por exemplo:
 
  - Controlar um motor:
 
-![motor](../../img/1sem/01/motor_shield.png)
+![motor](../../img/1sem/02/motor_shield.png)
 
  - Usar um chip de celular no seu projeto(GPRS):
 
- ![gprs](../../img/1sem/01/gprs.jpeg)
+ ![gprs](../../img/1sem/02/gprs.jpeg)
 
  - Módulos MP3 para músicas:
 
- ![mp3](../../img/1sem/01/mp3.jpeg)
+ ![mp3](../../img/1sem/02/mp3.jpeg)
 
  - E muitos outros...
 
- ![random](../../img/1sem/01/random.png)
+ ![random](../../img/1sem/02/random.png)
 
 
 Primeiro instale a IDE em sua máquina, acesse [esse link](https://www.arduino.cc/en/main/software) e faça o download de acordo com o seu sistema operacional.
@@ -111,24 +111,25 @@ Após fazer o upload de um código, podemos acompanhar a comunicação que acont
 
 Monitor serial:
 
-![serial](../../img/1sem/01/serial.jpeg)
+![serial](../../img/1sem/02/serial.jpeg)
 
 Serial plotter:
 
-![plotter](../../img/1sem/01/plotter.jpeg)
+![plotter](../../img/1sem/02/plotter.jpeg)
 
 ## Na pratica
 
-blink e outro exemplo
+Agora vamos analisar o exemplo do blink:
+
+https://www.tinkercad.com/things/7CiiX0aZ7gg-blink
 
 ## Desafio
 
-
+Seu desafio agora vai ser montar um semaforo usando mais dois leds.
 
 ### Tasklist
 
-* [ ] Montar squad
-* [ ] Criar um canal de comunicação
+* [ ] Fazer o projeto no tinkercad(deixar ele publico para eu poder corrigir)
 
 
 ## Referências e recursos úteis
