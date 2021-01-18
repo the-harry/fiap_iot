@@ -111,23 +111,23 @@ ADD FOTO MOSTRANDO O LANCE ACIMA!
 
 # Desafio
 
-brincar c as parada fazer um push button com led e tals
+Vamos brincar um pouco com um push button e um multimetro.
+
+https://www.tinkercad.com/things/cW6Oq07JNla-push-button
 
 ### User story
 
-Seu squad está fazendo estudos sobre eletrônica nesta semana e você recebeu alguns resistores, uma fonte e um arduino, foi pedido para que você analisasse os valores dos componentes utilizando um multímetro.
+Dado o seguinte exemplo, analise as perguntas abaixo:
+
+https://www.tinkercad.com/things/4tSSsCku1Xd-desafio-medicoes
 
 ### Tasklist
 
-* [ ] Medir a resistência dos dois resistores apresentados.
+* [ ] Medir a resistência dos resistores apresentados usando um multimetro.
 
-* [ ] Medir a tensão de alimentação do arduino e dizer qual é o polo positivo e qual o negativo.
-
-* [ ] Medir a tensao de alimentacao do led e dizer qual é o polo positivo e qual o negativo.
+* [ ] Medir a tensao de alimentacao do antes e depois do resistor e dizer qual é o polo positivo e negativo do LED usando o multimetro.
 
 * [ ] Medir a corrente passando pelo led.
-
-* [ ] Verificar a continuidade do um circuito apresentado.
 
 
 ## Referências e recursos úteis

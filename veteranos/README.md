@@ -17,25 +17,25 @@ Caso não possua um Arduino, você pode usar o [tinkercad](https://www.tinkercad
 
   - [Aula 1 - O que é IOT?](1-sem/01/README.md) intro
 
-  - [Aula 2 - Arduino, placas de desenvolvimento, instalação da IDE.](1-sem/01/README.md) intro
+  - [Aula 2 - Arduino, placas de desenvolvimento, instalação da IDE.](1-sem/02/README.md) intro
 
-  - [Aula 3 - Eletrônica básica.](1-sem/01/README.md) intro
+  - [Aula 3 - Eletrônica básica.](1-sem/03/README.md) intro
 
-  - [Aula 4 - Sensores e atuadores - pt1.](1-sem/01/README.md) bixo e planta
+  - [Aula 4 - Sensores e atuadores - pt1.](1-sem/04/README.md) bixo e planta
 prova
-  - [Aula 5 - Sensores e atuadores - pt2.](1-sem/01/README.md) planta
+  - [Aula 5 - Sensores e atuadores - pt2.](1-sem/05/README.md) planta
 
-  - [Aula 6 - Comunicação por HTTP.](1-sem/01/README.md) bixo
+  - [Aula 6 - Comunicação por HTTP.](1-sem/06/README.md) bixo
 prova
-  * [Aula 7 - Projetos com alimentação externa.](1-sem/01/README.md) planta
+  * [Aula 7 - Projetos com alimentação externa.](1-sem/07/README.md) planta
 
-  - [Aula 8 - Tipos de motores e suas aplicacoes.](1-sem/01/README.md) bixo
+  - [Aula 8 - Tipos de motores e suas aplicacoes.](1-sem/08/README.md) bixo
 prova
-  - [Aula 9 - Comunicação por RF.](1-sem/01/README.md) bonus
+  - [Aula 9 - Comunicação por RF.](1-sem/09/README.md) bonus
 
-  - [Aula 10 - Registradores.](1-sem/01/README.md) bonus
+  - [Aula 10 - Registradores.](1-sem/10/README.md) bonus
 
-  - [Aula 11 - Interruptores.](1-sem/01/README.md) bonus
+  - [Aula 11 - Interruptores.](1-sem/11/README.md) bonus
 
 
 ### Segundo semestre
@@ -44,25 +44,25 @@ Para o segundo semestre voce precisa apenas de um computador rodando qualquer di
 
   * [Aula 1 - Integrando nosso gadget.](1-sem/01/README.md)
 
-  * [Aula 2 - Introdução ao Raspberry pi.](1-sem/01/README.md)
+  * [Aula 2 - Introdução ao Raspberry pi.](1-sem/02/README.md)
 
-  * [Aula 3 - Comunicação entre Arduino e Raspberry por porta serial.](1-sem/01/README.md)
+  * [Aula 3 - Comunicação entre Arduino e Raspberry por porta serial.](1-sem/03/README.md)
 
-  * [Aula 4 - Protocolo HTTP.](1-sem/01/README.md)
+  * [Aula 4 - Protocolo HTTP.](1-sem/04/README.md)
 
-  * [Aula 5 - Criando uma API.](1-sem/01/README.md)
+  * [Aula 5 - Criando uma API.](1-sem/05/README.md)
 
-  * [Aula 6 - Usando o docker para montar nosso stack.](1-sem/01/README.md)
+  * [Aula 6 - Usando o docker para montar nosso stack.](1-sem/06/README.md)
 
-  * [Aula 7 - Time series databases, Introdução ao InfluxDB.](1-sem/01/README.md)
+  * [Aula 7 - Time series databases, Introdução ao InfluxDB.](1-sem/07/README.md)
 
-  * [Aula 8 - Introdução à monitoração com Grafana.](1-sem/01/README.md)
+  * [Aula 8 - Introdução à monitoração com Grafana.](1-sem/08/README.md)
 
-  - [Aula 9 - Trabalhando com alertas no grafana.](1-sem/01/README.md)
+  - [Aula 9 - Trabalhando com alertas no grafana.](1-sem/09/README.md)
 
-  - [Aula 10 - Protocolo MQTT.](1-sem/01/README.md)
+  - [Aula 10 - Protocolo MQTT.](1-sem/10/README.md)
 
-  - [Aula 11 - Protocolo BLE.](1-sem/01/README.md)
+  - [Aula 11 - Protocolo BLE.](1-sem/11/README.md)
 
 
 ## Hardware
