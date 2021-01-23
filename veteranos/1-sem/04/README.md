@@ -1,8 +1,5 @@
 # Aula 4 - Sensores e atuadores - pt1
 
-
- PELO MENOS UM EXECICIO DE CADA
-
 ## Estrutura básica do sketch arduino
 
 Um sketch é um arquivo do arduino com a extensão `.ino`, que funciona basicamente como um `C++`, porém com algumas funções próprias. É importante saber que o sketch deve ficar dentro de uma pasta que contenha o mesmo nome do arquino .ino. Este sketch sempre apresentará duas funções iniciais, sendo elas: `setup e loop`. No momento de execução do programa, o código começará a ser lido por ele de cima, fazendo assim a função setup uma vez no início do processo. Na sequência, a função loop é ativada e permanecerá executando os códigos dentro da função (como um loop infinito), até que haja uma interrupção.
@@ -152,6 +149,14 @@ void loop() {
 
 ## IO - Entendendo os sensores e atuadores
 
+Pra simplificar essa explicacao, vamos pensar em um exemplo bem basico. Imagine que voce coloque sua mao no fogo, o que vai acontecer?
+
+O seu sistema nervoso vai perceber que tem alguma coisa danificando uma parte do seu corpo, que envia um sinal eletrico para seu cerebro, que por vez envia um sinal de volta, para que voce tire seu braco da chama.
+
+Um dispositivo de IOT nao funciona muito diferente do nosso corpo, os sensores sao como os nervos, a pele, eles medem valores e enviam para um cerebro(que no caso sera nosso micro-controlador). E uma vez que esses dados sao processados chamamos um atuador, que realmente faz alguma coisa, esse atuador pode ser um motor, um interruptor, ou qualquer coisa que ative outra coisa.
+
+## Sensores
+
 Atualmente temos diversos tipos de sensores, que se dividem em alguns subtipos básicos, tendo cada um deles as suas particularidades. Estes sensores sempre serão `analógicos ou digitais` (lembrando que os digitais medem 0 e 1, e os analógicos 0~1023). Alguns sensores funcionam usando apenas os comandos do arduino, enquanto outros dependem de alguma lib para funcionar corretamente.
 
 Ao importar uma lib no topo do código, é criado um objeto que representa aquela lib para podemos utilizar o sensor, como é o caso do `DHT11`. Um sensor serve para pegar métricas sobre alguma situação, enquanto os atuadores fazem algo de fato. Basicamente, é possível dizer que o sensor é o INPUT e o atuador o OUTPUT.
@@ -223,17 +228,15 @@ void loop() {
 }
 ```
 
+https://www.tinkercad.com/things/g8UO26b57s9
+
 # Desafio
 
 ### User story
 
-Desenvolver um algoritmo que, ao receber a letra `H` na porta serial, ligue o LED e, caso receba o `L`, desligue o LED.
+Agora vamos comecar um projeto para alimentar animais, a ideia eh usar um sensor de presença para detectar quando os animais passam perto do alimento, caso ele passe mais de 3 vezes ele deve ativar um mecanismo para alimentar ele. Para simplificar o projeto, vamos apenas acender um led por enquanto, na proxima aula colocaremos um motor que ativara uma comporta para liberar alimento em um vasilhame.
 
-* [ ] Codigo arduino
-
-BONUS:
-
-* [ ] Alterar a lógica do algoritmo, para que este apenas inverta o estado do LED a cada caractere que chegue na porta serial, desconsiderando claro `\n`. Faça esse exercício sem usar `if`'s.
+* [ ] Criar o projeto no tinkercad e mandar no chat ate o fim da aula.
 
 
 ## Referências e recursos úteis

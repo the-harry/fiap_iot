@@ -21,9 +21,9 @@ Caso não possua um Arduino, você pode usar o [tinkercad](https://www.tinkercad
 
   - [Aula 3 - Eletrônica básica.](1-sem/03/README.md) intro
 
-  - [Aula 4 - Sensores e atuadores - pt1.](1-sem/04/README.md) bixo e planta
+  - [Aula 4 - Sensores e atuadores - pt1.](1-sem/04/README.md) bixo
 prova
-  - [Aula 5 - Sensores e atuadores - pt2.](1-sem/05/README.md) planta
+  - [Aula 5 - Sensores e atuadores - pt2.](1-sem/05/README.md) bixo e planta
 
   - [Aula 6 - Comunicação por HTTP.](1-sem/06/README.md) bixo
 prova
