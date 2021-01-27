@@ -50,7 +50,7 @@ Já o #define é feito geralmente no topo do arquivo, sendo parseado pelo pré p
 O mais importante é se lembrar de que constantes não mudam de valor durante a execução do programa.
 
 ```cpp
-define IDADE 27
+#define IDADE 27
 
 Serial.println(IDADE)
 ```
@@ -58,7 +58,7 @@ Serial.println(IDADE)
 Esse código, antes de ser compilado, troca todas as ocorrências de IDADE por 27, resultando em:
 
 ```cpp
-define IDADE 27
+#define IDADE 27
 
 Serial.println(27)
 ```

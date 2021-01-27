@@ -15,19 +15,19 @@ Para os donos de animais que ficam muito tempo fora de casa, seja por motivo de 
 
 Caso não possua um Arduino, você pode usar o [tinkercad](https://www.tinkercad.com) para emular um.
 
-  - [Aula 1 - O que é IOT?](1-sem/01/README.md) intro
+  * [Aula 1 - O que é IOT?](1-sem/01/README.md) intro
 
-  - [Aula 2 - Arduino, placas de desenvolvimento, instalação da IDE.](1-sem/02/README.md) intro
+  * [Aula 2 - Arduino, placas de desenvolvimento, instalação da IDE.](1-sem/02/README.md) intro
 
-  - [Aula 3 - Eletrônica básica.](1-sem/03/README.md) intro
+  * [Aula 3 - Eletrônica básica.](1-sem/03/README.md) intro
 
-  - [Aula 4 - Sensores e atuadores - pt1.](1-sem/04/README.md) bixo
+  * [Aula 4 - Sensores e atuadores - pt1.](1-sem/04/README.md) bixo
 prova
   - [Aula 5 - Sensores e atuadores - pt2.](1-sem/05/README.md) bixo e planta
 
   - [Aula 6 - Comunicação por HTTP.](1-sem/06/README.md) bixo
 prova
-  * [Aula 7 - Projetos com alimentação externa.](1-sem/07/README.md) planta
+  - [Aula 7 - Projetos com alimentação externa.](1-sem/07/README.md) planta
 
   - [Aula 8 - Tipos de motores e suas aplicacoes.](1-sem/08/README.md) bixo
 prova
